@@ -1,0 +1,52 @@
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2008
+
+Project("{9E66F204-4322-9F16-D1A6-FF24065131A0}") = "WizardOculusLeap", "Assembly-CSharp-firstpass.csproj", "{79EC6CD2-55BC-BBD0-1202-23E63D137A05}"
+EndProject
+Project("{9E66F204-4322-9F16-D1A6-FF24065131A0}") = "WizardOculusLeap", "Assembly-CSharp.csproj", "{DFC85223-0D5F-7390-FECD-E141B6866F78}"
+EndProject
+Project("{9E66F204-4322-9F16-D1A6-FF24065131A0}") = "WizardOculusLeap", "Assembly-CSharp-Editor.csproj", "{871017F2-417B-C975-8A9C-80BD83F3F96A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{79EC6CD2-55BC-BBD0-1202-23E63D137A05}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{79EC6CD2-55BC-BBD0-1202-23E63D137A05}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{79EC6CD2-55BC-BBD0-1202-23E63D137A05}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{79EC6CD2-55BC-BBD0-1202-23E63D137A05}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DFC85223-0D5F-7390-FECD-E141B6866F78}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DFC85223-0D5F-7390-FECD-E141B6866F78}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DFC85223-0D5F-7390-FECD-E141B6866F78}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DFC85223-0D5F-7390-FECD-E141B6866F78}.Release|Any CPU.Build.0 = Release|Any CPU
+		{871017F2-417B-C975-8A9C-80BD83F3F96A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{871017F2-417B-C975-8A9C-80BD83F3F96A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{871017F2-417B-C975-8A9C-80BD83F3F96A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{871017F2-417B-C975-8A9C-80BD83F3F96A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+																																																																			GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = Assembly-CSharp.csproj
+		Policies = $0
+		$0.TextStylePolicy = $1
+		$1.inheritsSet = null
+		$1.scope = text/x-csharp
+		$0.CSharpFormattingPolicy = $2
+		$2.inheritsSet = Mono
+		$2.inheritsScope = text/x-csharp
+		$2.scope = text/x-csharp
+		$0.TextStylePolicy = $3
+		$3.FileWidth = 120
+		$3.TabWidth = 4
+		$3.IndentWidth = 4
+		$3.EolMarker = Unix
+		$3.inheritsSet = Mono
+		$3.inheritsScope = text/plain
+		$3.scope = text/plain
+	EndGlobalSection
+
+EndGlobal
