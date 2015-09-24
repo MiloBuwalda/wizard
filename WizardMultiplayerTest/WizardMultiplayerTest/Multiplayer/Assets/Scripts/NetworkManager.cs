@@ -14,30 +14,30 @@ public class NetworkManager : MonoBehaviour
 	public Button refreshHotlistButton;
 	public Button joinServerButton;
 
+	public Button networkInitializerButton;
+
 	private bool showStartServerButton = true;
-	private bool showRefreshHotlistButton = true;
-	private bool showJoinServerButton = true;
+//	private bool showRefreshHotlistButton = true;
 
 	private HostData[] hostList;
 	
-	public Button networkInitializerButton;
 
-	private bool showButton = true;
+//	private bool showButton = true;
 
 	void Start()
 	{
-		instantiateButton ();
+		instantiateButtons ();
 	}
 
 	void Update()
 	{
-
+		refreshServerList ();
 	}
 
 	public void StartServer()
 	{
-		MasterServer.ipAddress = "127.0.0.1";
 		Network.InitializeServer(4, 25000, !Network.HavePublicAddress());
+		MasterServer.ipAddress = "127.0.0.1";
 		MasterServer.RegisterHost(typeName, gameName);
 	}
 
@@ -48,26 +48,36 @@ public class NetworkManager : MonoBehaviour
 		Debug.Log ("isserver: " + Network.isServer); 
 		if (Network.isClient || Network.isServer) {
 			toggleButton( ref startServerButton, ref showStartServerButton);
-			toggleButton();
+//			toggleButton();
 		}
 	}
 	
-	void instantiateButton()
+	void instantiateButtons()
 	{
 		if (canvas != null)
 		if (!Network.isClient && !Network.isServer) {
-			Debug.Log ("here");
+			Debug.Log ("Instantiate Buttons");
 			startServerButton.onClick.AddListener(() => StartServer());
-			refreshHotlistButton.onClick.AddListener(() => RefreshHostList());
-			for(int i = 0 ; i < hostList.Length; i++)
-			{
-				Button joinServerButton = Instantiate
-				addButtonToElement(joinServerPanel, 
-				JoinServer(hostList[i]);		
-			}
-			joinServerButton.onClick.AddListener(() => JoinAllServers());
+			refreshHotlistButton.onClick.AddListener(() => {RefreshHostList();});
+//			joinServerButton.onClick.AddListener(() => JoinAllServers());
 //			joinServerButton.onClick.AddListener(() => JoinServer (
 //			startServerButton.transform.SetParent(canvas.transform, false);
+		}
+	} 
+
+	void refreshServerList()
+	{
+		Debug.Log ("RefreshServerList");
+		if (canvas != null)
+		if (!Network.isClient && !Network.isServer) {
+			for(int i = 0 ; i < hostList.Length; i++)
+			{
+				Button joinServerButtonX = Instantiate(joinServerButton) as Button;
+				joinServerButtonX.GetComponentsInChildren<Text>()[0].text = hostList[i].gameName;
+				joinServerButtonX.transform.SetParent(joinServerPanel.transform, false);
+//				addButtonToElement(joinServerPanel, ref joinServerButtonX);
+				joinServerButtonX.onClick.AddListener(() => JoinServer (hostList[1]));
+			}
 		}
 	} 
 
@@ -86,8 +96,11 @@ public class NetworkManager : MonoBehaviour
 	
 	void OnMasterServerEvent(MasterServerEvent msEvent)
 	{
-		if (msEvent == MasterServerEvent.HostListReceived)
-			hostList = MasterServer.PollHostList();
+		if (msEvent == MasterServerEvent.HostListReceived) {
+			hostList = MasterServer.PollHostList ();
+			Debug.Log("hostList is set");
+			Debug.Log("length: " +	hostList.Length);
+		}
 	}
 
 	private void JoinServer(HostData hostData)
@@ -106,17 +119,17 @@ public class NetworkManager : MonoBehaviour
 		button.gameObject.SetActive(showButtonToggle);
 	}
 
-	void addButton()
-	{
-		networkInitializerButton.onClick.AddListener(() => StartServer());
-		networkInitializerButton.transform.SetParent(canvas.transform, false);
-	} 
-
-	void toggleButton()
-	{
-		showButton = !showButton;
-		networkInitializerButton.gameObject.SetActive(showButton);
-	}
+//	void addButton()
+//	{
+//		networkInitializerButton.onClick.AddListener(() => StartServer());
+//		networkInitializerButton.transform.SetParent(canvas.transform, false);
+//	} 
+//
+//	void toggleButton()
+//	{
+//		showButton = !showButton;
+//		networkInitializerButton.gameObject.SetActive(showButton);
+//	}
 	// Legacy! 
 
 	// ongui()

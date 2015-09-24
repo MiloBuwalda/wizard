@@ -1,0 +1,48 @@
+Initialize engine version: 5.0.0f4 (5b98b70ebeb9)
+GfxDevice: creating device client; threaded=1
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.0]
+    Renderer: Intel(R) HD Graphics 4000 (ID=0x166)
+    Vendor:   Intel
+    VRAM:     128 MB
+Begin MonoManager ReloadAssembly
+Platform assembly: C:\Users\MiloBU\Documenten\3D\Unity\wizard\WizardMultiplayerTest\Builds\serverTest_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading C:\Users\MiloBU\Documenten\3D\Unity\wizard\WizardMultiplayerTest\Builds\serverTest_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: C:\Users\MiloBU\Documenten\3D\Unity\wizard\WizardMultiplayerTest\Builds\serverTest_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading C:\Users\MiloBU\Documenten\3D\Unity\wizard\WizardMultiplayerTest\Builds\serverTest_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: C:\Users\MiloBU\Documenten\3D\Unity\wizard\WizardMultiplayerTest\Builds\serverTest_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading C:\Users\MiloBU\Documenten\3D\Unity\wizard\WizardMultiplayerTest\Builds\serverTest_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+- Completed reload, in  0.115 seconds
+desktop: 1366x768 60Hz; virtual: 3286x1439 at -1920,-671
+<RI> Initializing input.
+<RI> Input initialized.
+<RI> Initialized touch support.
+Platform assembly: C:\Users\MiloBU\Documenten\3D\Unity\wizard\WizardMultiplayerTest\Builds\serverTest_Data\Managed\System.Core.dll (this message is harmless)
+Platform assembly: C:\Users\MiloBU\Documenten\3D\Unity\wizard\WizardMultiplayerTest\Builds\serverTest_Data\Managed\System.dll (this message is harmless)
+here
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Setting up 2 worker threads for Enlighten.
+  Thread -> id: 4f38 -> priority: 1 
+  Thread -> id: 44ec -> priority: 1 
+Server Initializied
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+isclient: False
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+isserver: True
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Failed to connect to master server at 127.0.0.1:23466
+ 
+(Filename:  Line: 236)
+
+Failed to connect to master server at 127.0.0.1:23466
+ 
+(Filename:  Line: 236)
+
