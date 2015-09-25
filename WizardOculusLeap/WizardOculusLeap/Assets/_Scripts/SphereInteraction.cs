@@ -14,6 +14,12 @@ public class SphereInteraction : MonoBehaviour {
 
 	Vector3 floatingPosition;
 
+	void Awake()
+	{
+		amplitudeh = Random.Range(0.00025f, 0.00035f);
+		amplitudev = Random.Range(0.0009f, 0.0011f);
+	}
+
 	void Start()
 	{
 		floatingPosition = transform.localPosition;
