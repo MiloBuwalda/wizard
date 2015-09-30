@@ -1,10 +1,9 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\_Scripts\MovementManager.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\_Scripts\SphereInteraction.cs">
     <Files>
-      <File FileName="Assets\_Scripts\MovementManager.cs" Line="45" Column="1" />
-      <File FileName="Assets\_Scripts\Magicball.cs" Line="1" Column="1" />
-      <File FileName="Assets\_Scripts\SphereInteraction.cs" Line="1" Column="1" />
+      <File FileName="Assets\_Scripts\SphereInteraction.cs" Line="34" Column="48" />
+      <File FileName="Assets\_Scripts\ICollidable.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

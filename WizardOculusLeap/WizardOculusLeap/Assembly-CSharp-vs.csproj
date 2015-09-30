@@ -128,6 +128,10 @@
      <Compile Include="Assets\OVR\Scripts\Util\OVRScreenFade.cs" />
      <Compile Include="Assets\OVR\Scripts\Util\OVRUGUI.cs" />
      <Compile Include="Assets\OVR\Scripts\Util\OVRVisionGuide.cs" />
+     <Compile Include="Assets\_Scripts\BasicLookInputModule.cs" />
+     <Compile Include="Assets\_Scripts\Element.cs" />
+     <Compile Include="Assets\_Scripts\HandInteraction.cs" />
+     <Compile Include="Assets\_Scripts\ICollidable.cs" />
      <Compile Include="Assets\_Scripts\Magicball.cs" />
      <Compile Include="Assets\_Scripts\MovementManager.cs" />
      <Compile Include="Assets\_Scripts\SphereInteraction.cs" />
@@ -140,6 +144,7 @@
      <None Include="Assets\LeapMotion\Resources\ImageHandHighlight.shader" />
      <None Include="Assets\OVR\Shaders\TextShader3D.shader" />
      <None Include="Assets\LeapMotion\Shaders\RimShading.shader" />
+     <None Include="Assets\_Shaders\Default_OverlayNoZTest.shader" />
      <None Include="Assets\LeapMotion\Dependencies.txt" />
      <None Include="Assets\LeapMotion\Materials\Sources\Shaders\Toony-BasicOutline.shader" />
      <None Include="Assets\Standard Assets\ParticleSystems\Shaders\PriorityParticleAlpha.shader" />

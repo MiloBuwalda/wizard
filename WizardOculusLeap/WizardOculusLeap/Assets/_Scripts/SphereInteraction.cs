@@ -7,51 +7,45 @@ public class SphereInteraction : MonoBehaviour {
 
 	public HandController handController = null;
 
-	float horizontalSpeed = 1.5f;
-	float verticalSpeed = 1;
-	float amplitudeh = 0.0003f;
-	float amplitudev = 0.001f;
+	int handNumber = 0;
+	bool notGrabbed;
 
-	Vector3 floatingPosition;
+//	float verticalSpeed = 1;
+//	float amplitudev = 0.001f;
 
-	void Awake()
-	{
-		amplitudeh = Random.Range(0.00025f, 0.00035f);
-		amplitudev = Random.Range(0.0009f, 0.0011f);
-	}
+//	Vector3 floatingPosition;
 
 	void Start()
 	{
-		floatingPosition = transform.localPosition;
+//		floatingPosition = transform.localPosition;
 	}
 
 	void FixedUpdate()
 	{
-		floatingPosition.x += Mathf.Sin (Time.realtimeSinceStartup + horizontalSpeed) * amplitudeh;
-		floatingPosition.y += Mathf.Sin (Time.realtimeSinceStartup + verticalSpeed) * amplitudev;
-		transform.localPosition = floatingPosition;
-	}
-	
-	void OnTriggerStay(Collider other)
-	{
-		HandModel[] hands = handController.GetAllGraphicsHands();
-
-		//Debug.Log (hands [GameObject.Find ("MovementManager").GetComponent<MovementManager> ().rightHandNumber].GetLeapHand ().GrabStrength);
-
-		//Debug.Log (hands [0].GetLeapHand ().GrabStrength);
-
-		if (other.gameObject.name == "palm" && hands[GameObject.Find("MovementManager").GetComponent<MovementManager>().rightHandNumber].GetLeapHand().GrabStrength == 1)
-		{
-			GameObject.Find("MovementManager").GetComponent<MovementManager>().element = element;
-			//Debug.Log ("Touching" + element);
-		}
+//		floatingPosition.y += Mathf.Sin (Time.realtimeSinceStartup + verticalSpeed) * amplitudev;
+//		transform.localPosition = floatingPosition;
 	}
 
-//	void OnTriggerExit (Collider other)
+//	void OnTriggerStay(Collider other)
 //	{
-//		if (other.gameObject.name == "palm") 
+//		HandModel[] hands = handController.GetAllPhysicsHands();
+//		if (other.gameObject.name == "palm")
 //		{
-//			Debug.Log ("Noooo" + element);
+//			if(hands[0].gameObject.transform == other.gameObject.transform.parent)
+//			{
+//				Debug.Log("Check is 0");
+//				handNumber = 0;
+//			}
+//			else if(hands[1].gameObject.transform == other.gameObject.transform.parent)
+//			{
+//				Debug.Log("Check is 1");
+//				handNumber = 1;
+//			}
+//		}
+//
+//		if (other.gameObject.name == "palm" && hands[handNumber].GetLeapHand().GrabStrength > 0.8)
+//		{
+//			transform.position = other.transform.position;
 //		}
 //	}
 }
