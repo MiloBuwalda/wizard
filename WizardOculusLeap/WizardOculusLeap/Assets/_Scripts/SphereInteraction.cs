@@ -4,48 +4,25 @@ using System.Collections;
 
 public class SphereInteraction : MonoBehaviour {
 	public int element;
-
 	public HandController handController = null;
+	public bool notGrabbed;
+	public bool shot;
 
-	int handNumber = 0;
-	bool notGrabbed;
-
-//	float verticalSpeed = 1;
-//	float amplitudev = 0.001f;
-
-//	Vector3 floatingPosition;
-
-	void Start()
+	void Update()
 	{
-//		floatingPosition = transform.localPosition;
+		if (shot == true)
+			transform.position = new Vector3 (transform.position.x, transform.position.y, transform.position.z + 1 * Time.deltaTime);
 	}
 
-	void FixedUpdate()
+	void OnTriggerStay (Collider other)
 	{
-//		floatingPosition.y += Mathf.Sin (Time.realtimeSinceStartup + verticalSpeed) * amplitudev;
-//		transform.localPosition = floatingPosition;
+		if (other.gameObject.tag == "Field" && notGrabbed == true) 
+		{
+			if(shot == false)
+			{
+				shot = true;
+				Debug.Log("Shoot");
+			}
+		}
 	}
-
-//	void OnTriggerStay(Collider other)
-//	{
-//		HandModel[] hands = handController.GetAllPhysicsHands();
-//		if (other.gameObject.name == "palm")
-//		{
-//			if(hands[0].gameObject.transform == other.gameObject.transform.parent)
-//			{
-//				Debug.Log("Check is 0");
-//				handNumber = 0;
-//			}
-//			else if(hands[1].gameObject.transform == other.gameObject.transform.parent)
-//			{
-//				Debug.Log("Check is 1");
-//				handNumber = 1;
-//			}
-//		}
-//
-//		if (other.gameObject.name == "palm" && hands[handNumber].GetLeapHand().GrabStrength > 0.8)
-//		{
-//			transform.position = other.transform.position;
-//		}
-//	}
 }

@@ -4,13 +4,25 @@ using System.Collections;
 public class HandInteraction : MonoBehaviour 
 {	
 	int handNumber = 0;
+	GameObject elementSlot = null;
 	bool occupied;
+	bool grabbed;
+
+	void OnTriggerEnter(Collider other)
+	{
+		if (other.gameObject.tag == "Element" && occupied == false) 
+		{
+			elementSlot = other.gameObject;
+			other.gameObject.GetComponent<SphereInteraction>().notGrabbed = false;
+			occupied = true;
+		}
+	}
 
 	void OnTriggerStay(Collider other)
 	{
 		HandModel[] hands = GameObject.Find ("MovementManager").GetComponent<MovementManager> ().handController.GetAllPhysicsHands ();
 		//Debug.Log (other.name);
-		if (other.gameObject.tag == "Element")
+		if (other.gameObject == elementSlot)
 		{
 			if(hands[0].gameObject.transform == gameObject.transform.parent)
 			{
@@ -22,12 +34,24 @@ public class HandInteraction : MonoBehaviour
 			}
 		}
 		
-		if (other.gameObject.tag == "Element" && hands [handNumber].GetLeapHand ().GrabStrength > 0.8) {
+		if (other.gameObject == elementSlot && hands [handNumber].GetLeapHand ().GrabStrength > 0.8) 
+		{
 			other.transform.position = transform.position;
-			if (occupied == false)
-				occupied = true;
-		} else if (occupied == true) {
+			grabbed = true;
+		}
+		else if (other.gameObject == elementSlot && hands [handNumber].GetLeapHand ().GrabStrength < 0.8 && grabbed == true) 
+		{
+			//other.GetComponent<Rigidbody>().velocity = GetComponent<Rigidbody>().velocity;
+			grabbed = false;
+		}
+	}
+
+	void OnTriggerExit(Collider other)
+	{
+		if (other.gameObject == elementSlot && occupied == true) 
+		{
 			occupied = false;
+			other.gameObject.GetComponent<SphereInteraction>().notGrabbed = true;
 		}
 	}
 }
