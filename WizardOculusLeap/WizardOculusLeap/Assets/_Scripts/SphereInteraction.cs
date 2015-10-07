@@ -16,7 +16,7 @@ public class SphereInteraction : MonoBehaviour {
 
 	void Update()
 	{
-		if (shot == true )
+		if (shot == true)
 		{
 			_position = transform.position;
 			//_position.x += Mathf.Sin(Time.time) * Time.deltaTime;
