@@ -7,11 +7,22 @@ public class SphereInteraction : MonoBehaviour {
 	public HandController handController = null;
 	public bool notGrabbed;
 	public bool shot;
+	Vector3 _position;
+
+	void Start()
+	{
+		_position = transform.position;
+	}
 
 	void Update()
 	{
-		if (shot == true)
-			transform.position = new Vector3 (transform.position.x, transform.position.y, transform.position.z + 1 * Time.deltaTime);
+		if (shot == true )
+		{
+			_position = transform.position;
+			//_position.x += Mathf.Sin(Time.time) * Time.deltaTime;
+			_position.z += 1f * Time.deltaTime;
+			transform.position = _position;
+		}
 	}
 
 	void OnTriggerStay (Collider other)
