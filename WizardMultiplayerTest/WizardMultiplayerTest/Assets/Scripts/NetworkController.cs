@@ -3,7 +3,7 @@ using System.Collections;
 
 public class NetworkController : MonoBehaviour
 {
-	string _room = "Tutorial_Convrge";
+	string _room = "Wizard";
 	
 	void Start()
 	{
