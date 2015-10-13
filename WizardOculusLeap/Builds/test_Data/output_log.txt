@@ -16,12 +16,14 @@ Platform assembly: D:\Documenten\Unity5\Wizard_Oculus_Leap\WizardOculusLeap\Buil
 Loading D:\Documenten\Unity5\Wizard_Oculus_Leap\WizardOculusLeap\Builds\test_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
 Platform assembly: D:\Documenten\Unity5\Wizard_Oculus_Leap\WizardOculusLeap\Builds\test_Data\Managed\LeapCSharp.NET3.5.dll (this message is harmless)
 Loading D:\Documenten\Unity5\Wizard_Oculus_Leap\WizardOculusLeap\Builds\test_Data\Managed\LeapCSharp.NET3.5.dll into Unity Child Domain
-- Completed reload, in  0.041 seconds
+- Completed reload, in  0.044 seconds
 <RI> Initializing input.
 <RI> Input initialized.
-desktop: 1920x1080 60Hz; virtual: 2902x2280 at -982,-1200
+desktop: 1920x1080 60Hz; virtual: 1920x1080 at 0,0
 <RI> Initialized touch support.
 Platform assembly: D:\Documenten\Unity5\Wizard_Oculus_Leap\WizardOculusLeap\Builds\test_Data\Managed\System.Core.dll (this message is harmless)
+Shader 'Nature/Terrain/Specular': fallback shader 'Nature/Terrain/Diffuse' not found
+Shader 'Nature/Terrain/Standard': fallback shader 'Nature/Terrain/Diffuse' not found
 Platform assembly: D:\Documenten\Unity5\Wizard_Oculus_Leap\WizardOculusLeap\Builds\test_Data\Managed\System.dll (this message is harmless)
 <RI.Hid> Failed to create device file:
  2 Het systeem kan het opgegeven bestand niet vinden.
@@ -33,45 +35,4 @@ IndexOutOfRangeException: Array index is out of range.
   at HandInteraction.OnTriggerStay (UnityEngine.Collider other) [0x00000] in <filename unknown>:0 
  
 (Filename:  Line: -1)
-
-Shoot
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
-
-IndexOutOfRangeException: Array index is out of range.
-  at HandInteraction.OnTriggerStay (UnityEngine.Collider other) [0x00000] in <filename unknown>:0 
- 
-(Filename:  Line: -1)
-
-IndexOutOfRangeException: Array index is out of range.
-  at HandInteraction.OnTriggerStay (UnityEngine.Collider other) [0x00000] in <filename unknown>:0 
- 
-(Filename:  Line: -1)
-
-IndexOutOfRangeException: Array index is out of range.
-  at HandInteraction.OnTriggerStay (UnityEngine.Collider other) [0x00000] in <filename unknown>:0 
- 
-(Filename:  Line: -1)
-
-IndexOutOfRangeException: Array index is out of range.
-  at HandInteraction.OnTriggerStay (UnityEngine.Collider other) [0x00000] in <filename unknown>:0 
- 
-(Filename:  Line: -1)
-
-IndexOutOfRangeException: Array index is out of range.
-  at HandInteraction.OnTriggerStay (UnityEngine.Collider other) [0x00000] in <filename unknown>:0 
- 
-(Filename:  Line: -1)
-
-Shoot
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
-
-Shoot
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
-
-Shoot
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
 
