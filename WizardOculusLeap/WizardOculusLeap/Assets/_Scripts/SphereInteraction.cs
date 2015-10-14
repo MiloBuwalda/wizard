@@ -3,17 +3,20 @@ using System.Collections;
 
 
 public class SphereInteraction : MonoBehaviour {
+	public GameObject newElement = null;
+	public float _magnitude;
 	public int element;
-	public HandController handController = null;
-	public bool notGrabbed;
+	public bool notInsideElement;
 	public bool shootSign;
-	bool inPosition;
-	bool shot;
 	Vector3 fieldCenter;
 	Vector3 _position;
+	Vector3 previousLocation;
 	float startTime;
 	float journeyLength;
 	float speed = 1f;
+	int otherElement;
+	bool inPosition;
+	bool shot;
 
 	void Start()
 	{
@@ -22,11 +25,14 @@ public class SphereInteraction : MonoBehaviour {
 
 	void Update()
 	{
+		_magnitude = ((transform.position - previousLocation).magnitude) / Time.deltaTime;
+		previousLocation = transform.position;
+
 		if (inPosition == true && shootSign == true) 
 		{
 			shot = true;
 		} 
-		else if (inPosition == true && notGrabbed == true && shot == false && _position != fieldCenter) 
+		if (inPosition == true && notInsideElement == true && shot == false && _position != fieldCenter) 
 		{
 			float distCovered = (Time.time - startTime) * speed;
 			float fracJourney = distCovered / journeyLength;
@@ -43,6 +49,19 @@ public class SphereInteraction : MonoBehaviour {
 
 	void OnTriggerEnter (Collider other)
 	{
+		if (other.gameObject.tag == "Element") 
+		{
+			otherElement = other.GetComponent<SphereInteraction>().element;
+
+			if (_magnitude < other.GetComponent<SphereInteraction>()._magnitude)
+			{
+				Debug.Log ("Create new element with base: " + element);
+				Instantiate(newElement, transform.position, Quaternion.identity);
+				Destroy (gameObject);
+				Destroy(other.gameObject);
+			}
+			//spawn nieuw element at lower magnitude location
+		}
 		if (other.gameObject.tag == "Field") 
 		{
 			fieldCenter = other.gameObject.transform.position;
@@ -51,7 +70,7 @@ public class SphereInteraction : MonoBehaviour {
 
 	void OnTriggerStay (Collider other)
 	{
-		if (other.gameObject.tag == "Field" && notGrabbed == true) 
+		if (other.gameObject.tag == "Field" && notInsideElement == true) 
 		{
 			if(inPosition == false)
 			{
