@@ -16,12 +16,16 @@ public class HandInteraction : MonoBehaviour
 			other.gameObject.GetComponent<SphereInteraction>().notGrabbed = false;
 			occupied = true;
 		}
+		if (other.gameObject == elementSlot && occupied == true) 
+		{
+			other.gameObject.GetComponent<SphereInteraction>().notGrabbed = false;
+		}
 	}
 
 	void OnTriggerStay(Collider other)
 	{
 		HandModel[] hands = GameObject.Find ("MovementManager").GetComponent<MovementManager> ().handController.GetAllPhysicsHands ();
-		//Debug.Log (other.name);
+
 		if (other.gameObject == elementSlot)
 		{
 			if(hands[0].gameObject.transform == gameObject.transform.parent)
