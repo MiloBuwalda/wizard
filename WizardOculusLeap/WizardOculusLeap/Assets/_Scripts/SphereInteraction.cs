@@ -28,17 +28,17 @@ public class SphereInteraction : MonoBehaviour {
 		_magnitude = ((transform.position - previousLocation).magnitude) / Time.deltaTime;
 		previousLocation = transform.position;
 
-		if (inPosition == true && shootSign == true) 
+		if (inPosition && shootSign) 
 		{
 			shot = true;
 		} 
-		if (inPosition == true && notInsideElement == true && shot == false && _position != fieldCenter) 
+		if (inPosition && notInsideElement && !shot && _position != fieldCenter) 
 		{
 			float distCovered = (Time.time - startTime) * speed;
 			float fracJourney = distCovered / journeyLength;
 			transform.position = Vector3.Lerp(_position, fieldCenter, fracJourney);
 		}
-		if (shot == true) 
+		if (shot) 
 		{
 			_position = transform.position;
 			//_position.x += Mathf.Sin(Time.time) * Time.deltaTime;
@@ -70,9 +70,9 @@ public class SphereInteraction : MonoBehaviour {
 
 	void OnTriggerStay (Collider other)
 	{
-		if (other.gameObject.tag == "Field" && notInsideElement == true) 
+		if (other.gameObject.tag == "Field" && notInsideElement) 
 		{
-			if(inPosition == false)
+			if(!inPosition)
 			{
 				inPosition = true;
 				_position = transform.position;
@@ -85,7 +85,7 @@ public class SphereInteraction : MonoBehaviour {
 	{
 		if (other.gameObject.tag == "Field") 
 		{
-			if(inPosition == true)
+			if(inPosition)
 			{
 				inPosition = false;
 			}

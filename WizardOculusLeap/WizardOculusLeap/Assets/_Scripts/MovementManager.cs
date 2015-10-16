@@ -4,9 +4,8 @@ using Leap;
 
 public class MovementManager : MonoBehaviour {
   	public GameObject leapMotionOVRController = null;
-  	public HandController handController = null;
 	public GameObject cameraDirection = null;
-	public Rigidbody magicBall;
+  	public HandController handController = null;
 
 	Controller leapController;
 	Listener leapListener;
@@ -42,7 +41,7 @@ public class MovementManager : MonoBehaviour {
 
     	HandModel[] hands = handController.GetAllGraphicsHands();
 
-		if (hands.Length <= 1) 
+		if (hands.Length <= 1)
 		{
 			GameObject[] elements;
 			elements = GameObject.FindGameObjectsWithTag("Element");
@@ -90,7 +89,7 @@ public class MovementManager : MonoBehaviour {
 			Frame current = leapController.Frame();
 			
 			GestureList gesturesInFrame = current.Gestures();
-			foreach(Gesture gesture in gesturesInFrame )
+			foreach(Gesture gesture in gesturesInFrame)
 			{
 				Debug.Log("Captured a gesture: " + gesture.Type.ToString());
 				if (gesture.Type == Gesture.GestureType.TYPECIRCLE) ;

@@ -10,13 +10,13 @@ public class HandInteraction : MonoBehaviour
 
 	void OnTriggerEnter(Collider other)
 	{
-		if (other.gameObject.tag == "Element" && occupied == false) 
+		if (other.gameObject.tag == "Element" && !occupied) 
 		{
 			elementSlot = other.gameObject;
 			other.gameObject.GetComponent<SphereInteraction>().notInsideElement = false;
 			occupied = true;
 		}
-		if (other.gameObject == elementSlot && occupied == true) 
+		if (other.gameObject == elementSlot && !occupied) 
 		{
 			other.gameObject.GetComponent<SphereInteraction>().notInsideElement = false;
 		}
@@ -26,11 +26,10 @@ public class HandInteraction : MonoBehaviour
 	{
 		HandModel[] hands = GameObject.Find ("MovementManager").GetComponent<MovementManager> ().handController.GetAllPhysicsHands ();
 
-		if (hands.Length > 0) 
+		if (hands.Length > 0)
 		{
 			if (other.gameObject == elementSlot) 
 			{
-
 				if (hands [0].gameObject.transform == gameObject.transform.parent) 
 				{
 					handNumber = 0;
@@ -56,7 +55,7 @@ public class HandInteraction : MonoBehaviour
 
 	void OnTriggerExit(Collider other)
 	{
-		if (other.gameObject == elementSlot && occupied == true) 
+		if (other.gameObject == elementSlot && occupied) 
 		{
 			occupied = false;
 			other.gameObject.GetComponent<SphereInteraction>().notInsideElement = true;
