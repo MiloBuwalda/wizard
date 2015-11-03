@@ -1,6 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+public enum elementType {Fire, Air, Water, Earth};
+
 public abstract class Element : MonoBehaviour, ICollidable
 {
 	#region ICollidable implementation

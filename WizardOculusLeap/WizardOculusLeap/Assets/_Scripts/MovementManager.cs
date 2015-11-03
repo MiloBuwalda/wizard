@@ -6,6 +6,7 @@ public class MovementManager : MonoBehaviour {
   	public GameObject leapMotionOVRController = null;
 	public GameObject cameraDirection = null;
   	public HandController handController = null;
+	public bool circleMotion;
 
 	Controller leapController;
 	Listener leapListener;
@@ -22,7 +23,7 @@ public class MovementManager : MonoBehaviour {
 		// Add a listener so that the controller is waiting for inputs
 		leapController.AddListener(leapListener);
 		// Check that the leap is fully connected and ready for input
-		Debug.Log("Leap Motion connected: " + leapController.IsConnected);
+		Debug.Log("Leap Motion connected: " + leapController.IsConnected); 
 		
 		// Set up the gesture detection
 		leapController.EnableGesture(Gesture.GestureType.TYPE_CIRCLE);
@@ -41,16 +42,19 @@ public class MovementManager : MonoBehaviour {
 
     	HandModel[] hands = handController.GetAllGraphicsHands();
 
+
 		if (hands.Length <= 1)
 		{
 			GameObject[] elements;
 			elements = GameObject.FindGameObjectsWithTag("Element");
-			foreach(GameObject element in elements)
+			if (elements.Length > 0)
 			{
-				element.gameObject.GetComponent<SphereInteraction>().shootSign = false;
+				foreach(GameObject element in elements)
+				{
+					element.gameObject.GetComponent<SphereInteraction>().shootSign = false;
+				}
 			}
 		}
-
 
 		if (hands.Length > 1)
 		{
@@ -62,20 +66,29 @@ public class MovementManager : MonoBehaviour {
 			
 			if (Vector3.Dot(direction0, normal0) > direction0.sqrMagnitude * 0.5f && Vector3.Dot(direction1, normal1) > direction1.sqrMagnitude * 0.5f)
 			{
-				GameObject[] elementballs;
-				elementballs = GameObject.FindGameObjectsWithTag("Element");
-				foreach(GameObject element in elementballs)
+				if (GameObject.Find("palm").GetComponent<HandInteraction>()._magnitude > 1)
 				{
-					element.gameObject.GetComponent<SphereInteraction>().shootSign = true;
+					GameObject[] elements;
+					elements = GameObject.FindGameObjectsWithTag("Element");
+					if (elements.Length > 0)
+					{
+						foreach(GameObject element in elements)
+						{
+							element.gameObject.GetComponent<SphereInteraction>().shootSign = true;
+						}
+					}
 				}
 			}
 			else
 			{
 				GameObject[] elements;
 				elements = GameObject.FindGameObjectsWithTag("Element");
-				foreach(GameObject element in elements)
+				if (elements.Length > 0)
 				{
-					element.gameObject.GetComponent<SphereInteraction>().shootSign = false;
+					foreach(GameObject element in elements)
+					{
+						element.gameObject.GetComponent<SphereInteraction>().shootSign = false;
+					}
 				}
 			}
 		}
@@ -95,7 +108,6 @@ public class MovementManager : MonoBehaviour {
 				if (gesture.Type == Gesture.GestureType.TYPECIRCLE) ;
 				{
 					Debug.Log("Circle motion found");
-					
 				}
 			}
 		}

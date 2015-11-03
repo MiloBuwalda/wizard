@@ -3,9 +3,8 @@ using System.Collections;
 
 
 public class SphereInteraction : MonoBehaviour {
-	public GameObject newElement = null;
 	public float _magnitude;
-	public int element;
+	public elementType element;
 	public bool notInsideElement;
 	public bool shootSign;
 	Vector3 fieldCenter;
@@ -14,8 +13,8 @@ public class SphereInteraction : MonoBehaviour {
 	float startTime;
 	float journeyLength;
 	float speed = 1f;
-	int otherElement;
-	bool inPosition;
+	elementType otherElement;
+//	bool inPosition;
 	bool shot;
 
 	void Start()
@@ -28,16 +27,16 @@ public class SphereInteraction : MonoBehaviour {
 		_magnitude = ((transform.position - previousLocation).magnitude) / Time.deltaTime;
 		previousLocation = transform.position;
 
-		if (inPosition && shootSign) 
+		if (shootSign) 
 		{
 			shot = true;
 		} 
-		if (inPosition && notInsideElement && !shot && _position != fieldCenter) 
-		{
-			float distCovered = (Time.time - startTime) * speed;
-			float fracJourney = distCovered / journeyLength;
-			transform.position = Vector3.Lerp(_position, fieldCenter, fracJourney);
-		}
+//		if (notInsideElement && !shot && _position != fieldCenter) 
+//		{
+//			float distCovered = (Time.time - startTime) * speed;
+//			float fracJourney = distCovered / journeyLength;
+//			transform.position = Vector3.Lerp(_position, fieldCenter, fracJourney);
+//		}
 		if (shot) 
 		{
 			_position = transform.position;
@@ -47,48 +46,35 @@ public class SphereInteraction : MonoBehaviour {
 		}
 	}
 
-	void OnTriggerEnter (Collider other)
-	{
-		if (other.gameObject.tag == "Element") 
-		{
-			otherElement = other.GetComponent<SphereInteraction>().element;
-
-			if (_magnitude < other.GetComponent<SphereInteraction>()._magnitude)
-			{
-				Debug.Log ("Create new element with base: " + element);
-				Instantiate(newElement, transform.position, Quaternion.identity);
-				Destroy (gameObject);
-				Destroy(other.gameObject);
-			}
-			//spawn nieuw element at lower magnitude location
-		}
-		if (other.gameObject.tag == "Field") 
-		{
-			fieldCenter = other.gameObject.transform.position;
-		}
-	}
-
-	void OnTriggerStay (Collider other)
-	{
-		if (other.gameObject.tag == "Field" && notInsideElement) 
-		{
-			if(!inPosition)
-			{
-				inPosition = true;
-				_position = transform.position;
-				startTime = Time.time;
-				journeyLength = Vector3.Distance(_position, fieldCenter);
-			}
-		}
-	}
-	void OnTriggerExit (Collider other)
-	{
-		if (other.gameObject.tag == "Field") 
-		{
-			if(inPosition)
-			{
-				inPosition = false;
-			}
-		}
-	}
+//	void OnTriggerEnter (Collider other)
+//	{
+//		if (other.gameObject.tag == "Field") 
+//		{
+//			fieldCenter = other.gameObject.transform.position;
+//		}
+//	}
+//
+//	void OnTriggerStay (Collider other)
+//	{
+//		if (other.gameObject.tag == "Field" && notInsideElement) 
+//		{
+//			if(!inPosition)
+//			{
+//				inPosition = true;
+//				_position = transform.position;
+//				startTime = Time.time;
+//				journeyLength = Vector3.Distance(_position, fieldCenter);
+//			}
+//		}
+//	}
+//	void OnTriggerExit (Collider other)
+//	{
+//		if (other.gameObject.tag == "Field") 
+//		{
+//			if(inPosition)
+//			{
+//				inPosition = false;
+//			}
+//		}
+//	}
 }

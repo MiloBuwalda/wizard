@@ -1,0 +1,147 @@
+fileFormatVersion: 2
+guid: bc923d23c0aab2245b215f6e10344746
+timeCreated: 1445954150
+licenseType: Free
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: Object081
+    100002: Object083
+    100004: Object084
+    100006: Object085
+    100008: Object086
+    100010: Object087
+    100012: Object088
+    100014: Object089
+    100016: Object090
+    100018: //RootNode
+    100020: tower_top
+    100022: tower_top_base
+    100024: tower_top_debris
+    100026: tower_top_roof
+    100028: tower_top_roof_platform
+    400000: Object081
+    400002: Object083
+    400004: Object084
+    400006: Object085
+    400008: Object086
+    400010: Object087
+    400012: Object088
+    400014: Object089
+    400016: Object090
+    400018: //RootNode
+    400020: tower_top
+    400022: tower_top_base
+    400024: tower_top_debris
+    400026: tower_top_roof
+    400028: tower_top_roof_platform
+    2300000: Object083
+    2300002: Object084
+    2300004: Object085
+    2300006: Object086
+    2300008: Object087
+    2300010: Object088
+    2300012: Object089
+    2300014: Object090
+    2300016: tower_top
+    2300018: tower_top_base
+    2300020: tower_top_debris
+    2300022: tower_top_roof
+    2300024: tower_top_roof_platform
+    3300000: Object083
+    3300002: Object084
+    3300004: Object085
+    3300006: Object086
+    3300008: Object087
+    3300010: Object088
+    3300012: Object089
+    3300014: Object090
+    3300016: tower_top
+    3300018: tower_top_base
+    3300020: tower_top_debris
+    3300022: tower_top_roof
+    3300024: tower_top_roof_platform
+    4300000: tower_top
+    4300002: tower_top_roof
+    4300004: tower_top_roof_platform
+    4300006: Object083
+    4300008: Object084
+    4300010: Object085
+    4300012: Object086
+    4300014: Object087
+    4300016: tower_top_debris
+    4300018: tower_top_base
+    4300020: Object088
+    4300022: Object089
+    4300024: Object090
+    6400000: Object083
+    6400002: Object084
+    6400004: Object085
+    6400006: Object086
+    6400008: Object087
+    6400010: Object088
+    6400012: Object089
+    6400014: Object090
+    6400016: tower_top
+    6400018: tower_top_base
+    6400020: tower_top_debris
+    6400022: tower_top_roof
+    6400024: tower_top_roof_platform
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 1
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
