@@ -190,10 +190,10 @@
      <Compile Include="Assets\Photon Unity Networking\UtilityScripts\TimeKeeper.cs" />
      <Compile Include="Assets\Scripts\CamSwitch.cs" />
      <Compile Include="Assets\Scripts\General\MouseLook_FIXED.cs" />
+     <Compile Include="Assets\Scripts\General\NetworkController.cs" />
+     <Compile Include="Assets\Scripts\General\NetworkedPlayer.cs" />
+     <Compile Include="Assets\Scripts\General\PhotonNetworkStarter.cs" />
      <Compile Include="Assets\Scripts\General\RoomProperties.cs" />
-     <Compile Include="Assets\Scripts\NetworkController.cs" />
-     <Compile Include="Assets\Scripts\NetworkedPlayer.cs" />
-     <Compile Include="Assets\Scripts\PhotonNetworkStarter.cs" />
      <Compile Include="Assets\_Scripts\BasicLookInputModule.cs" />
      <Compile Include="Assets\_Scripts\Element.cs" />
      <Compile Include="Assets\_Scripts\HandInteraction.cs" />
