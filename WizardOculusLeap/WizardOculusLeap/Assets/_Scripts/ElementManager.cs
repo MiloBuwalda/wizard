@@ -7,8 +7,7 @@ public class ElementManager {
 	public elementType elementType;
 	//public ElementMovement elementMovement;
 
-	public void Setup()
-	{
+	public void Setup()	{
 		//elementMovement = instance.GetComponent<ElementMovement> ();
 	}
 }

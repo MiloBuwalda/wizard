@@ -6,8 +6,7 @@ public class ShieldManager {
 	public GameObject instance;
 	public elementType elementType;
 
-	public void Setup()
-	{
+	public void Setup()	{
 
 	}
 }

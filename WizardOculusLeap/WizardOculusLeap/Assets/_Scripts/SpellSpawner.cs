@@ -12,12 +12,10 @@ public class SpellSpawner : MonoBehaviour {
 		instance = this;
 	}
 
-	void Start()
-	{
+	void Start()	{
 		spellBook = new Dictionary<string, GameObject> ();
 		GameObject[] spells = Resources.LoadAll<GameObject> ("Spells");
-		foreach(GameObject g in spells)
-		{
+		foreach(GameObject g in spells)	{
 			spellBook.Add(g.name,g);
 		}
 	}
@@ -27,8 +25,7 @@ public class SpellSpawner : MonoBehaviour {
 			SpellManager spell = new SpellManager();
 			ElementManager basis = list[0];
 			GameObject g;
-			if (spellBook.TryGetValue (basis.elementType.ToString() + "Spell", out g))
-			{
+			if (spellBook.TryGetValue (basis.elementType.ToString() + "Spell", out g))	{
 				spell.instance = (GameObject)Instantiate(g, transform.position, transform.rotation);
 				spell.Setup(list);
 			}

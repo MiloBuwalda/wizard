@@ -9,8 +9,7 @@ public class GameManager : MonoBehaviour {
 	public SpellSpawner spellSpawner;
 	public ShieldSpawner shieldSpawner;
 
-	void Awake()
-	{
+	void Awake(){
 		if(instance == null)
 		{
 			instance = this;

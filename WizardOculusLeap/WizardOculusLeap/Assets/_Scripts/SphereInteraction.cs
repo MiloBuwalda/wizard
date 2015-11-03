@@ -17,18 +17,15 @@ public class SphereInteraction : MonoBehaviour {
 //	bool inPosition;
 	bool shot;
 
-	void Start()
-	{
+	void Start(){
 		_position = transform.position;
 	}
 
-	void Update()
-	{
+	void Update(){
 		_magnitude = ((transform.position - previousLocation).magnitude) / Time.deltaTime;
 		previousLocation = transform.position;
 
-		if (shootSign) 
-		{
+		if (shootSign) {
 			shot = true;
 		} 
 //		if (notInsideElement && !shot && _position != fieldCenter) 
@@ -37,8 +34,7 @@ public class SphereInteraction : MonoBehaviour {
 //			float fracJourney = distCovered / journeyLength;
 //			transform.position = Vector3.Lerp(_position, fieldCenter, fracJourney);
 //		}
-		if (shot) 
-		{
+		if (shot) {
 			_position = transform.position;
 			//_position.x += Mathf.Sin(Time.time) * Time.deltaTime;
 			_position.z += 3f * Time.deltaTime;
