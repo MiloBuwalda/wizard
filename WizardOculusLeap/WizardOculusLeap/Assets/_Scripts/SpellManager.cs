@@ -8,8 +8,7 @@ public class SpellManager {
 
 	public void Setup (List<ElementManager> list) {
 		elements = new List<elementType> ();
-		foreach(ElementManager e in list)
-		{
+		foreach(ElementManager e in list){
 			elements.Add(e.elementType);
 		}
 		//Choose Texture

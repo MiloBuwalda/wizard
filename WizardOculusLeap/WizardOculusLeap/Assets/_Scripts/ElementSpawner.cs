@@ -6,24 +6,20 @@ public class ElementSpawner : MonoBehaviour {
 	public static ElementSpawner instance;
 	public Dictionary<string, GameObject> elementBook;
 
-	void Awake()
-	{
+	void Awake(){
 		//singleton
 		instance = this;
 	}
 
-	void Start()
-	{
+	void Start(){
 		elementBook = new Dictionary<string, GameObject> ();
 		GameObject[] elements = Resources.LoadAll<GameObject> ("Elements");
-		foreach(GameObject g in elements)
-		{
+		foreach(GameObject g in elements){
 			elementBook.Add(g.name,g);
 		}
 	}
 
-	public ElementManager GetElementOfType(elementType t)
-	{
+	public ElementManager GetElementOfType(elementType t){
 		ElementManager element = null;
 		GameObject g;
 		Vector3 _position;

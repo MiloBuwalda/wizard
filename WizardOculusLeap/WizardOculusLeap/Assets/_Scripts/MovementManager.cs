@@ -30,63 +30,49 @@ public class MovementManager : MonoBehaviour {
 		Debug.Log("Circle Gesture Enabled: " + leapController.IsGestureEnabled(Gesture.GestureType.TYPE_CIRCLE));	
 	}
 
-	void Update()
-	{
+	void Update(){
 		CheckForGestures ();
 	}
 
-	void LateUpdate () 
-	{
-    	if (leapMotionOVRController == null || handController == null)
+	void LateUpdate () {    	
+		if (leapMotionOVRController == null || handController == null)
      	 return;
 
-    	HandModel[] hands = handController.GetAllGraphicsHands();
+    	HandModel[] hands = handController.GetAllPhysicsHands();
 
 
-		if (hands.Length <= 1)
-		{
+		if (hands.Length <= 1)	{
 			GameObject[] elements;
 			elements = GameObject.FindGameObjectsWithTag("Element");
-			if (elements.Length > 0)
-			{
-				foreach(GameObject element in elements)
-				{
+			if (elements.Length > 0){
+				foreach(GameObject element in elements)	{
 					element.gameObject.GetComponent<SphereInteraction>().shootSign = false;
 				}
 			}
 		}
 
-		if (hands.Length > 1)
-		{
+		if (hands.Length > 1)	{
 			Vector3 direction0 = (hands[0].GetPalmPosition() - handController.transform.position).normalized;
 			Vector3 normal0 = hands[0].GetPalmNormal().normalized;
 			
 			Vector3 direction1 = (hands[1].GetPalmPosition() - handController.transform.position).normalized;
 			Vector3 normal1 = hands[1].GetPalmNormal().normalized;
 			
-			if (Vector3.Dot(direction0, normal0) > direction0.sqrMagnitude * 0.5f && Vector3.Dot(direction1, normal1) > direction1.sqrMagnitude * 0.5f)
-			{
-				if (GameObject.Find("palm").GetComponent<HandInteraction>()._magnitude > 1)
-				{
+			if (Vector3.Dot(direction0, normal0) > direction0.sqrMagnitude * 0.5f && Vector3.Dot(direction1, normal1) > direction1.sqrMagnitude * 0.5f)	{
+				if (GameObject.Find("palm").GetComponent<HandInteraction>()._magnitude > 1)	{
 					GameObject[] elements;
 					elements = GameObject.FindGameObjectsWithTag("Element");
-					if (elements.Length > 0)
-					{
-						foreach(GameObject element in elements)
-						{
+					if (elements.Length > 0){
+						foreach(GameObject element in elements)	{
 							element.gameObject.GetComponent<SphereInteraction>().shootSign = true;
 						}
 					}
 				}
-			}
-			else
-			{
+			}else{
 				GameObject[] elements;
 				elements = GameObject.FindGameObjectsWithTag("Element");
-				if (elements.Length > 0)
-				{
-					foreach(GameObject element in elements)
-					{
+				if (elements.Length > 0){
+					foreach(GameObject element in elements)	{
 						element.gameObject.GetComponent<SphereInteraction>().shootSign = false;
 					}
 				}
@@ -96,17 +82,14 @@ public class MovementManager : MonoBehaviour {
 
 	void CheckForGestures()
 	{
-		if(leapController.IsConnected)
-		{
+		if(leapController.IsConnected){
 			// Check the list of gestures for a circle
 			Frame current = leapController.Frame();
 			
 			GestureList gesturesInFrame = current.Gestures();
-			foreach(Gesture gesture in gesturesInFrame)
-			{
+			foreach(Gesture gesture in gesturesInFrame)	{
 				Debug.Log("Captured a gesture: " + gesture.Type.ToString());
-				if (gesture.Type == Gesture.GestureType.TYPECIRCLE) ;
-				{
+				if (gesture.Type == Gesture.GestureType.TYPECIRCLE)	{
 					Debug.Log("Circle motion found");
 				}
 			}

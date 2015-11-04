@@ -12,8 +12,7 @@ public class ShieldSpawner : MonoBehaviour {
 		instance = this;
 	}
 
-	void Start()
-	{
+	void Start(){
 		shieldBook = new Dictionary<string, GameObject> ();
 		GameObject[] shields = Resources.LoadAll<GameObject> ("Shields");
 		foreach(GameObject g in shields)
@@ -27,8 +26,7 @@ public class ShieldSpawner : MonoBehaviour {
 			ShieldManager shield = new ShieldManager();
 			ElementManager basis = list[0];
 			GameObject g;
-			if (shieldBook.TryGetValue (basis.elementType.ToString() + "Shield", out g))
-			{
+			if (shieldBook.TryGetValue (basis.elementType.ToString() + "Shield", out g)){
 				shield.instance = (GameObject)Instantiate(g, transform.position, transform.rotation);
 				shield.Setup();
 			}

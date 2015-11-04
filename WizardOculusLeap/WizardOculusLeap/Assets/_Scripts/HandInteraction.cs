@@ -51,28 +51,11 @@ public class HandInteraction : MonoBehaviour
 				Debug.Log("Spawn does not exist");
 				break;
 			}
-//			if (other.gameObject.name == "FireSpawn") 
-//			{
-//				GameManager.instance.player.AddElementToPool(elementType.Fire);
-//			}
-//			if (other.gameObject.name == "AirSpawn") 
-//			{
-//				GameManager.instance.player.AddElementToPool(elementType.Air);
-//			}
-//			if (other.gameObject.name == "WaterSpawn") 
-//			{
-//				GameManager.instance.player.AddElementToPool(elementType.Water);
-//			}
-//			if (other.gameObject.name == "EarthSpawn") 
-//			{
-//				GameManager.instance.player.AddElementToPool(elementType.Earth);
-//			}
 		}
 
 	}
 
-	void OnTriggerStay(Collider other)
-	{
+	void OnTriggerStay(Collider other){
 		HandModel[] hands = GameManager.instance.movementManager.handController.GetAllPhysicsHands();
 
 		if (hands.Length > 0) {
@@ -96,16 +79,13 @@ public class HandInteraction : MonoBehaviour
 			}
 		}
 
-		if(grabbed)
-		{
+		if(grabbed)	{
 			other.transform.position = transform.position;
 		}
 	}
 
-	void OnTriggerExit(Collider other)
-	{
-		if (other.gameObject == elementSlot && occupied) 
-		{
+	void OnTriggerExit(Collider other){
+		if (other.gameObject == elementSlot && occupied) {
 			occupied = false;
 			other.gameObject.GetComponent<SphereInteraction>().notInsideElement = true;
 		}
