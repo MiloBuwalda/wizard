@@ -1,10 +1,15 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class NetworkController : MonoBehaviour
+public class NetworkController : Photon.MonoBehaviour
 {
-	string _room = "Wizard";
-	string _levelName = "Demo";
+	string _versionNumber = "0.1"; 
+	string _room = "room_01";
+	string _levelName = "Networking";
+
+	public Transform spawnPoint;
+	public GameObject playerReference;
+	public bool isConnected = false;
 
 	public static bool isHost = false;
 	public static bool QuitOnLogout = false;
@@ -20,20 +25,22 @@ public class NetworkController : MonoBehaviour
 	void Start()
 	{
 		DontDestroyOnLoad (gameObject);
-
+//
+//		PhotonNetwork.ConnectUsingSettings(_versionNumber);
+		Connect ();
 		Debug.Log ("NetworkController Started");
-		PhotonNetwork.ConnectUsingSettings("0.1");
 	}
 
 	public void Connect()
 	{
-		if (PhotonNetwork.connectionState != ConnectionState.Disconnected)
-		    return;
-
+		Debug.Log("Connect");
+		if (PhotonNetwork.connectionState != ConnectionState.Disconnected) {
+			return;
+		}
 
 		try
 		{
-			PhotonNetwork.ConnectUsingSettings("0.1");
+			PhotonNetwork.ConnectUsingSettings(_versionNumber);
 		}
 		catch
 		{
@@ -53,34 +60,39 @@ public class NetworkController : MonoBehaviour
 	/// </summary>
 	void OnJoinedLobby()
 	{
-		if( isHost == true )
-			return;
-		
-		if( QuitOnLogout == true )
-		{
-			Application.Quit();
-			return;
-		}
-		
-		if( Application.loadedLevelName == _levelName )
-		{
-			RoomOptions roomOptions = new RoomOptions();
-			roomOptions.maxPlayers = 20;
-			
-			PhotonNetwork.JoinOrCreateRoom( "Wizard", roomOptions, TypedLobby.Default );
-			Debug.Log( "Joined Lobby" );
-		}
-		else
-		{
-			//If we join the lobby while not being in the MainMenu scene, something went wrong and we disconnect from Photon
-			PhotonNetwork.Disconnect();
-		}
+		PhotonNetwork.JoinOrCreateRoom (_room, null, TypedLobby.Default);
+		Debug.Log ("Starting Server");
+//		if( isHost == true )
+//			return;
+//		
+//		if( QuitOnLogout == true )
+//		{
+//			Application.Quit();
+//			return;
+//		}
+//		
+//		if( Application.loadedLevelName == _levelName )
+//		{
+//			RoomOptions roomOptions = new RoomOptions();
+//			roomOptions.maxPlayers = 20;
+//			
+//			PhotonNetwork.JoinOrCreateRoom( _room, roomOptions, TypedLobby.Default );
+//			Debug.Log( "Joined Lobby" );
+//		}
+//		else
+//		{
+//			//If we join the lobby while not being in the MainMenu scene, something went wrong and we disconnect from Photon
+//			PhotonNetwork.Disconnect();
+//		}
 	}
 
 
 
 	void OnJoinedRoom()
 	{
+		isConnected = true;
+		PhotonNetwork.Instantiate (playerReference.name, spawnPoint.position, spawnPoint.rotation, 0);
+		Debug.Log ("Joined Room");
 //		PhotonNetwork.isMessageQueueRunning = false;
 //		Application.LoadLevel ("Level");
 	}
