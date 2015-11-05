@@ -19,16 +19,14 @@ public class ElementSpawner : MonoBehaviour {
 		}
 	}
 
-	public ElementManager GetElementOfType(elementType t){
+	public ElementManager GetElementOfType(elementType t, int handNumber){
 		ElementManager element = null;
 		GameObject g;
-		Vector3 _position;
-
-		_position = GameObject.Find (t.ToString() + "Spawn").transform.position;
+		HandModel[] hands = GameManager.instance.movementManager.handController.GetAllPhysicsHands();
 
 		if (elementBook.TryGetValue (t.ToString (), out g)) {
 			element = new ElementManager ();
-			element.instance = (GameObject)Instantiate (g, _position, transform.rotation);
+			element.instance = (GameObject)Instantiate (g, hands[handNumber].GetPalmPosition(), transform.rotation);
 			element.elementType = t;
 			element.Setup ();
 		} else {
@@ -36,5 +34,22 @@ public class ElementSpawner : MonoBehaviour {
 		}
 
 		return element;
+	}
+
+	public void ElementToSpawn (Vector3 location, int handNumber){
+		float locationSignX = Mathf.Sign (location.x);
+
+		if (locationSignX == -1 && location.y > 58.7) {
+			GameManager.instance.player.AddElementToPool (elementType.Fire, handNumber);
+		}
+		else if (locationSignX == 1 && location.y > 58.7) {
+			GameManager.instance.player.AddElementToPool (elementType.Air, handNumber);
+		}
+		else if (locationSignX == 1 && location.y < 58.7) {
+			GameManager.instance.player.AddElementToPool (elementType.Water, handNumber);
+		}
+		else if (locationSignX == -1 && location.y < 58.7) {
+			GameManager.instance.player.AddElementToPool (elementType.Earth, handNumber);
+		}
 	}
 }

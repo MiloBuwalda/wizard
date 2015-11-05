@@ -26,7 +26,7 @@ public class SpellSpawner : MonoBehaviour {
 			ElementManager basis = list[0];
 			GameObject g;
 			if (spellBook.TryGetValue (basis.elementType.ToString() + "Spell", out g))	{
-				spell.instance = (GameObject)Instantiate(g, transform.position, transform.rotation);
+				spell.instance = (GameObject)Instantiate(g, basis.instance.transform.position, transform.rotation);
 				spell.Setup(list);
 			}
 

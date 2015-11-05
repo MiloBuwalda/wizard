@@ -11,48 +11,20 @@ public class HandInteraction : MonoBehaviour
 	Vector3 previousLocation;
 	string spawnName;
 
-	void Update()
-	{
+	void Update(){
 		_magnitude = ((transform.position - previousLocation).magnitude) / Time.deltaTime;
 		previousLocation = transform.position;
 	}
 
-	void OnTriggerEnter(Collider other)
-	{
-		if (other.gameObject.tag == "Element" && !occupied) 
-		{
+	void OnTriggerEnter(Collider other){
+		if (other.gameObject.tag == "Element" && !occupied) {
 			elementSlot = other.gameObject;
 			other.gameObject.GetComponent<SphereInteraction>().notInsideElement = false;
 			occupied = true; 
 		}
-		if (other.gameObject == elementSlot && !occupied) 
-		{
+		if (other.gameObject == elementSlot && !occupied) {
 			other.gameObject.GetComponent<SphereInteraction>().notInsideElement = false;
 		}
-
-		if (GameManager.instance.player.elementPool.Count < 2)
-		{
-			spawnName = other.gameObject.name;
-			switch (spawnName)
-			{
-			case "FireSpawn": 
-				GameManager.instance.player.AddElementToPool(elementType.Fire);
-				break;
-			case "AirSpawn":
-				GameManager.instance.player.AddElementToPool(elementType.Air);
-				break;
-			case "WaterSpawn":
-				GameManager.instance.player.AddElementToPool(elementType.Water);
-				break;
-			case "EarthSpawn":
-				GameManager.instance.player.AddElementToPool(elementType.Earth);
-				break;
-			default:
-				Debug.Log("Spawn does not exist");
-				break;
-			}
-		}
-
 	}
 
 	void OnTriggerStay(Collider other){
