@@ -27,7 +27,9 @@ public class ElementSpawner : MonoBehaviour {
 		if (elementBook.TryGetValue (t.ToString (), out g)) {
 			element = new ElementManager ();
 			element.instance = (GameObject)Instantiate (g, hands[handNumber].GetPalmPosition(), transform.rotation);
+			//element.instance = (GameObject)Instantiate (g, transform.position, transform.rotation);
 			element.elementType = t;
+			//element.instance.transform.parent = hands[handNumber].transform;
 			element.Setup ();
 		} else {
 			print ("Could not find element: " + t.ToString());

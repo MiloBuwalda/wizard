@@ -5,11 +5,16 @@ public class HandInteraction : MonoBehaviour
 {	
 	public float _magnitude;
 	GameObject elementSlot = null;
+	Transform transformElementSlot = null;
 	int handNumber = 0;
 	bool occupied;
 	bool grabbed;
 	Vector3 previousLocation;
 	string spawnName;
+
+	void Awake(){
+		transformElementSlot = transform.FindChild ("ElementSlot");
+	}
 
 	void Update(){
 		_magnitude = ((transform.position - previousLocation).magnitude) / Time.deltaTime;
@@ -19,11 +24,7 @@ public class HandInteraction : MonoBehaviour
 	void OnTriggerEnter(Collider other){
 		if (other.gameObject.tag == "Element" && !occupied) {
 			elementSlot = other.gameObject;
-			other.gameObject.GetComponent<SphereInteraction>().notInsideElement = false;
 			occupied = true; 
-		}
-		if (other.gameObject == elementSlot && !occupied) {
-			other.gameObject.GetComponent<SphereInteraction>().notInsideElement = false;
 		}
 	}
 
@@ -52,14 +53,13 @@ public class HandInteraction : MonoBehaviour
 		}
 
 		if(grabbed)	{
-			other.transform.position = transform.position;
+			other.transform.position = transformElementSlot.transform.position;
 		}
 	}
 
 	void OnTriggerExit(Collider other){
 		if (other.gameObject == elementSlot && occupied) {
 			occupied = false;
-			other.gameObject.GetComponent<SphereInteraction>().notInsideElement = true;
 		}
 	}
 }

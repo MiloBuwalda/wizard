@@ -38,16 +38,6 @@ public class MovementManager : MonoBehaviour {
 
     	HandModel[] hands = handController.GetAllPhysicsHands();
 
-		if (hands.Length <= 1)	{
-//			GameObject[] elements;
-//			elements = GameObject.FindGameObjectsWithTag("Element");
-//			if (elements.Length > 0){
-//				foreach(GameObject element in elements)	{
-//					element.gameObject.GetComponent<SphereInteraction>().shootSign = false;
-//				}
-//			}
-		}
-
 		if (hands.Length > 0) {
 			if(GameManager.instance.player.elementPool.Count < 2){
 				// Check the list of gestures for a circle
@@ -102,22 +92,7 @@ public class MovementManager : MonoBehaviour {
 				if (Vector3.Dot(direction0, normal0) > direction0.sqrMagnitude * 0.5f && Vector3.Dot(direction1, normal1) > direction1.sqrMagnitude * 0.5f)	{
 					if (GameObject.Find("palm").GetComponent<HandInteraction>()._magnitude > 1)	{
 						GameManager.instance.player.ExecuteSpell();
-//						GameObject[] elements;
-//						elements = GameObject.FindGameObjectsWithTag("Element");
-//						if (elements.Length > 0){
-//							foreach(GameObject element in elements)	{
-//								element.gameObject.GetComponent<SphereInteraction>().shootSign = true;
-//							}
-//						}
 					}
-				}else{
-//					GameObject[] elements;
-//					elements = GameObject.FindGameObjectsWithTag("Element");
-//					if (elements.Length > 0){
-//						foreach(GameObject element in elements)	{
-//							element.gameObject.GetComponent<SphereInteraction>().shootSign = false;
-//						}
-//					}
 				}
 			}
 		}

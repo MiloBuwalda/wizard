@@ -197,6 +197,7 @@
      <Compile Include="Assets\_Scripts\BasicLookInputModule.cs" />
      <Compile Include="Assets\_Scripts\Element.cs" />
      <Compile Include="Assets\_Scripts\ElementManager.cs" />
+     <Compile Include="Assets\_Scripts\ElementMovement.cs" />
      <Compile Include="Assets\_Scripts\ElementSpawner.cs" />
      <Compile Include="Assets\_Scripts\GameManager.cs" />
      <Compile Include="Assets\_Scripts\General\MouseLook_FIXED.cs" />
