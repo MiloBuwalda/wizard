@@ -60,7 +60,8 @@ public class NetworkController : Photon.MonoBehaviour
 	/// </summary>
 	void OnJoinedLobby()
 	{
-		PhotonNetwork.JoinOrCreateRoom (_room, null, TypedLobby.Default);
+		RoomOptions roomOptions = new RoomOptions (){};
+		PhotonNetwork.JoinOrCreateRoom (_room, roomOptions, TypedLobby.Default);
 		Debug.Log ("Starting Server");
 //		if( isHost == true )
 //			return;
@@ -91,7 +92,7 @@ public class NetworkController : Photon.MonoBehaviour
 	void OnJoinedRoom()
 	{
 		isConnected = true;
-		PhotonNetwork.Instantiate (playerReference.name, spawnPoint.position, spawnPoint.rotation, 0);
+		PhotonNetwork.Instantiate (playerReference.name, spawnPoint.position, Quaternion.identity, 0);
 		Debug.Log ("Joined Room");
 //		PhotonNetwork.isMessageQueueRunning = false;
 //		Application.LoadLevel ("Level");
@@ -119,16 +120,16 @@ public class NetworkController : Photon.MonoBehaviour
 		Debug.Log( "OnCreatedRoom" );
 		
 		//When we create the room we set several custom room properties that get synchronized between all players
-		ExitGames.Client.Photon.Hashtable properties = new ExitGames.Client.Photon.Hashtable();
+//		ExitGames.Client.Photon.Hashtable properties = new ExitGames.Client.Photon.Hashtable();
 		
 //		//If we don't set the scores to 0 here, players would get errors when trying to access the score properties
 //		properties.Add( RoomProperty.BlueScore, (int)0 );
 //		properties.Add( RoomProperty.RedScore, (int)0 );
 		
 		//PhotonNetwork.time is synchronized between all players, so by using it as the start time here, all players can calculate how long the game ran
-		properties.Add( RoomProperty.StartTime, PhotonNetwork.time );
+//		properties.Add( RoomProperty.StartTime, PhotonNetwork.time );
 		
-		PhotonNetwork.room.SetCustomProperties( properties );
+//		PhotonNetwork.room.SetCustomProperties( properties );
 	}
 
 	/// <summary>

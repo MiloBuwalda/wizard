@@ -12,17 +12,18 @@ public class NetworkedPlayer : Photon.MonoBehaviour
 	{
 		Debug.Log("i'm instantiated");
 		
-		if (photonView.isMine)
-		{
-			Debug.Log("player is mine");
+		if (photonView.isMine) {
+			Debug.Log ("player is mine");
 			
-			playerGlobal = GameObject.Find("OVRPlayerController").transform;
-			playerLocal = playerGlobal.Find("OVRCameraRig/CenterEyeAnchor");
+			playerGlobal = GameObject.Find ("LeapOVRPlayerController").transform;
+			playerLocal = playerGlobal.Find ("LeapOVRCameraRig/CenterEyeAnchor");
 			
-			this.transform.SetParent(playerLocal);
+			this.transform.SetParent (playerLocal);
 			this.transform.localPosition = Vector3.zero;
 			
 			// avatar.SetActive(false);
+		} else {
+			Debug.Log("Not mine"); 
 		}
 	}
 	
