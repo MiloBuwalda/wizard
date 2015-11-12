@@ -9,6 +9,8 @@ public class NetworkController : Photon.MonoBehaviour
 
 	public Transform spawnPoint;
 	public GameObject playerReference;
+
+
 	public bool isConnected = false;
 
 	public static bool isHost = false;
@@ -92,7 +94,14 @@ public class NetworkController : Photon.MonoBehaviour
 	void OnJoinedRoom()
 	{
 		isConnected = true;
-		PhotonNetwork.Instantiate (playerReference.name, spawnPoint.position, Quaternion.identity, 0);
+
+//		PlayerSpawner ps = new PlayerSpawner ();
+//		ps.CreateNetworkedPlayer ();
+		PhotonNetwork.Instantiate (
+			playerReference.name, 
+			spawnPoint.position, 
+			Quaternion.identity, 
+			0);
 		Debug.Log ("Joined Room");
 //		PhotonNetwork.isMessageQueueRunning = false;
 //		Application.LoadLevel ("Level");
