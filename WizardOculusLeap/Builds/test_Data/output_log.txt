@@ -18,7 +18,7 @@ Platform assembly: D:\Documenten\Unity5\Wizard_Oculus_Leap\WizardOculusLeap\Buil
 Loading D:\Documenten\Unity5\Wizard_Oculus_Leap\WizardOculusLeap\Builds\test_Data\Managed\LeapCSharp.NET3.5.dll into Unity Child Domain
 Platform assembly: D:\Documenten\Unity5\Wizard_Oculus_Leap\WizardOculusLeap\Builds\test_Data\Managed\Photon3Unity3D.dll (this message is harmless)
 Loading D:\Documenten\Unity5\Wizard_Oculus_Leap\WizardOculusLeap\Builds\test_Data\Managed\Photon3Unity3D.dll into Unity Child Domain
-- Completed reload, in  0.041 seconds
+- Completed reload, in  0.046 seconds
 <RI> Initializing input.
 <RI> Input initialized.
 desktop: 1920x1080 60Hz; virtual: 1920x1080 at 0,0
@@ -37,672 +37,976 @@ Circle Gesture Enabled: True
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
 
-ArgumentOutOfRangeException: Argument is out of range.
-Parameter name: index
-  at System.Collections.Generic.List`1[ElementManager].get_Item (Int32 index) [0x00000] in <filename unknown>:0 
-  at Player.ExecuteSpell () [0x00000] in <filename unknown>:0 
-  at MovementManager.Update () [0x00000] in <filename unknown>:0 
- 
-(Filename:  Line: -1)
-
-Left circle found
+Right circle found 1
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
 
-Left circle found
+Right circle found 1
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
 
-Left circle found
+Right circle found 1
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
 
-Left circle found
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
-
-Left circle found
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
-
-Left circle found
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
-
-Left circle found
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
-
-Left circle found
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
-
-Left circle found
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
-
-Left circle found
+Right circle found 1
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
 
 ArgumentOutOfRangeException: Argument is out of range.
 Parameter name: index
   at System.Collections.Generic.List`1[ElementManager].get_Item (Int32 index) [0x00000] in <filename unknown>:0 
-  at Player.ExecuteSpell () [0x00000] in <filename unknown>:0 
-  at MovementManager.Update () [0x00000] in <filename unknown>:0 
+  at ElementSpawner.CombineElements (System.Collections.Generic.List`1 list) [0x00000] in <filename unknown>:0 
+  at Player.Combine () [0x00000] in <filename unknown>:0 
+  at ElementMovement.OnTriggerEnter (UnityEngine.Collider other) [0x00000] in <filename unknown>:0 
  
 (Filename:  Line: -1)
 
 ArgumentOutOfRangeException: Argument is out of range.
 Parameter name: index
   at System.Collections.Generic.List`1[ElementManager].get_Item (Int32 index) [0x00000] in <filename unknown>:0 
-  at Player.ExecuteSpell () [0x00000] in <filename unknown>:0 
-  at MovementManager.Update () [0x00000] in <filename unknown>:0 
+  at ElementSpawner.CombineElements (System.Collections.Generic.List`1 list) [0x00000] in <filename unknown>:0 
+  at Player.Combine () [0x00000] in <filename unknown>:0 
+  at ElementMovement.OnTriggerEnter (UnityEngine.Collider other) [0x00000] in <filename unknown>:0 
  
 (Filename:  Line: -1)
 
-Right circle found
+ArgumentOutOfRangeException: Argument is out of range.
+Parameter name: index
+  at System.Collections.Generic.List`1[ElementManager].get_Item (Int32 index) [0x00000] in <filename unknown>:0 
+  at ElementSpawner.CombineElements (System.Collections.Generic.List`1 list) [0x00000] in <filename unknown>:0 
+  at Player.Combine () [0x00000] in <filename unknown>:0 
+  at ElementMovement.OnTriggerEnter (UnityEngine.Collider other) [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+ArgumentOutOfRangeException: Argument is out of range.
+Parameter name: index
+  at System.Collections.Generic.List`1[ElementManager].get_Item (Int32 index) [0x00000] in <filename unknown>:0 
+  at ElementSpawner.CombineElements (System.Collections.Generic.List`1 list) [0x00000] in <filename unknown>:0 
+  at Player.Combine () [0x00000] in <filename unknown>:0 
+  at ElementMovement.OnTriggerEnter (UnityEngine.Collider other) [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+ArgumentOutOfRangeException: Argument is out of range.
+Parameter name: index
+  at System.Collections.Generic.List`1[ElementManager].get_Item (Int32 index) [0x00000] in <filename unknown>:0 
+  at ElementSpawner.CombineElements (System.Collections.Generic.List`1 list) [0x00000] in <filename unknown>:0 
+  at Player.Combine () [0x00000] in <filename unknown>:0 
+  at ElementMovement.OnTriggerEnter (UnityEngine.Collider other) [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+ArgumentOutOfRangeException: Argument is out of range.
+Parameter name: index
+  at System.Collections.Generic.List`1[ElementManager].get_Item (Int32 index) [0x00000] in <filename unknown>:0 
+  at ElementSpawner.CombineElements (System.Collections.Generic.List`1 list) [0x00000] in <filename unknown>:0 
+  at Player.Combine () [0x00000] in <filename unknown>:0 
+  at ElementMovement.OnTriggerEnter (UnityEngine.Collider other) [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+ArgumentOutOfRangeException: Argument is out of range.
+Parameter name: index
+  at System.Collections.Generic.List`1[ElementManager].get_Item (Int32 index) [0x00000] in <filename unknown>:0 
+  at ElementSpawner.CombineElements (System.Collections.Generic.List`1 list) [0x00000] in <filename unknown>:0 
+  at Player.Combine () [0x00000] in <filename unknown>:0 
+  at ElementMovement.OnTriggerEnter (UnityEngine.Collider other) [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+ArgumentOutOfRangeException: Argument is out of range.
+Parameter name: index
+  at System.Collections.Generic.List`1[ElementManager].get_Item (Int32 index) [0x00000] in <filename unknown>:0 
+  at ElementSpawner.CombineElements (System.Collections.Generic.List`1 list) [0x00000] in <filename unknown>:0 
+  at Player.Combine () [0x00000] in <filename unknown>:0 
+  at ElementMovement.OnTriggerEnter (UnityEngine.Collider other) [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+ArgumentOutOfRangeException: Argument is out of range.
+Parameter name: index
+  at System.Collections.Generic.List`1[ElementManager].get_Item (Int32 index) [0x00000] in <filename unknown>:0 
+  at ElementSpawner.CombineElements (System.Collections.Generic.List`1 list) [0x00000] in <filename unknown>:0 
+  at Player.Combine () [0x00000] in <filename unknown>:0 
+  at ElementMovement.OnTriggerEnter (UnityEngine.Collider other) [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+ArgumentOutOfRangeException: Argument is out of range.
+Parameter name: index
+  at System.Collections.Generic.List`1[ElementManager].get_Item (Int32 index) [0x00000] in <filename unknown>:0 
+  at ElementSpawner.CombineElements (System.Collections.Generic.List`1 list) [0x00000] in <filename unknown>:0 
+  at Player.Combine () [0x00000] in <filename unknown>:0 
+  at ElementMovement.OnTriggerEnter (UnityEngine.Collider other) [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+ArgumentOutOfRangeException: Argument is out of range.
+Parameter name: index
+  at System.Collections.Generic.List`1[ElementManager].get_Item (Int32 index) [0x00000] in <filename unknown>:0 
+  at ElementSpawner.CombineElements (System.Collections.Generic.List`1 list) [0x00000] in <filename unknown>:0 
+  at Player.Combine () [0x00000] in <filename unknown>:0 
+  at ElementMovement.OnTriggerEnter (UnityEngine.Collider other) [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+ArgumentOutOfRangeException: Argument is out of range.
+Parameter name: index
+  at System.Collections.Generic.List`1[ElementManager].get_Item (Int32 index) [0x00000] in <filename unknown>:0 
+  at ElementSpawner.CombineElements (System.Collections.Generic.List`1 list) [0x00000] in <filename unknown>:0 
+  at Player.Combine () [0x00000] in <filename unknown>:0 
+  at ElementMovement.OnTriggerEnter (UnityEngine.Collider other) [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+ArgumentOutOfRangeException: Argument is out of range.
+Parameter name: index
+  at System.Collections.Generic.List`1[ElementManager].get_Item (Int32 index) [0x00000] in <filename unknown>:0 
+  at ElementSpawner.CombineElements (System.Collections.Generic.List`1 list) [0x00000] in <filename unknown>:0 
+  at Player.Combine () [0x00000] in <filename unknown>:0 
+  at ElementMovement.OnTriggerEnter (UnityEngine.Collider other) [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+ArgumentOutOfRangeException: Argument is out of range.
+Parameter name: index
+  at System.Collections.Generic.List`1[ElementManager].get_Item (Int32 index) [0x00000] in <filename unknown>:0 
+  at ElementSpawner.CombineElements (System.Collections.Generic.List`1 list) [0x00000] in <filename unknown>:0 
+  at Player.Combine () [0x00000] in <filename unknown>:0 
+  at ElementMovement.OnTriggerEnter (UnityEngine.Collider other) [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+ArgumentOutOfRangeException: Argument is out of range.
+Parameter name: index
+  at System.Collections.Generic.List`1[ElementManager].get_Item (Int32 index) [0x00000] in <filename unknown>:0 
+  at ElementSpawner.CombineElements (System.Collections.Generic.List`1 list) [0x00000] in <filename unknown>:0 
+  at Player.Combine () [0x00000] in <filename unknown>:0 
+  at ElementMovement.OnTriggerEnter (UnityEngine.Collider other) [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+ArgumentOutOfRangeException: Argument is out of range.
+Parameter name: index
+  at System.Collections.Generic.List`1[ElementManager].get_Item (Int32 index) [0x00000] in <filename unknown>:0 
+  at ElementSpawner.CombineElements (System.Collections.Generic.List`1 list) [0x00000] in <filename unknown>:0 
+  at Player.Combine () [0x00000] in <filename unknown>:0 
+  at ElementMovement.OnTriggerEnter (UnityEngine.Collider other) [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+ArgumentOutOfRangeException: Argument is out of range.
+Parameter name: index
+  at System.Collections.Generic.List`1[ElementManager].get_Item (Int32 index) [0x00000] in <filename unknown>:0 
+  at ElementSpawner.CombineElements (System.Collections.Generic.List`1 list) [0x00000] in <filename unknown>:0 
+  at Player.Combine () [0x00000] in <filename unknown>:0 
+  at ElementMovement.OnTriggerEnter (UnityEngine.Collider other) [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+ArgumentOutOfRangeException: Argument is out of range.
+Parameter name: index
+  at System.Collections.Generic.List`1[ElementManager].get_Item (Int32 index) [0x00000] in <filename unknown>:0 
+  at ElementSpawner.CombineElements (System.Collections.Generic.List`1 list) [0x00000] in <filename unknown>:0 
+  at Player.Combine () [0x00000] in <filename unknown>:0 
+  at ElementMovement.OnTriggerEnter (UnityEngine.Collider other) [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+Right circle found 1
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
 
-Right circle found
+Right circle found 1
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
 
-Right circle found
+Right circle found 1
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
 
-Right circle found
+Right circle found 1
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
 
-Right circle found
+Right circle found 1
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
 
-Right circle found
+Right circle found 1
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
 
-Right circle found
+Right circle found 1
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
 
-Right circle found
+Right circle found 1
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
 
-Right circle found
+Right circle found 1
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
 
-Right circle found
+Right circle found 1
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
 
-Right circle found
+Right circle found 1
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
 
-Right circle found
+Right circle found 1
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
 
-Right circle found
+Right circle found 1
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
 
-Right circle found
+Right circle found 1
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
 
-Right circle found
+Right circle found 1
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
 
-Right circle found
+Right circle found 1
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
 
-Right circle found
+Right circle found 1
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
 
-Right circle found
+Right circle found 1
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
 
-Right circle found
+Right circle found 1
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
 
-Right circle found
+Right circle found 1
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
 
-Right circle found
+Right circle found 1
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
 
-Right circle found
+Right circle found 1
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
 
-Right circle found
+Right circle found 1
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
 
-Right circle found
+Right circle found 1
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
 
-Left circle found
+Right circle found 1
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
 
-Left circle found
+Right circle found 1
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Right circle found 1
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Right circle found 1
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Right circle found 1
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Right circle found 1
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Right circle found 1
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Right circle found 1
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Right circle found 1
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Right circle found 1
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Right circle found 1
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Right circle found 1
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Right circle found 1
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Right circle found 1
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Right circle found 1
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Right circle found 1
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Right circle found 1
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Right circle found 1
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Right circle found 1
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Right circle found 1
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Create Shield
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Right circle found 1
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Right circle found 1
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Right circle found 1
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Right circle found 1
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Right circle found 1
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Right circle found 1
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Right circle found 1
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Right circle found 1
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Right circle found 1
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Right circle found 1
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Right circle found 1
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Right circle found 1
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Right circle found 1
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Right circle found 1
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Right circle found 1
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Right circle found 1
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Right circle found 1
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Right circle found 1
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Right circle found 1
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Right circle found 1
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Right circle found 1
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Right circle found 1
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Right circle found 1
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Right circle found 1
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Right circle found 1
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Right circle found 1
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Right circle found 1
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Right circle found 1
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Right circle found 1
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Right circle found 1
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Right circle found 1
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Right circle found 1
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Right circle found 1
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Right circle found 1
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+ArgumentOutOfRangeException: Argument is out of range.
+Parameter name: index
+  at System.Collections.Generic.List`1[ElementManager].get_Item (Int32 index) [0x00000] in <filename unknown>:0 
+  at ElementSpawner.CombineElements (System.Collections.Generic.List`1 list) [0x00000] in <filename unknown>:0 
+  at Player.Combine () [0x00000] in <filename unknown>:0 
+  at ElementMovement.OnTriggerEnter (UnityEngine.Collider other) [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+ArgumentOutOfRangeException: Argument is out of range.
+Parameter name: index
+  at System.Collections.Generic.List`1[ElementManager].get_Item (Int32 index) [0x00000] in <filename unknown>:0 
+  at ElementSpawner.CombineElements (System.Collections.Generic.List`1 list) [0x00000] in <filename unknown>:0 
+  at Player.Combine () [0x00000] in <filename unknown>:0 
+  at ElementMovement.OnTriggerEnter (UnityEngine.Collider other) [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+ArgumentOutOfRangeException: Argument is out of range.
+Parameter name: index
+  at System.Collections.Generic.List`1[ElementManager].get_Item (Int32 index) [0x00000] in <filename unknown>:0 
+  at ElementSpawner.CombineElements (System.Collections.Generic.List`1 list) [0x00000] in <filename unknown>:0 
+  at Player.Combine () [0x00000] in <filename unknown>:0 
+  at ElementMovement.OnTriggerEnter (UnityEngine.Collider other) [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+ArgumentOutOfRangeException: Argument is out of range.
+Parameter name: index
+  at System.Collections.Generic.List`1[ElementManager].get_Item (Int32 index) [0x00000] in <filename unknown>:0 
+  at ElementSpawner.CombineElements (System.Collections.Generic.List`1 list) [0x00000] in <filename unknown>:0 
+  at Player.Combine () [0x00000] in <filename unknown>:0 
+  at ElementMovement.OnTriggerEnter (UnityEngine.Collider other) [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+ArgumentOutOfRangeException: Argument is out of range.
+Parameter name: index
+  at System.Collections.Generic.List`1[ElementManager].get_Item (Int32 index) [0x00000] in <filename unknown>:0 
+  at ElementSpawner.CombineElements (System.Collections.Generic.List`1 list) [0x00000] in <filename unknown>:0 
+  at Player.Combine () [0x00000] in <filename unknown>:0 
+  at ElementMovement.OnTriggerEnter (UnityEngine.Collider other) [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+ArgumentOutOfRangeException: Argument is out of range.
+Parameter name: index
+  at System.Collections.Generic.List`1[ElementManager].get_Item (Int32 index) [0x00000] in <filename unknown>:0 
+  at ElementSpawner.CombineElements (System.Collections.Generic.List`1 list) [0x00000] in <filename unknown>:0 
+  at Player.Combine () [0x00000] in <filename unknown>:0 
+  at ElementMovement.OnTriggerEnter (UnityEngine.Collider other) [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+ArgumentOutOfRangeException: Argument is out of range.
+Parameter name: index
+  at System.Collections.Generic.List`1[ElementManager].get_Item (Int32 index) [0x00000] in <filename unknown>:0 
+  at ElementSpawner.CombineElements (System.Collections.Generic.List`1 list) [0x00000] in <filename unknown>:0 
+  at Player.Combine () [0x00000] in <filename unknown>:0 
+  at ElementMovement.OnTriggerEnter (UnityEngine.Collider other) [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+ArgumentOutOfRangeException: Argument is out of range.
+Parameter name: index
+  at System.Collections.Generic.List`1[ElementManager].get_Item (Int32 index) [0x00000] in <filename unknown>:0 
+  at ElementSpawner.CombineElements (System.Collections.Generic.List`1 list) [0x00000] in <filename unknown>:0 
+  at Player.Combine () [0x00000] in <filename unknown>:0 
+  at ElementMovement.OnTriggerEnter (UnityEngine.Collider other) [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+ArgumentOutOfRangeException: Argument is out of range.
+Parameter name: index
+  at System.Collections.Generic.List`1[ElementManager].get_Item (Int32 index) [0x00000] in <filename unknown>:0 
+  at ElementSpawner.CombineElements (System.Collections.Generic.List`1 list) [0x00000] in <filename unknown>:0 
+  at Player.Combine () [0x00000] in <filename unknown>:0 
+  at ElementMovement.OnTriggerEnter (UnityEngine.Collider other) [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+ArgumentOutOfRangeException: Argument is out of range.
+Parameter name: index
+  at System.Collections.Generic.List`1[ElementManager].get_Item (Int32 index) [0x00000] in <filename unknown>:0 
+  at ElementSpawner.CombineElements (System.Collections.Generic.List`1 list) [0x00000] in <filename unknown>:0 
+  at Player.Combine () [0x00000] in <filename unknown>:0 
+  at ElementMovement.OnTriggerEnter (UnityEngine.Collider other) [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+ArgumentOutOfRangeException: Argument is out of range.
+Parameter name: index
+  at System.Collections.Generic.List`1[ElementManager].get_Item (Int32 index) [0x00000] in <filename unknown>:0 
+  at ElementSpawner.CombineElements (System.Collections.Generic.List`1 list) [0x00000] in <filename unknown>:0 
+  at Player.Combine () [0x00000] in <filename unknown>:0 
+  at ElementMovement.OnTriggerEnter (UnityEngine.Collider other) [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+ArgumentOutOfRangeException: Argument is out of range.
+Parameter name: index
+  at System.Collections.Generic.List`1[ElementManager].get_Item (Int32 index) [0x00000] in <filename unknown>:0 
+  at ElementSpawner.CombineElements (System.Collections.Generic.List`1 list) [0x00000] in <filename unknown>:0 
+  at Player.Combine () [0x00000] in <filename unknown>:0 
+  at ElementMovement.OnTriggerEnter (UnityEngine.Collider other) [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+ArgumentOutOfRangeException: Argument is out of range.
+Parameter name: index
+  at System.Collections.Generic.List`1[ElementManager].get_Item (Int32 index) [0x00000] in <filename unknown>:0 
+  at ElementSpawner.CombineElements (System.Collections.Generic.List`1 list) [0x00000] in <filename unknown>:0 
+  at Player.Combine () [0x00000] in <filename unknown>:0 
+  at ElementMovement.OnTriggerEnter (UnityEngine.Collider other) [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+ArgumentOutOfRangeException: Argument is out of range.
+Parameter name: index
+  at System.Collections.Generic.List`1[ElementManager].get_Item (Int32 index) [0x00000] in <filename unknown>:0 
+  at ElementSpawner.CombineElements (System.Collections.Generic.List`1 list) [0x00000] in <filename unknown>:0 
+  at Player.Combine () [0x00000] in <filename unknown>:0 
+  at ElementMovement.OnTriggerEnter (UnityEngine.Collider other) [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+ArgumentOutOfRangeException: Argument is out of range.
+Parameter name: index
+  at System.Collections.Generic.List`1[ElementManager].get_Item (Int32 index) [0x00000] in <filename unknown>:0 
+  at ElementSpawner.CombineElements (System.Collections.Generic.List`1 list) [0x00000] in <filename unknown>:0 
+  at Player.Combine () [0x00000] in <filename unknown>:0 
+  at ElementMovement.OnTriggerEnter (UnityEngine.Collider other) [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+ArgumentOutOfRangeException: Argument is out of range.
+Parameter name: index
+  at System.Collections.Generic.List`1[ElementManager].get_Item (Int32 index) [0x00000] in <filename unknown>:0 
+  at ElementSpawner.CombineElements (System.Collections.Generic.List`1 list) [0x00000] in <filename unknown>:0 
+  at Player.Combine () [0x00000] in <filename unknown>:0 
+  at ElementMovement.OnTriggerEnter (UnityEngine.Collider other) [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+ArgumentOutOfRangeException: Argument is out of range.
+Parameter name: index
+  at System.Collections.Generic.List`1[ElementManager].get_Item (Int32 index) [0x00000] in <filename unknown>:0 
+  at ElementSpawner.CombineElements (System.Collections.Generic.List`1 list) [0x00000] in <filename unknown>:0 
+  at Player.Combine () [0x00000] in <filename unknown>:0 
+  at ElementMovement.OnTriggerEnter (UnityEngine.Collider other) [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+ArgumentOutOfRangeException: Argument is out of range.
+Parameter name: index
+  at System.Collections.Generic.List`1[ElementManager].get_Item (Int32 index) [0x00000] in <filename unknown>:0 
+  at ElementSpawner.CombineElements (System.Collections.Generic.List`1 list) [0x00000] in <filename unknown>:0 
+  at Player.Combine () [0x00000] in <filename unknown>:0 
+  at ElementMovement.OnTriggerEnter (UnityEngine.Collider other) [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+ArgumentOutOfRangeException: Argument is out of range.
+Parameter name: index
+  at System.Collections.Generic.List`1[ElementManager].get_Item (Int32 index) [0x00000] in <filename unknown>:0 
+  at ElementSpawner.CombineElements (System.Collections.Generic.List`1 list) [0x00000] in <filename unknown>:0 
+  at Player.Combine () [0x00000] in <filename unknown>:0 
+  at ElementMovement.OnTriggerEnter (UnityEngine.Collider other) [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+Right circle found 1
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Right circle found 1
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Right circle found 1
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Right circle found 1
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Right circle found 1
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+ArgumentOutOfRangeException: Argument is out of range.
+Parameter name: index
+  at System.Collections.Generic.List`1[ElementManager].get_Item (Int32 index) [0x00000] in <filename unknown>:0 
+  at ElementSpawner.CombineElements (System.Collections.Generic.List`1 list) [0x00000] in <filename unknown>:0 
+  at Player.Combine () [0x00000] in <filename unknown>:0 
+  at ElementMovement.OnTriggerEnter (UnityEngine.Collider other) [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+ArgumentOutOfRangeException: Argument is out of range.
+Parameter name: index
+  at System.Collections.Generic.List`1[ElementManager].get_Item (Int32 index) [0x00000] in <filename unknown>:0 
+  at ElementSpawner.CombineElements (System.Collections.Generic.List`1 list) [0x00000] in <filename unknown>:0 
+  at Player.Combine () [0x00000] in <filename unknown>:0 
+  at ElementMovement.OnTriggerEnter (UnityEngine.Collider other) [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+Create Shield
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Right circle found 1
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+ArgumentOutOfRangeException: Argument is out of range.
+Parameter name: index
+  at System.Collections.Generic.List`1[ElementManager].get_Item (Int32 index) [0x00000] in <filename unknown>:0 
+  at ElementSpawner.CombineElements (System.Collections.Generic.List`1 list) [0x00000] in <filename unknown>:0 
+  at Player.Combine () [0x00000] in <filename unknown>:0 
+  at ElementMovement.OnTriggerEnter (UnityEngine.Collider other) [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+ArgumentOutOfRangeException: Argument is out of range.
+Parameter name: index
+  at System.Collections.Generic.List`1[ElementManager].get_Item (Int32 index) [0x00000] in <filename unknown>:0 
+  at ElementSpawner.CombineElements (System.Collections.Generic.List`1 list) [0x00000] in <filename unknown>:0 
+  at Player.Combine () [0x00000] in <filename unknown>:0 
+  at ElementMovement.OnTriggerEnter (UnityEngine.Collider other) [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+ArgumentOutOfRangeException: Argument is out of range.
+Parameter name: index
+  at System.Collections.Generic.List`1[ElementManager].get_Item (Int32 index) [0x00000] in <filename unknown>:0 
+  at ElementSpawner.CombineElements (System.Collections.Generic.List`1 list) [0x00000] in <filename unknown>:0 
+  at Player.Combine () [0x00000] in <filename unknown>:0 
+  at ElementMovement.OnTriggerEnter (UnityEngine.Collider other) [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+ArgumentOutOfRangeException: Argument is out of range.
+Parameter name: index
+  at System.Collections.Generic.List`1[ElementManager].get_Item (Int32 index) [0x00000] in <filename unknown>:0 
+  at ElementSpawner.CombineElements (System.Collections.Generic.List`1 list) [0x00000] in <filename unknown>:0 
+  at Player.Combine () [0x00000] in <filename unknown>:0 
+  at ElementMovement.OnTriggerEnter (UnityEngine.Collider other) [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+ArgumentOutOfRangeException: Argument is out of range.
+Parameter name: index
+  at System.Collections.Generic.List`1[ElementManager].get_Item (Int32 index) [0x00000] in <filename unknown>:0 
+  at ElementSpawner.CombineElements (System.Collections.Generic.List`1 list) [0x00000] in <filename unknown>:0 
+  at Player.Combine () [0x00000] in <filename unknown>:0 
+  at ElementMovement.OnTriggerEnter (UnityEngine.Collider other) [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+ArgumentOutOfRangeException: Argument is out of range.
+Parameter name: index
+  at System.Collections.Generic.List`1[ElementManager].get_Item (Int32 index) [0x00000] in <filename unknown>:0 
+  at ElementSpawner.CombineElements (System.Collections.Generic.List`1 list) [0x00000] in <filename unknown>:0 
+  at Player.Combine () [0x00000] in <filename unknown>:0 
+  at ElementMovement.OnTriggerEnter (UnityEngine.Collider other) [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+ArgumentOutOfRangeException: Argument is out of range.
+Parameter name: index
+  at System.Collections.Generic.List`1[ElementManager].get_Item (Int32 index) [0x00000] in <filename unknown>:0 
+  at ElementSpawner.CombineElements (System.Collections.Generic.List`1 list) [0x00000] in <filename unknown>:0 
+  at Player.Combine () [0x00000] in <filename unknown>:0 
+  at ElementMovement.OnTriggerEnter (UnityEngine.Collider other) [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+ArgumentOutOfRangeException: Argument is out of range.
+Parameter name: index
+  at System.Collections.Generic.List`1[ElementManager].get_Item (Int32 index) [0x00000] in <filename unknown>:0 
+  at ElementSpawner.CombineElements (System.Collections.Generic.List`1 list) [0x00000] in <filename unknown>:0 
+  at Player.Combine () [0x00000] in <filename unknown>:0 
+  at ElementMovement.OnTriggerEnter (UnityEngine.Collider other) [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+ArgumentOutOfRangeException: Argument is out of range.
+Parameter name: index
+  at System.Collections.Generic.List`1[ElementManager].get_Item (Int32 index) [0x00000] in <filename unknown>:0 
+  at ElementSpawner.CombineElements (System.Collections.Generic.List`1 list) [0x00000] in <filename unknown>:0 
+  at Player.Combine () [0x00000] in <filename unknown>:0 
+  at ElementMovement.OnTriggerEnter (UnityEngine.Collider other) [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+ArgumentOutOfRangeException: Argument is out of range.
+Parameter name: index
+  at System.Collections.Generic.List`1[ElementManager].get_Item (Int32 index) [0x00000] in <filename unknown>:0 
+  at ElementSpawner.CombineElements (System.Collections.Generic.List`1 list) [0x00000] in <filename unknown>:0 
+  at Player.Combine () [0x00000] in <filename unknown>:0 
+  at ElementMovement.OnTriggerEnter (UnityEngine.Collider other) [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+ArgumentOutOfRangeException: Argument is out of range.
+Parameter name: index
+  at System.Collections.Generic.List`1[ElementManager].get_Item (Int32 index) [0x00000] in <filename unknown>:0 
+  at ElementSpawner.CombineElements (System.Collections.Generic.List`1 list) [0x00000] in <filename unknown>:0 
+  at Player.Combine () [0x00000] in <filename unknown>:0 
+  at ElementMovement.OnTriggerEnter (UnityEngine.Collider other) [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+ArgumentOutOfRangeException: Argument is out of range.
+Parameter name: index
+  at System.Collections.Generic.List`1[ElementManager].get_Item (Int32 index) [0x00000] in <filename unknown>:0 
+  at ElementSpawner.CombineElements (System.Collections.Generic.List`1 list) [0x00000] in <filename unknown>:0 
+  at Player.Combine () [0x00000] in <filename unknown>:0 
+  at ElementMovement.OnTriggerEnter (UnityEngine.Collider other) [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+ArgumentOutOfRangeException: Argument is out of range.
+Parameter name: index
+  at System.Collections.Generic.List`1[ElementManager].get_Item (Int32 index) [0x00000] in <filename unknown>:0 
+  at ElementSpawner.CombineElements (System.Collections.Generic.List`1 list) [0x00000] in <filename unknown>:0 
+  at Player.Combine () [0x00000] in <filename unknown>:0 
+  at ElementMovement.OnTriggerEnter (UnityEngine.Collider other) [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+ArgumentOutOfRangeException: Argument is out of range.
+Parameter name: index
+  at System.Collections.Generic.List`1[ElementManager].get_Item (Int32 index) [0x00000] in <filename unknown>:0 
+  at ElementSpawner.CombineElements (System.Collections.Generic.List`1 list) [0x00000] in <filename unknown>:0 
+  at Player.Combine () [0x00000] in <filename unknown>:0 
+  at ElementMovement.OnTriggerEnter (UnityEngine.Collider other) [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+ArgumentOutOfRangeException: Argument is out of range.
+Parameter name: index
+  at System.Collections.Generic.List`1[ElementManager].get_Item (Int32 index) [0x00000] in <filename unknown>:0 
+  at ElementSpawner.CombineElements (System.Collections.Generic.List`1 list) [0x00000] in <filename unknown>:0 
+  at Player.Combine () [0x00000] in <filename unknown>:0 
+  at ElementMovement.OnTriggerEnter (UnityEngine.Collider other) [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+ArgumentOutOfRangeException: Argument is out of range.
+Parameter name: index
+  at System.Collections.Generic.List`1[ElementManager].get_Item (Int32 index) [0x00000] in <filename unknown>:0 
+  at ElementSpawner.CombineElements (System.Collections.Generic.List`1 list) [0x00000] in <filename unknown>:0 
+  at Player.Combine () [0x00000] in <filename unknown>:0 
+  at ElementMovement.OnTriggerEnter (UnityEngine.Collider other) [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+ArgumentOutOfRangeException: Argument is out of range.
+Parameter name: index
+  at System.Collections.Generic.List`1[ElementManager].get_Item (Int32 index) [0x00000] in <filename unknown>:0 
+  at ElementSpawner.CombineElements (System.Collections.Generic.List`1 list) [0x00000] in <filename unknown>:0 
+  at Player.Combine () [0x00000] in <filename unknown>:0 
+  at ElementMovement.OnTriggerEnter (UnityEngine.Collider other) [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+ArgumentOutOfRangeException: Argument is out of range.
+Parameter name: index
+  at System.Collections.Generic.List`1[ElementManager].get_Item (Int32 index) [0x00000] in <filename unknown>:0 
+  at ElementSpawner.CombineElements (System.Collections.Generic.List`1 list) [0x00000] in <filename unknown>:0 
+  at Player.Combine () [0x00000] in <filename unknown>:0 
+  at ElementMovement.OnTriggerEnter (UnityEngine.Collider other) [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+ArgumentOutOfRangeException: Argument is out of range.
+Parameter name: index
+  at System.Collections.Generic.List`1[ElementManager].get_Item (Int32 index) [0x00000] in <filename unknown>:0 
+  at ElementSpawner.CombineElements (System.Collections.Generic.List`1 list) [0x00000] in <filename unknown>:0 
+  at Player.Combine () [0x00000] in <filename unknown>:0 
+  at ElementMovement.OnTriggerEnter (UnityEngine.Collider other) [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+Right circle found 1
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Right circle found 1
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Right circle found 1
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Right circle found 1
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Right circle found 1
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+ArgumentOutOfRangeException: Argument is out of range.
+Parameter name: index
+  at System.Collections.Generic.List`1[ElementManager].get_Item (Int32 index) [0x00000] in <filename unknown>:0 
+  at ElementSpawner.CombineElements (System.Collections.Generic.List`1 list) [0x00000] in <filename unknown>:0 
+  at Player.Combine () [0x00000] in <filename unknown>:0 
+  at ElementMovement.OnTriggerEnter (UnityEngine.Collider other) [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+ArgumentOutOfRangeException: Argument is out of range.
+Parameter name: index
+  at System.Collections.Generic.List`1[ElementManager].get_Item (Int32 index) [0x00000] in <filename unknown>:0 
+  at ElementSpawner.CombineElements (System.Collections.Generic.List`1 list) [0x00000] in <filename unknown>:0 
+  at Player.Combine () [0x00000] in <filename unknown>:0 
+  at ElementMovement.OnTriggerEnter (UnityEngine.Collider other) [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+ArgumentOutOfRangeException: Argument is out of range.
+Parameter name: index
+  at System.Collections.Generic.List`1[ElementManager].get_Item (Int32 index) [0x00000] in <filename unknown>:0 
+  at ElementSpawner.CombineElements (System.Collections.Generic.List`1 list) [0x00000] in <filename unknown>:0 
+  at Player.Combine () [0x00000] in <filename unknown>:0 
+  at ElementMovement.OnTriggerEnter (UnityEngine.Collider other) [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+ArgumentOutOfRangeException: Argument is out of range.
+Parameter name: index
+  at System.Collections.Generic.List`1[ElementManager].get_Item (Int32 index) [0x00000] in <filename unknown>:0 
+  at ElementSpawner.CombineElements (System.Collections.Generic.List`1 list) [0x00000] in <filename unknown>:0 
+  at Player.Combine () [0x00000] in <filename unknown>:0 
+  at ElementMovement.OnTriggerEnter (UnityEngine.Collider other) [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+ArgumentOutOfRangeException: Argument is out of range.
+Parameter name: index
+  at System.Collections.Generic.List`1[ElementManager].get_Item (Int32 index) [0x00000] in <filename unknown>:0 
+  at ElementSpawner.CombineElements (System.Collections.Generic.List`1 list) [0x00000] in <filename unknown>:0 
+  at Player.Combine () [0x00000] in <filename unknown>:0 
+  at ElementMovement.OnTriggerEnter (UnityEngine.Collider other) [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+ArgumentOutOfRangeException: Argument is out of range.
+Parameter name: index
+  at System.Collections.Generic.List`1[ElementManager].get_Item (Int32 index) [0x00000] in <filename unknown>:0 
+  at ElementSpawner.CombineElements (System.Collections.Generic.List`1 list) [0x00000] in <filename unknown>:0 
+  at Player.Combine () [0x00000] in <filename unknown>:0 
+  at ElementMovement.OnTriggerEnter (UnityEngine.Collider other) [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+ArgumentOutOfRangeException: Argument is out of range.
+Parameter name: index
+  at System.Collections.Generic.List`1[ElementManager].get_Item (Int32 index) [0x00000] in <filename unknown>:0 
+  at ElementSpawner.CombineElements (System.Collections.Generic.List`1 list) [0x00000] in <filename unknown>:0 
+  at Player.Combine () [0x00000] in <filename unknown>:0 
+  at ElementMovement.OnTriggerEnter (UnityEngine.Collider other) [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+Create Shield
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
 
 IndexOutOfRangeException: Array index is out of range.
-  at HandInteraction.OnTriggerStay (UnityEngine.Collider other) [0x00000] in <filename unknown>:0 
- 
-(Filename:  Line: -1)
-
-IndexOutOfRangeException: Array index is out of range.
-  at HandInteraction.OnTriggerStay (UnityEngine.Collider other) [0x00000] in <filename unknown>:0 
- 
-(Filename:  Line: -1)
-
-Left circle found
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
-
-Left circle found
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
-
-Left circle found
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
-
-Left circle found
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
-
-Left circle found
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
-
-Left circle found
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
-
-Left circle found
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
-
-Left circle found
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
-
-Left circle found
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
-
-Left circle found
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
-
-Left circle found
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
-
-Left circle found
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
-
-Left circle found
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
-
-Left circle found
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
-
-Left circle found
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
-
-Left circle found
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
-
-Left circle found
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
-
-Left circle found
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
-
-Left circle found
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
-
-Left circle found
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
-
-Left circle found
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
-
-Left circle found
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
-
-Left circle found
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
-
-Left circle found
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
-
-Left circle found
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
-
-Left circle found
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
-
-Left circle found
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
-
-Left circle found
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
-
-Left circle found
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
-
-Left circle found
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
-
-Left circle found
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
-
-Left circle found
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
-
-Left circle found
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
-
-Left circle found
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
-
-Left circle found
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
-
-Left circle found
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
-
-Left circle found
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
-
-Left circle found
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
-
-Left circle found
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
-
-Left circle found
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
-
-Left circle found
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
-
-Left circle found
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
-
-Left circle found
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
-
-Left circle found
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
-
-Left circle found
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
-
-Left circle found
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
-
-Left circle found
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
-
-Left circle found
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
-
-Left circle found
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
-
-Left circle found
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
-
-Left circle found
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
-
-Left circle found
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
-
-Left circle found
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
-
-Left circle found
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
-
-Left circle found
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
-
-Left circle found
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
-
-Left circle found
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
-
-Left circle found
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
-
-Left circle found
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
-
-Left circle found
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
-
-Left circle found
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
-
-Left circle found
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
-
-Left circle found
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
-
-Left circle found
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
-
-Left circle found
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
-
-Left circle found
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
-
-Left circle found
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
-
-Left circle found
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
-
-Left circle found
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
-
-Left circle found
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
-
-Left circle found
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
-
-Left circle found
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
-
-Left circle found
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
-
-Left circle found
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
-
-Left circle found
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
-
-Left circle found
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
-
-Left circle found
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
-
-Left circle found
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
-
-Left circle found
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
-
-Left circle found
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
-
-Left circle found
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
-
-Left circle found
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
-
-Left circle found
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
-
-Left circle found
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
-
-Left circle found
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
-
-Left circle found
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
-
-Left circle found
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
-
-Left circle found
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
-
-Left circle found
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
-
-Left circle found
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
-
-Left circle found
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
-
-Left circle found
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
-
-Left circle found
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
-
-Left circle found
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
-
-Left circle found
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
-
-Left circle found
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
-
-Right circle found
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
-
-Right circle found
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
-
-ArgumentOutOfRangeException: Argument is out of range.
-Parameter name: index
-  at System.Collections.Generic.List`1[ElementManager].get_Item (Int32 index) [0x00000] in <filename unknown>:0 
-  at Player.ExecuteSpell () [0x00000] in <filename unknown>:0 
-  at MovementManager.Update () [0x00000] in <filename unknown>:0 
- 
-(Filename:  Line: -1)
-
-Left circle found
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
-
-Left circle found
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
-
-Left circle found
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
-
-Left circle found
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
-
-Left circle found
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
-
-Left circle found
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
-
-Left circle found
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
-
-Left circle found
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
-
-Left circle found
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
-
-Left circle found
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
-
-Left circle found
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
-
-Left circle found
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
-
-Left circle found
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
-
-Left circle found
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
-
-Left circle found
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
-
-Left circle found
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
-
-Left circle found
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
-
-ArgumentOutOfRangeException: Argument is out of range.
-Parameter name: index
-  at System.Collections.Generic.List`1[ElementManager].get_Item (Int32 index) [0x00000] in <filename unknown>:0 
-  at Player.ExecuteSpell () [0x00000] in <filename unknown>:0 
-  at MovementManager.Update () [0x00000] in <filename unknown>:0 
- 
-(Filename:  Line: -1)
-
-ArgumentOutOfRangeException: Argument is out of range.
-Parameter name: index
-  at System.Collections.Generic.List`1[ElementManager].get_Item (Int32 index) [0x00000] in <filename unknown>:0 
-  at Player.ExecuteSpell () [0x00000] in <filename unknown>:0 
-  at MovementManager.Update () [0x00000] in <filename unknown>:0 
- 
-(Filename:  Line: -1)
-
-ArgumentOutOfRangeException: Argument is out of range.
-Parameter name: index
-  at System.Collections.Generic.List`1[ElementManager].get_Item (Int32 index) [0x00000] in <filename unknown>:0 
-  at Player.ExecuteSpell () [0x00000] in <filename unknown>:0 
   at MovementManager.Update () [0x00000] in <filename unknown>:0 
  
 (Filename:  Line: -1)

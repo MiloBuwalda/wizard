@@ -20,6 +20,7 @@ public class SpellSpawner : MonoBehaviour {
 		}
 	}
 
+	//Create a spell with elements from player when player demands it
 	public SpellManager CreateSpell(List<ElementManager> list){
 		if (list.Count > 0) {
 			SpellManager spell = new SpellManager();
