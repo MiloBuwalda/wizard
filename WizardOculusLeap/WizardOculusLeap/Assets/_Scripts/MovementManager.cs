@@ -7,6 +7,18 @@ public class MovementManager : MonoBehaviour {
 	public GameObject cameraDirection = null;
   	public HandController handController = null;
 	public bool circleMotion;
+	public bool insideShieldLeft;
+	public bool insideShieldRight;
+
+	Vector3 directionLeft;
+	Vector3 normalLeft; 
+	Vector3 directionRight;
+	Vector3 normalRight;
+
+	int elementToSummon;
+
+	float timerShield; //Delay shield summon
+	float timerSummon; //Delay summons
 
 	Controller leapController;
 	Listener leapListener;
@@ -30,67 +42,120 @@ public class MovementManager : MonoBehaviour {
 		Debug.Log("Circle Gesture Enabled: " + leapController.IsGestureEnabled(Gesture.GestureType.TYPE_CIRCLE));	
 	}
 
-	void Update(){
-		CheckForGestures ();
-	}
-
-	void LateUpdate () {    	
+	void Update () {  
 		if (leapMotionOVRController == null || handController == null)
      	 return;
 
+		//Get all physic hand models
     	HandModel[] hands = handController.GetAllPhysicsHands();
-
-
-		if (hands.Length <= 1)	{
-			GameObject[] elements;
-			elements = GameObject.FindGameObjectsWithTag("Element");
-			if (elements.Length > 0){
-				foreach(GameObject element in elements)	{
-					element.gameObject.GetComponent<SphereInteraction>().shootSign = false;
-				}
-			}
-		}
-
-		if (hands.Length > 1)	{
-			Vector3 direction0 = (hands[0].GetPalmPosition() - handController.transform.position).normalized;
-			Vector3 normal0 = hands[0].GetPalmNormal().normalized;
-			
-			Vector3 direction1 = (hands[1].GetPalmPosition() - handController.transform.position).normalized;
-			Vector3 normal1 = hands[1].GetPalmNormal().normalized;
-			
-			if (Vector3.Dot(direction0, normal0) > direction0.sqrMagnitude * 0.5f && Vector3.Dot(direction1, normal1) > direction1.sqrMagnitude * 0.5f)	{
-				if (GameObject.Find("palm").GetComponent<HandInteraction>()._magnitude > 1)	{
-					GameObject[] elements;
-					elements = GameObject.FindGameObjectsWithTag("Element");
-					if (elements.Length > 0){
-						foreach(GameObject element in elements)	{
-							element.gameObject.GetComponent<SphereInteraction>().shootSign = true;
-						}
+/////////////////////////////////////////////////////////////// SUMMON WITH GRAB ///////////////////////////////////////////////////////////////
+		if (hands.Length > 0) {
+			if (GameManager.instance.player.elementPool.Count < 2) {
+				if (GameManager.instance.player.handLeft != 2 && hands[GameManager.instance.player.handLeft].GetLeapHand().GrabStrength > 0.9){
+					if (!GameManager.instance.player.handLeftSlot && !insideShieldLeft && timerSummon < Time.time) {
+						GameManager.instance.elementSpawner.ElementToSpawn (hands [GameManager.instance.player.handLeft].GetPalmPosition (), GameManager.instance.player.handLeft);
+						GameManager.instance.player.handLeftSlot = true;
+						timerShield = Time.time + 10f * Time.deltaTime;
+						timerSummon = Time.time + 40f * Time.deltaTime;
 					}
 				}
-			}else{
-				GameObject[] elements;
-				elements = GameObject.FindGameObjectsWithTag("Element");
-				if (elements.Length > 0){
-					foreach(GameObject element in elements)	{
-						element.gameObject.GetComponent<SphereInteraction>().shootSign = false;
+				if (GameManager.instance.player.handRight != 2 && hands[GameManager.instance.player.handRight].GetLeapHand().GrabStrength > 0.9){
+					if (!GameManager.instance.player.handRightSlot && !insideShieldRight && timerSummon < Time.time) {
+						GameManager.instance.elementSpawner.ElementToSpawn (hands [GameManager.instance.player.handRight].GetPalmPosition (), GameManager.instance.player.handRight);
+						GameManager.instance.player.handRightSlot = true;
+						timerShield = Time.time + 10f * Time.deltaTime;
+						timerSummon = Time.time + 40f * Time.deltaTime;
+					}
+				}
+/////////////////////////////////////////////////////////////// SUMMON WITH GRAB /////////////////////////////////////////////////////////////// 
+
+/////////////////////////////////////////////////////////////// SUMMON WITH CIRCLE GESTURE ///////////////////////////////////////////////////////////////
+//				// Check the list of gestures for a circle
+//				Frame current = leapController.Frame ();
+//
+//				GestureList gesturesInFrame = current.Gestures ();
+//
+//				foreach (Gesture gesture in gesturesInFrame) {
+//					//Circle gesture om element te summonen
+//					if (gesture.Type == Gesture.GestureType.TYPECIRCLE) { 
+//						if (gesture.DurationSeconds > 0.5f) { //Hoelang je een cirkel beweging minimaal moet maken
+//							//Linkerhand zonder rechterhand in de scene
+//							if (GameManager.instance.player.handLeft != 2 && gesture.Hands [0].Id == hands [GameManager.instance.player.handLeft].GetLeapHand ().Id) { 
+//								Debug.Log ("Left circle found 1");
+//								if (!GameManager.instance.player.handLeftSlot && timerSummon < Time.time) {
+//									GameManager.instance.elementSpawner.ElementToSpawn (hands [GameManager.instance.player.handLeft].GetPalmPosition (), GameManager.instance.player.handLeft);
+//									GameManager.instance.player.handLeftSlot = true;
+//									timerShield = Time.time + 10f * Time.deltaTime;
+//									timerSummon = Time.time + 40f * Time.deltaTime;
+//								}
+//							//Rechterhand zonder linkerhand in de scene
+//							} else if (GameManager.instance.player.handRight != 2 && gesture.Hands [0].Id == hands [GameManager.instance.player.handRight].GetLeapHand ().Id) {
+//								Debug.Log ("Right circle found 1");
+//								if (!GameManager.instance.player.handRightSlot && timerSummon < Time.time) {
+//									GameManager.instance.elementSpawner.ElementToSpawn (hands [GameManager.instance.player.handRight].GetPalmPosition (), GameManager.instance.player.handRight);
+//									GameManager.instance.player.handRightSlot = true;
+//									timerShield = Time.time + 10f * Time.deltaTime;
+//									timerSummon = Time.time + 40f * Time.deltaTime;
+//								}
+//							}
+//							if (hands.Length > 1) {
+//								//Linkerhand met rechterhand in de scene
+//								if (GameManager.instance.player.handLeft != 2 && gesture.Hands [1].Id == hands [GameManager.instance.player.handLeft].GetLeapHand ().Id) { 
+//									Debug.Log ("Left circle found 2");
+//									if (!GameManager.instance.player.handLeftSlot && timerSummon < Time.time) {
+//										GameManager.instance.elementSpawner.ElementToSpawn (hands [GameManager.instance.player.handLeft].GetPalmPosition (), GameManager.instance.player.handLeft);
+//										GameManager.instance.player.handLeftSlot = true;
+//										timerShield = Time.time + 10f * Time.deltaTime;
+//										timerSummon = Time.time + 40f * Time.deltaTime;
+//									}
+//									//Rechterhand met linkerhand in de scene
+//								} else if (GameManager.instance.player.handRight != 2 && gesture.Hands [1].Id == hands [GameManager.instance.player.handRight].GetLeapHand ().Id) {
+//									Debug.Log ("Right circle found 2"); 
+//									if (!GameManager.instance.player.handRightSlot && timerSummon < Time.time) {
+//										GameManager.instance.elementSpawner.ElementToSpawn (hands [GameManager.instance.player.handRight].GetPalmPosition (), GameManager.instance.player.handRight);
+//										GameManager.instance.player.handRightSlot = true;
+//										timerShield = Time.time + 10f * Time.deltaTime;
+//										timerSummon = Time.time + 40f * Time.deltaTime;
+//									}
+//								}
+//							}
+//						}
+//					} 
+//				}
+/////////////////////////////////////////////////////////////// SUMMON WITH CIRCLE GESTURE ///////////////////////////////////////////////////////////////
+			}
+			// Handen vooruit bewegen om spell execute te doen
+			if (hands.Length > 1) {	
+				Vector3 directionLeft = (hands [GameManager.instance.player.handLeft].GetPalmPosition () - handController.transform.position).normalized;
+				Vector3 normalLeft = hands [GameManager.instance.player.handLeft].GetPalmNormal ().normalized;
+				
+				Vector3 directionRight = (hands [GameManager.instance.player.handRight].GetPalmPosition () - handController.transform.position).normalized;
+				Vector3 normalRight = hands [GameManager.instance.player.handRight].GetPalmNormal ().normalized;
+
+				if (Vector3.Dot (directionLeft, normalLeft) > directionLeft.sqrMagnitude * 0.5f && Vector3.Dot (directionRight, normalRight) > directionRight.sqrMagnitude * 0.5f) {
+//					if (GameObject.Find ("palm").GetComponent<HandInteraction> ()._magnitude > 1) {
+					if (hands[0].gameObject.GetComponentInChildren<HandInteraction>()._magnitude > 1 && hands[1].gameObject.GetComponentInChildren<HandInteraction>()._magnitude > 1){
+						//if collision with shield
+						//GameManager.instance.player.ExecuteSpell ();
 					}
 				}
 			}
-		}
-	}
+			//Linkerhand schild wanneer hand naar voren
+			if(GameManager.instance.player.handLeftSlot){
+				Vector3 directionLeft = (hands [GameManager.instance.player.handLeft].GetPalmPosition () - handController.transform.position).normalized;
+				Vector3 normalLeft = hands [GameManager.instance.player.handLeft].GetPalmNormal ().normalized;
 
-	void CheckForGestures()
-	{
-		if(leapController.IsConnected){
-			// Check the list of gestures for a circle
-			Frame current = leapController.Frame();
-			
-			GestureList gesturesInFrame = current.Gestures();
-			foreach(Gesture gesture in gesturesInFrame)	{
-				Debug.Log("Captured a gesture: " + gesture.Type.ToString());
-				if (gesture.Type == Gesture.GestureType.TYPECIRCLE)	{
-					Debug.Log("Circle motion found");
+				if (Vector3.Dot (directionLeft, normalLeft) > directionLeft.sqrMagnitude * 0.70f && Vector3.Dot (directionLeft, normalLeft) < directionLeft.sqrMagnitude * 1.1f && hands [GameManager.instance.player.handLeft].GetLeapHand().GrabStrength < 0.8f && timerShield < Time.time) {
+					GameManager.instance.player.ExecuteShield();
+				}
+			}
+			//Rechterhand schild wanneer hand naar voren 
+			if(GameManager.instance.player.handRightSlot){
+				Vector3 directionRight = (hands [GameManager.instance.player.handRight].GetPalmPosition () - handController.transform.position).normalized;
+				Vector3 normalRight = hands [GameManager.instance.player.handRight].GetPalmNormal ().normalized;
+
+				if (Vector3.Dot (directionRight, normalRight) > directionRight.sqrMagnitude * 0.70f && Vector3.Dot (directionRight, normalRight) < directionRight.sqrMagnitude * 1.1f && hands [GameManager.instance.player.handRight].GetLeapHand().GrabStrength < 0.8f && timerShield < Time.time) {
+					GameManager.instance.player.ExecuteShield();
 				}
 			}
 		}

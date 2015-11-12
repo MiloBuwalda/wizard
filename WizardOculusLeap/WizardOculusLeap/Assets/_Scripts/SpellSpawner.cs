@@ -20,13 +20,14 @@ public class SpellSpawner : MonoBehaviour {
 		}
 	}
 
+	//Create a spell with elements from player when player demands it
 	public SpellManager CreateSpell(List<ElementManager> list){
 		if (list.Count > 0) {
 			SpellManager spell = new SpellManager();
 			ElementManager basis = list[0];
 			GameObject g;
 			if (spellBook.TryGetValue (basis.elementType.ToString() + "Spell", out g))	{
-				spell.instance = (GameObject)Instantiate(g, transform.position, transform.rotation);
+				spell.instance = (GameObject)Instantiate(g, basis.instance.transform.position, transform.rotation);
 				spell.Setup(list);
 			}
 
