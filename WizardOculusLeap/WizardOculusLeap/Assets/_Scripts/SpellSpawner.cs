@@ -20,21 +20,17 @@ public class SpellSpawner : MonoBehaviour {
 		}
 	}
 
-	public SpellManager CreateSpell(List<ElementManager> list){
-		if (list.Count > 0) {
-			SpellManager spell = new SpellManager();
-			ElementManager basis = list[0];
-			GameObject g;
-			if (spellBook.TryGetValue (basis.elementType.ToString() + "Spell", out g))	{
-				spell.instance = (GameObject)Instantiate(g, basis.instance.transform.position, transform.rotation);
-				spell.Setup(list);
-			}
-
-			return spell;
+	//Create a spell with elements from player when player demands it
+	public SpellManager CreateSpell(elementType t, Vector3 position){
+		SpellManager spell = new SpellManager();
+		GameObject g;
+		if (spellBook.TryGetValue (t.ToString () + "Spell", out g)) {
+			spell.instance = (GameObject)Instantiate (g, position, transform.rotation);
+			spell.Setup ();
 		} else {
-			//buzz sound
-			return null;
+			spell = null;
 		}
 
+		return spell;
 	}
 }

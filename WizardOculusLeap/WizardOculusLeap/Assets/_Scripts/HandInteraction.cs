@@ -1,65 +1,44 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class HandInteraction : MonoBehaviour 
-{	
+public class HandInteraction : MonoBehaviour {	
 	public float _magnitude;
-	GameObject elementSlot = null;
-	Transform transformElementSlot = null;
-	int handNumber = 0;
-	bool occupied;
-	bool grabbed;
-	Vector3 previousLocation;
-	string spawnName;
+	public int handNumber;
 
-	void Awake(){
-		transformElementSlot = transform.FindChild ("ElementSlot");
-	}
+	Vector3 previousLocation;
 
 	void Update(){
 		_magnitude = ((transform.position - previousLocation).magnitude) / Time.deltaTime;
 		previousLocation = transform.position;
 	}
 
-	void OnTriggerEnter(Collider other){
-		if (other.gameObject.tag == "Element" && !occupied) {
-			elementSlot = other.gameObject;
-			occupied = true; 
+	void OnTriggerEnter (Collider other){
+		if (other.tag == "Shield") {
+			HandModel[] hands = GameManager.instance.movementManager.handController.GetAllPhysicsHands();
+
+			GameManager.instance.player.triggerShieldElementType = other.gameObject.GetComponent<ShieldElement>().elementType;
+			GameManager.instance.player.triggerShieldPosition = other.gameObject.transform.position;
+			GameManager.instance.movementManager.insideShield = true;
+
+			if(hands[handNumber].GetLeapHand().IsLeft){
+				GameManager.instance.movementManager.insideShieldLeft = true;
+			}
+			if(hands[handNumber].GetLeapHand().IsRight){
+				GameManager.instance.movementManager.insideShieldRight = true;
+			}
 		}
 	}
 
-	void OnTriggerStay(Collider other){
-		HandModel[] hands = GameManager.instance.movementManager.handController.GetAllPhysicsHands();
+	void OnTriggerExit (Collider other){ 
+		if (other.tag == "Shield") {
+			HandModel[] hands = GameManager.instance.movementManager.handController.GetAllPhysicsHands();
 
-		if (hands.Length > 0) {
-			if (other.gameObject == elementSlot) {
-				if (hands [0].gameObject.transform == gameObject.transform.parent) {
-					handNumber = 0;
-				} else if (hands [1].gameObject.transform == gameObject.transform.parent) {
-					handNumber = 1;
-				}
+			if(hands[handNumber].GetLeapHand().IsLeft){
+				GameManager.instance.movementManager.insideShieldLeft = false;
 			}
-			if (other.gameObject == elementSlot && hands [handNumber].GetLeapHand ().GrabStrength > 0.8 && !grabbed) {
-				grabbed = true;
-			} else if (other.gameObject == elementSlot && hands [handNumber].GetLeapHand ().GrabStrength < 0.8 && grabbed) {
-				grabbed = false;
-			} else {
-				grabbed = false;
+			if(hands[handNumber].GetLeapHand().IsRight){
+				GameManager.instance.movementManager.insideShieldRight = false;
 			}
-		} else {
-			if(grabbed){
-				grabbed = false;
-			}
-		}
-
-		if(grabbed)	{
-			other.transform.position = transformElementSlot.transform.position;
-		}
-	}
-
-	void OnTriggerExit(Collider other){
-		if (other.gameObject == elementSlot && occupied) {
-			occupied = false;
 		}
 	}
 }
