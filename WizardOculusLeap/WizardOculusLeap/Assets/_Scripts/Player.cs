@@ -9,7 +9,9 @@ public class Player : MonoBehaviour {
 	public List <ShieldManager> shieldPool;
 	public ElementManager leftElement;
 	public ElementManager rightElement;
-	public elementType triggerShieldElementType;
+	public elementType triggerShieldElementTypeSpell;
+	public elementType triggerShieldElementTypeLeft;
+	public elementType triggerShieldElementTypeRight;
 	public Vector3 triggerShieldPosition;
 	public int handLeft;
 	public int handRight;
@@ -75,12 +77,18 @@ public class Player : MonoBehaviour {
 	}
 
 	//Delete alle elements and references in element pool
-	void EmptyElementPool()
-	{
+	void EmptyElementPool(){
 		foreach (ElementManager element in elementPool)	{
 			Destroy(element.instance);
 		}
 		elementPool.Clear ();
+	}
+
+	public void EmptyShieldPool(){
+		foreach (ShieldManager shield in shieldPool)	{
+			Destroy(shield.instance);
+		}
+		shieldPool.Clear ();
 	}
 
 	//Combine elements from pool
@@ -106,13 +114,10 @@ public class Player : MonoBehaviour {
 
 	//Create a shield with elements from pool
 	public void ExecuteSpell(){
-		SpellManager spell = SpellSpawner.instance.CreateSpell (triggerShieldElementType, triggerShieldPosition);
+		SpellManager spell = SpellSpawner.instance.CreateSpell (triggerShieldElementTypeSpell, triggerShieldPosition);
 		if (spell != null) {
 			spellPool.Add (spell);
-			foreach (ShieldManager shield in shieldPool)	{
-				Destroy(shield.instance);
-			}
-			shieldPool.Clear ();
+			EmptyShieldPool();
 			GameManager.instance.movementManager.insideShield = false;
 			handLeftSlot = false; 
 			handRightSlot = false;

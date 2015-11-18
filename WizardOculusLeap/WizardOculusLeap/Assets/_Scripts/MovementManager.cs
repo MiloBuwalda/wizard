@@ -52,17 +52,29 @@ public class MovementManager : MonoBehaviour {
 /////////////////////////////////////////////////////////////// SUMMON WITH GRAB ///////////////////////////////////////////////////////////////
 		if (hands.Length > 0) {
 			if (GameManager.instance.player.elementPool.Count < 2) {
-				if (GameManager.instance.player.handLeft != 2 && hands[GameManager.instance.player.handLeft].GetLeapHand().GrabStrength > 0.9){
+				if (GameManager.instance.player.handLeft != 2 && hands[GameManager.instance.player.handLeft].GetLeapHand().GrabStrength > 0.9f){
 					if (!GameManager.instance.player.handLeftSlot && !insideShieldLeft && timerSummon < Time.time) {
 						GameManager.instance.elementSpawner.ElementToSpawn (hands [GameManager.instance.player.handLeft].GetPalmPosition (), GameManager.instance.player.handLeft);
 						GameManager.instance.player.handLeftSlot = true;
 						timerShield = Time.time + 10f * Time.deltaTime;
 						timerSummon = Time.time + 40f * Time.deltaTime;
+					} else if (!GameManager.instance.player.handLeftSlot && insideShieldLeft && timerSummon < Time.time){
+						GameManager.instance.player.AddElementToPool(GameManager.instance.player.triggerShieldElementTypeLeft, GameManager.instance.player.handLeft);
+						GameManager.instance.player.EmptyShieldPool();
+						GameManager.instance.player.handLeftSlot = true;
+						timerShield = Time.time + 10f * Time.deltaTime;
+						timerSummon = Time.time + 40f * Time.deltaTime;
 					}
 				}
-				if (GameManager.instance.player.handRight != 2 && hands[GameManager.instance.player.handRight].GetLeapHand().GrabStrength > 0.9){
+				if (GameManager.instance.player.handRight != 2 && hands[GameManager.instance.player.handRight].GetLeapHand().GrabStrength > 0.9f){
 					if (!GameManager.instance.player.handRightSlot && !insideShieldRight && timerSummon < Time.time) {
 						GameManager.instance.elementSpawner.ElementToSpawn (hands [GameManager.instance.player.handRight].GetPalmPosition (), GameManager.instance.player.handRight);
+						GameManager.instance.player.handRightSlot = true;
+						timerShield = Time.time + 10f * Time.deltaTime;
+						timerSummon = Time.time + 40f * Time.deltaTime;
+					} else if (!GameManager.instance.player.handRightSlot && insideShieldRight && timerSummon < Time.time) {
+						GameManager.instance.player.AddElementToPool(GameManager.instance.player.triggerShieldElementTypeRight, GameManager.instance.player.handRight);
+						GameManager.instance.player.EmptyShieldPool();
 						GameManager.instance.player.handRightSlot = true;
 						timerShield = Time.time + 10f * Time.deltaTime;
 						timerSummon = Time.time + 40f * Time.deltaTime;
@@ -149,7 +161,12 @@ public class MovementManager : MonoBehaviour {
 				Vector3 normalLeft = hands [GameManager.instance.player.handLeft].GetPalmNormal ().normalized;
 
 				if (Vector3.Dot (directionLeft, normalLeft) > directionLeft.sqrMagnitude * 0.70f && Vector3.Dot (directionLeft, normalLeft) < directionLeft.sqrMagnitude * 1.1f && hands [GameManager.instance.player.handLeft].GetLeapHand().GrabStrength < 0.8f && timerShield < Time.time) {
-					GameManager.instance.player.ExecuteShield(GameManager.instance.player.leftElement);
+					if(GameManager.instance.player.shieldPool.Count > 0){
+						GameManager.instance.player.EmptyShieldPool();
+						GameManager.instance.player.ExecuteShield(GameManager.instance.player.leftElement);
+					} else {
+						GameManager.instance.player.ExecuteShield(GameManager.instance.player.leftElement);
+					}
 				}
 			}
 			//Rechterhand schild wanneer hand naar voren 
@@ -158,7 +175,12 @@ public class MovementManager : MonoBehaviour {
 				Vector3 normalRight = hands [GameManager.instance.player.handRight].GetPalmNormal ().normalized;
 
 				if (Vector3.Dot (directionRight, normalRight) > directionRight.sqrMagnitude * 0.70f && Vector3.Dot (directionRight, normalRight) < directionRight.sqrMagnitude * 1.1f && hands [GameManager.instance.player.handRight].GetLeapHand().GrabStrength < 0.8f && timerShield < Time.time) {
-					GameManager.instance.player.ExecuteShield(GameManager.instance.player.rightElement);
+					if(GameManager.instance.player.shieldPool.Count > 0){
+						GameManager.instance.player.EmptyShieldPool();
+						GameManager.instance.player.ExecuteShield(GameManager.instance.player.rightElement);
+					} else {
+						GameManager.instance.player.ExecuteShield(GameManager.instance.player.rightElement);
+					}
 				}
 			}
 		}

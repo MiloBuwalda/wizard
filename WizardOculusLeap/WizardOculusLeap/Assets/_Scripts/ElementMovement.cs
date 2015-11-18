@@ -18,14 +18,25 @@ public class ElementMovement : MonoBehaviour {
 	void Update(){
 		_magnitude = ((transform.position - previousLocation).magnitude) / Time.deltaTime;
 		previousLocation = transform.position;
+
+		//Wanneer er een element aan de hand zit, maak er een schild van als het element verdwijnt
 		if (transformElementSlot != null) {
 			transform.position = transformElementSlot.transform.position;
 		} else {
 			HandModel[] hands = GameManager.instance.movementManager.handController.GetAllPhysicsHands();
-			if (hands[handNumber].GetLeapHand().IsLeft){
-				GameManager.instance.player.ExecuteShield(GameManager.instance.player.leftElement);
-			} else if (hands[handNumber].GetLeapHand().IsRight){
-				GameManager.instance.player.ExecuteShield(GameManager.instance.player.rightElement);
+			if(GameManager.instance.player.shieldPool.Count > 0){
+				GameManager.instance.player.EmptyShieldPool();
+				if (hands[handNumber].GetLeapHand().IsLeft){
+					GameManager.instance.player.ExecuteShield(GameManager.instance.player.leftElement);
+				} else if (hands[handNumber].GetLeapHand().IsRight){
+					GameManager.instance.player.ExecuteShield(GameManager.instance.player.rightElement);
+				}
+			} else {
+				if (hands[handNumber].GetLeapHand().IsLeft){
+					GameManager.instance.player.ExecuteShield(GameManager.instance.player.leftElement);
+				} else if (hands[handNumber].GetLeapHand().IsRight){
+					GameManager.instance.player.ExecuteShield(GameManager.instance.player.rightElement);
+				}
 			}
 		}
 	}
