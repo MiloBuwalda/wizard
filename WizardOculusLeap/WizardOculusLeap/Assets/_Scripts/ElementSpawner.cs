@@ -77,17 +77,61 @@ public class ElementSpawner : MonoBehaviour {
 			handNumber = list[1].instance.GetComponent<ElementMovement>().handNumber;
 		}
 
-		ElementManager basis = list[basisNumber];
-		string elementTypeCombined = basis.elementType.ToString() + list[otherNumber].elementType.ToString();
+		elementType basis = list[basisNumber].elementType;
+		elementType other = list[otherNumber].elementType;
+
+		string elementTypeCombined = basis.ToString() + other.ToString();
 		
-		if (elementBook.TryGetValue (basis.elementType.ToString(), out g)) {
+		if (elementBook.TryGetValue (elementTypeCombined, out g)) {
 			element = new ElementManager ();
 			element.instance = (GameObject)Instantiate (g, hands[handNumber].GetPalmPosition(), transform.rotation);
-			element.elementType = basis.elementType;
+			switch (basis){
+			case elementType.Fire:
+				switch (other){
+				case elementType.Air:
+					basis = elementType.FireAir;
+					break;
+				case elementType.Earth:
+					basis = elementType.FireEarth;
+					break;
+				}
+				break;
+			case elementType.Air:
+				switch (other){
+				case elementType.Water:
+					basis = elementType.AirWater;
+					break;
+				case elementType.Fire:
+					basis = elementType.FireAir;
+					break;
+				}
+				break;
+			case elementType.Water:
+				switch (other){
+				case elementType.Air:
+					basis = elementType.WaterAir;
+					break;
+				case elementType.Earth:
+					basis = elementType.WaterEarth;
+					break;
+				}
+				break;
+			case elementType.Earth:
+				switch (other){
+				case elementType.Fire:
+					basis = elementType.EarthFire;
+					break;
+				case elementType.Water:
+					basis = elementType.EarthWater;
+					break;
+				}
+				break;
+			}
+			element.elementType = basis;
 			element.Setup ();
 			element.elementMovement.handNumber = handNumber;
 		} else {
-			print ("Could not find element: " + basis.elementType.ToString());
+			print ("Could not find element");
 		}
 		return element;
 	}

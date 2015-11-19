@@ -46,15 +46,12 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Custom\Fireball\Scripts\LightningboltUltimate.cs" />
-     <Compile Include="Assets\Custom\Fireball\Scripts\MaterialScroller.cs" />
-     <Compile Include="Assets\Custom\Fireball\Scripts\SphereRotator.cs" />
-     <Compile Include="Assets\Custom\Fireball\Scripts\SphereScaler.cs" />
+     <Compile Include="Assets\Custom\Scripts\PlasmaBall Scripts\LightningboltUltimate.cs" />
+     <Compile Include="Assets\Custom\Scripts\PlasmaBall Scripts\MaterialScroller.cs" />
      <Compile Include="Assets\Custom\Scripts\PlasmaBall Scripts\SphereCollapse.cs" />
      <Compile Include="Assets\Custom\Scripts\PlasmaBall Scripts\SphereCollapser.cs" />
-     <Compile Include="Assets\Custom\Shadertest\ExplosionLooper.cs" />
-     <Compile Include="Assets\Kenrick\DarkBehavior.cs" />
-     <Compile Include="Assets\Kenrick\calltest.cs" />
+     <Compile Include="Assets\Custom\Scripts\PlasmaBall Scripts\SphereRotator.cs" />
+     <Compile Include="Assets\Custom\Scripts\PlasmaBall Scripts\SphereScaler.cs" />
      <Compile Include="Assets\LeapMotion+OVR\DemoResources\Scripts\BlocksPlaneGenerator.cs" />
      <Compile Include="Assets\LeapMotion+OVR\DemoResources\Scripts\RandomBlocksGenerator.cs" />
      <Compile Include="Assets\LeapMotion+OVR\Scripts\LeapCameraAlignment.cs" />
@@ -242,16 +239,13 @@
      <None Include="Assets\Standard Assets\ParticleSystems\ParticleSystemsGuidelines.txt" />
      <None Include="Assets\LeapMotion\Resources\PassthroughForeground.shader" />
      <None Include="Assets\Standard Assets\Environment\Water (Basic)\Shaders\FXWaterBasic.shader" />
-     <None Include="Assets\Custom\Shadertest\ExplosionShader.shader" />
      <None Include="Assets\Standard Assets\CrossPlatformInput\CrossPlatformInputGuidelines.txt" />
      <None Include="Assets\Standard Assets\ParticleSystems\Shaders\PriorityParticleAddSoft.shader" />
      <None Include="Assets\LeapMotion\Materials\Sources\Shaders\Toony-LightedOutline.shader" />
      <None Include="Assets\LeapMotion\Materials\Sources\Shaders\Toony-Lighted.shader" />
      <None Include="Assets\LeapMotion\Resources\PassthroughBackground.shader" />
-     <None Include="Assets\Kenrick\thingshader.shader" />
      <None Include="Assets\LeapMotion\Widgets\Shaders\SelfIllumAlpha.shader" />
      <None Include="Assets\Standard Assets\Environment\Water\Water\Shaders\FXWaterPro.shader" />
-     <None Include="Assets\Custom\Fireball\Shaders\DoubleSided.shader" />
      <None Include="Assets\Photon Unity Networking\readme.txt" />
      <None Include="Assets\LeapMotion\Version.txt" />
      <None Include="Assets\OVR\Shaders\OVRGUIShader.shader" />

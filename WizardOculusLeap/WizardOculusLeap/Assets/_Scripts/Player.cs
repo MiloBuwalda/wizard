@@ -64,15 +64,15 @@ public class Player : MonoBehaviour {
 	//Add summoned element to element pool
 	public void AddElementToPool(elementType t, int handNumber)
 	{
-		ElementManager el = ElementSpawner.instance.GetElementOfType (t, handNumber);
-		elementPool.Add (el);
+		ElementManager element = ElementSpawner.instance.GetElementOfType (t, handNumber);
+		elementPool.Add (element);
 
 		HandModel[] hands = GameManager.instance.movementManager.handController.GetAllPhysicsHands();
 
 		if (hands[handNumber].GetLeapHand().IsLeft) {
-			leftElement = el;
+			leftElement = element;
 		} else if (hands[handNumber].GetLeapHand().IsRight) {
-			rightElement = el;
+			rightElement = element;
 		}
 	}
 
@@ -89,6 +89,8 @@ public class Player : MonoBehaviour {
 			Destroy(shield.instance);
 		}
 		shieldPool.Clear ();
+		GameManager.instance.movementManager.insideShieldLeft = false;
+		GameManager.instance.movementManager.insideShieldRight = false;
 	}
 
 	//Combine elements from pool
@@ -105,8 +107,10 @@ public class Player : MonoBehaviour {
 
 				if (hands[handLeft].gameObject.GetComponentInChildren<HandInteraction>()._magnitude < hands[handRight].gameObject.GetComponentInChildren<HandInteraction>()._magnitude){
 					handRightSlot = false;
+					leftElement = element;
 				}else{
 					handLeftSlot = false;
+					rightElement = element;
 				}
 			}
 		}
