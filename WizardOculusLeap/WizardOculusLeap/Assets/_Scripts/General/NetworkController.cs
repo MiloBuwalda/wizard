@@ -5,7 +5,7 @@ public class NetworkController : Photon.MonoBehaviour
 {
 	string _versionNumber = "0.1"; 
 	string _room = "room_01";
-	string _levelName = "Networking";
+	string _levelName = "BasicNetworkRPC";
 
 	public Transform spawnPoint;
 	public GameObject playerReference;

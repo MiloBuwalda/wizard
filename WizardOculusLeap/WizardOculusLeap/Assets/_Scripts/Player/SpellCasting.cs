@@ -4,7 +4,7 @@ using System.Collections;
 public class SpellCasting : Photon.MonoBehaviour {
 
 
-	public Vector3 thisPlayerTransform;
+//	public Vector3 thisPlayerTransform;
 
 	/// <summary>
 	/// What is the minimal time that should pass between to lasers fired
@@ -17,7 +17,6 @@ public class SpellCasting : Photon.MonoBehaviour {
 
 
 	public Transform m_player;
-	public Transform m_centerEyePosition;
 	Quaternion m_CastingSpawnRotation;
 
 	public bool IsShooting
@@ -29,7 +28,7 @@ public class SpellCasting : Photon.MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		thisPlayerTransform = transform.position;
+
 	}
 
 	

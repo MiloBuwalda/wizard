@@ -42,7 +42,7 @@ public class NetworkedPlayer : Photon.MonoBehaviour
 	void Update(){
 		// Update postion and orientation from network
 		if (!photonView.isMine) {
-			UpdateNetworkedPosition();
+			UpdateNetworkedPosition1();
 		}
 	}
 
