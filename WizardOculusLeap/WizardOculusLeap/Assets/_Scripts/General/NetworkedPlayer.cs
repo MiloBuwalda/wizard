@@ -42,7 +42,7 @@ public class NetworkedPlayer : Photon.MonoBehaviour
 	void Update(){
 		// Update postion and orientation from network
 		if (!photonView.isMine) {
-			UpdateNetworkedPosition1();
+			UpdateNetworkedPosition();
 		}
 	}
 
@@ -61,12 +61,12 @@ public class NetworkedPlayer : Photon.MonoBehaviour
 		float totalTimePassed = pingInSeconds + timeSinceLastUpdate;
 		
 		Vector3 exterpolatedTargetPosition = m_NetworkPosition
-			+ transform.forward * m_Speed * totalTimePassed;
+			+ transform.forward * totalTimePassed; // was transform.forward * m_speed * totalTimePassed
 		
 		
 		Vector3 newPosition = Vector3.MoveTowards( transform.position
 		                                          , exterpolatedTargetPosition
-		                                          , m_Speed * Time.deltaTime );
+		                                          , Time.deltaTime ); // was m_speed * Time.deltaTime
 		
 		if( Vector3.Distance( transform.position, exterpolatedTargetPosition ) > 2f )
 		{

@@ -3,16 +3,21 @@ using System.Collections;
 
 public class SpellCasting : Photon.MonoBehaviour {
 
+
+	public Vector3 thisPlayerTransform;
+
 	/// <summary>
 	/// What is the minimal time that should pass between to lasers fired
 	/// </summary>
 	public float ShootDelay;
+	
 
 	float m_LastShootTime;
 	int m_LastProjectileId;
 
 
 	public Transform m_player;
+	public Transform m_centerEyePosition;
 	Quaternion m_CastingSpawnRotation;
 
 	public bool IsShooting
@@ -24,7 +29,9 @@ public class SpellCasting : Photon.MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		thisPlayerTransform = transform.position;
 	}
+
 	
 	// Update is called once per frame
 	void Update () {
@@ -34,7 +41,7 @@ public class SpellCasting : Photon.MonoBehaviour {
 
 	void UpdateIsShooting()
 	{
-		IsShooting = Input.GetButton("FireKeyboard") || Input.GetAxisRaw("FireTrigger") >0.1f;
+		IsShooting = Input.GetButton ("FireKeyboard") || Input.GetAxisRaw ("FireTrigger") > 0.1f; // || Input.GetMouseButtonDown(0) > 0.1f;
 	}
 
 	void UpdateShooting(){
@@ -61,7 +68,8 @@ public class SpellCasting : Photon.MonoBehaviour {
 
 	Vector3 GetCastingSpawnPosition ()
 	{
-		return transform.position + this.m_player.forward * (100 * PhotonNetwork.GetPing () * 0.001f);
+		Vector3 adjustedHeight = new Vector3 (0f, 1.4f, 0f);
+		return transform.position - adjustedHeight;// - this.m_player.transform.position;// + this.m_player.forward * (100 * PhotonNetwork.GetPing () * 0.001f);
 	}
 
 	Quaternion GetCastingSpawnOrientation ()
@@ -73,12 +81,18 @@ public class SpellCasting : Photon.MonoBehaviour {
 	{
 		m_LastShootTime = Time.realtimeSinceStartup;
 
-		GameObject newCastingObject = (GameObject)Instantiate(Resources.Load<GameObject>("Elements/Fire"), new Vector3(0,-100,0), rotation);
+		GameObject newCastingObject = (GameObject)Instantiate(Resources.Load<GameObject>("RPCElement"), new Vector3(0,-100,0), rotation);
 		newCastingObject.name = "ZZZ_" + newCastingObject.name;
 
 		// Now projectile management has to take place. 
 		// Keep track of the projectile:
 		// creationTime, StartPosition, ProjectileID and Owner!
+		RPCElement rpcElement = newCastingObject.GetComponent<RPCElement> ();
+
+		rpcElement.SetCreationTime (createTime);
+		rpcElement.SetStartPosition (position);
+		rpcElement.SetProjectileId (projectileId);
+		rpcElement.SetOwner (0);
 	}
 
 	[PunRPC]
