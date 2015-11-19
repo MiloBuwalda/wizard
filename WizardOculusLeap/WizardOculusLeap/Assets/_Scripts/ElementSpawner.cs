@@ -6,6 +6,7 @@ public class ElementSpawner : MonoBehaviour {
 	public static ElementSpawner instance;
 	public Dictionary<string, GameObject> elementBook;
 	int basisNumber;
+	int otherNumber;
 
 	void Awake(){
 		//singleton
@@ -68,13 +69,16 @@ public class ElementSpawner : MonoBehaviour {
 
 		if(speed0 < speed1){
 			basisNumber = 0; 
+			otherNumber = 1;
 			handNumber = list[0].instance.GetComponent<ElementMovement>().handNumber;
 		}else{
 			basisNumber = 1;
+			otherNumber = 0;
 			handNumber = list[1].instance.GetComponent<ElementMovement>().handNumber;
 		}
 
 		ElementManager basis = list[basisNumber];
+		string elementTypeCombined = basis.elementType.ToString() + list[otherNumber].elementType.ToString();
 		
 		if (elementBook.TryGetValue (basis.elementType.ToString(), out g)) {
 			element = new ElementManager ();

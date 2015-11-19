@@ -16,15 +16,21 @@ public class HandInteraction : MonoBehaviour {
 		if (other.tag == "Shield") {
 			HandModel[] hands = GameManager.instance.movementManager.handController.GetAllPhysicsHands();
 
-			if(hands[handNumber].GetLeapHand().IsLeft){
+			if (hands[handNumber].GetLeapHand().IsLeft){
+				GameManager.instance.player.triggerShieldElementTypeLeft = other.gameObject.GetComponent<ShieldElement>().elementType;
 				GameManager.instance.movementManager.insideShieldLeft = true;
-			}
-			if(hands[handNumber].GetLeapHand().IsRight){
+			} else if (hands[handNumber].GetLeapHand().IsRight){
+				GameManager.instance.player.triggerShieldElementTypeRight = other.gameObject.GetComponent<ShieldElement>().elementType;
 				GameManager.instance.movementManager.insideShieldRight = true;
 			}
+
+			GameManager.instance.player.triggerShieldPosition = other.gameObject.transform.position;
+				GameManager.instance.player.triggerShieldElementTypeSpell = other.gameObject.GetComponent<ShieldElement>().elementType;
+			GameManager.instance.movementManager.insideShield = true;
 		}
 	}
-	void OnTriggerExit (Collider other){
+
+	void OnTriggerExit (Collider other){ 
 		if (other.tag == "Shield") {
 			HandModel[] hands = GameManager.instance.movementManager.handController.GetAllPhysicsHands();
 
