@@ -10,6 +10,7 @@ public class MovementManager : MonoBehaviour {
 	public bool insideShield;
 	public bool insideShieldLeft;
 	public bool insideShieldRight;
+	public bool summoning;
 
 	Vector3 directionLeft;
 	Vector3 normalLeft; 
@@ -52,36 +53,36 @@ public class MovementManager : MonoBehaviour {
 /////////////////////////////////////////////////////////////// SUMMON WITH GRAB ///////////////////////////////////////////////////////////////
 		if (hands.Length > 0) {
 			if (GameManager.instance.player.elementPool.Count < 2) {
-				if (GameManager.instance.player.handLeft != 2 && hands[GameManager.instance.player.handLeft].GetLeapHand().GrabStrength > 0.9f){
-					if (!GameManager.instance.player.handLeftSlot && !insideShieldLeft && timerSummon < Time.time) {
+				if (GameManager.instance.player.handLeft != 2 && hands[GameManager.instance.player.handLeft].GetLeapHand().GrabStrength > 0.8f){
+					if (!GameManager.instance.player.handLeftSlot && !summoning && !insideShieldLeft && timerSummon < Time.time) {
 						GameManager.instance.elementSpawner.ElementToSpawn (hands [GameManager.instance.player.handLeft].GetPalmPosition (), GameManager.instance.player.handLeft);
 						GameManager.instance.player.handLeftSlot = true;
 						timerShield = Time.time + 10f * Time.deltaTime;
 						timerSummon = Time.time + 40f * Time.deltaTime;
-						Debug.Log("LeftNoShield");
-					} else if (!GameManager.instance.player.handLeftSlot && insideShieldLeft && timerSummon < Time.time){
+						summoning = true;
+					} else if (!GameManager.instance.player.handLeftSlot && !summoning && insideShieldLeft && timerSummon < Time.time){
 						GameManager.instance.player.AddElementToPool(GameManager.instance.player.triggerShieldElementTypeLeft, GameManager.instance.player.handLeft);
 						GameManager.instance.player.EmptyShieldPool();
 						GameManager.instance.player.handLeftSlot = true;
 						timerShield = Time.time + 10f * Time.deltaTime;
 						timerSummon = Time.time + 40f * Time.deltaTime;
-						Debug.Log("LeftShield");
+						summoning = true;
 					}
 				}
-				if (GameManager.instance.player.handRight != 2 && hands[GameManager.instance.player.handRight].GetLeapHand().GrabStrength > 0.9f){
-					if (!GameManager.instance.player.handRightSlot && !insideShieldRight && timerSummon < Time.time) {
+				if (GameManager.instance.player.handRight != 2 && hands[GameManager.instance.player.handRight].GetLeapHand().GrabStrength > 0.8f){
+					if (!GameManager.instance.player.handRightSlot && !summoning && !insideShieldRight && timerSummon < Time.time) {
 						GameManager.instance.elementSpawner.ElementToSpawn (hands [GameManager.instance.player.handRight].GetPalmPosition (), GameManager.instance.player.handRight);
 						GameManager.instance.player.handRightSlot = true;
 						timerShield = Time.time + 10f * Time.deltaTime;
 						timerSummon = Time.time + 40f * Time.deltaTime;
-						Debug.Log("RightNoShield");
-					} else if (!GameManager.instance.player.handRightSlot && insideShieldRight && timerSummon < Time.time) {
+						summoning = true;
+					} else if (!GameManager.instance.player.handRightSlot && !summoning && insideShieldRight && timerSummon < Time.time) {
 						GameManager.instance.player.AddElementToPool(GameManager.instance.player.triggerShieldElementTypeRight, GameManager.instance.player.handRight);
 						GameManager.instance.player.EmptyShieldPool();
 						GameManager.instance.player.handRightSlot = true;
 						timerShield = Time.time + 10f * Time.deltaTime;
 						timerSummon = Time.time + 40f * Time.deltaTime;
-						Debug.Log("RightShield");
+						summoning = true;
 					}
 				}
 /////////////////////////////////////////////////////////////// SUMMON WITH GRAB /////////////////////////////////////////////////////////////// 

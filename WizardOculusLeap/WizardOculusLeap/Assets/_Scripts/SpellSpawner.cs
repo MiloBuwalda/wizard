@@ -5,7 +5,7 @@ using System.Collections.Generic;
 public class SpellSpawner : MonoBehaviour {
 	public static SpellSpawner instance;
 	public Dictionary<string, GameObject> spellBook;
-
+	public Transform inFrontOfPlayer;
 
 	void Awake () {
 		//singleton
@@ -25,12 +25,13 @@ public class SpellSpawner : MonoBehaviour {
 		SpellManager spell = new SpellManager();
 		GameObject g;
 		if (spellBook.TryGetValue (t.ToString () + "Spell", out g)) {
-			spell.instance = (GameObject)Instantiate (g, position, transform.rotation);
+			//spell.instance = (GameObject)Instantiate (g, position, transform.rotation);
+			spell.instance = (GameObject)Instantiate (g, inFrontOfPlayer.position, transform.rotation);
 			spell.Setup ();
 		} else {
 			spell = null;
 		}
 
-		return spell;
+		return spell; 
 	}
 }

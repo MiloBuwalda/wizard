@@ -5,9 +5,14 @@ using System.Collections.Generic;
 public class ElementSpawner : MonoBehaviour {
 	public static ElementSpawner instance;
 	public Dictionary<string, GameObject> elementBook;
+	public GameObject elementVisual;
+	public Transform fireSpawn;
+	public Transform airSpawn;
+	public Transform waterSpawn;
+	public Transform earthSpawn;
 	int basisNumber;
 	int otherNumber;
-
+	
 	void Awake(){
 		//singleton
 		instance = this;
@@ -46,17 +51,50 @@ public class ElementSpawner : MonoBehaviour {
 		float locationSignX = Mathf.Sign (location.x);
 
 		if (locationSignX == -1 && location.y > 58.7) { //links boven
-			GameManager.instance.player.AddElementToPool (elementType.Fire, handNumber);
+			//GameManager.instance.player.AddElementToPool (elementType.Fire, handNumber);
+			ElementSpawnStart(elementType.Fire, handNumber);
 		}
 		else if (locationSignX == 1 && location.y > 58.7) { //rechts boven
-			GameManager.instance.player.AddElementToPool (elementType.Air, handNumber);
+			//GameManager.instance.player.AddElementToPool (elementType.Air, handNumber);
+			ElementSpawnStart(elementType.Air, handNumber);
 		}
 		else if (locationSignX == 1 && location.y < 58.7) { //rechts onder
-			GameManager.instance.player.AddElementToPool (elementType.Water, handNumber);
+			//GameManager.instance.player.AddElementToPool (elementType.Water, handNumber);
+			ElementSpawnStart(elementType.Water, handNumber);
 		}
 		else if (locationSignX == -1 && location.y < 58.7) { //links onder
-			GameManager.instance.player.AddElementToPool (elementType.Earth, handNumber);
+			//GameManager.instance.player.AddElementToPool (elementType.Earth, handNumber);
+			ElementSpawnStart(elementType.Earth, handNumber);
 		}
+	}
+
+	//Move an element (visual only) from spawnpoint to hand
+	void ElementSpawnStart (elementType element, int handNumber){
+		//GameManager.instance.player.AddElementToPool (element, handNumber);
+		switch (element) { 
+		case elementType.Fire:
+			GameObject clone1 = (GameObject)Instantiate (elementVisual, fireSpawn.position, Quaternion.identity);
+			clone1.GetComponent<ElementSpawnVisual>().element = element; 
+			clone1.GetComponent<ElementSpawnVisual>().handNumber = handNumber; 
+			break;
+		case elementType.Air:
+			GameObject clone2 = (GameObject)Instantiate (elementVisual, airSpawn.position, Quaternion.identity);
+			clone2.GetComponent<ElementSpawnVisual>().element = element; 
+			clone2.GetComponent<ElementSpawnVisual>().handNumber = handNumber; 
+			break;
+		case elementType.Water:
+			GameObject clone3 = (GameObject)Instantiate (elementVisual, waterSpawn.position, Quaternion.identity);
+			clone3.GetComponent<ElementSpawnVisual>().element = element; 
+			clone3.GetComponent<ElementSpawnVisual>().handNumber = handNumber; 
+			break;
+		case elementType.Earth:
+			GameObject clone4 = (GameObject)Instantiate (elementVisual, earthSpawn.position, Quaternion.identity);
+			clone4.GetComponent<ElementSpawnVisual>().element = element; 
+			clone4.GetComponent<ElementSpawnVisual>().handNumber = handNumber; 
+			break;
+		}
+
+
 	}
 
 	public ElementManager CombineElements(List<ElementManager> list){
