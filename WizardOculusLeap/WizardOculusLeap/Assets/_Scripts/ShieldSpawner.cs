@@ -28,7 +28,9 @@ public class ShieldSpawner : MonoBehaviour {
 			GameObject g;
 			if (shieldBook.TryGetValue (basis.elementType.ToString() + "Shield", out g)){
 				shield.instance = (GameObject)Instantiate(g, basis.instance.transform.position, transform.rotation);
+				shield.elementType = basis.elementType;
 				shield.Setup();
+				shield.shieldElement.elementType = basis.elementType;
 			} 
 
 			return shield;

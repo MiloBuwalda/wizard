@@ -7,6 +7,12 @@ public class Player : MonoBehaviour {
 	public List <ElementManager> elementPool;
 	public List <SpellManager> spellPool;
 	public List <ShieldManager> shieldPool;
+	public ElementManager leftElement;
+	public ElementManager rightElement;
+	public elementType triggerShieldElementTypeSpell;
+	public elementType triggerShieldElementTypeLeft;
+	public elementType triggerShieldElementTypeRight;
+	public Vector3 triggerShieldPosition;
 	public int handLeft;
 	public int handRight;
 	public bool handLeftSlot;
@@ -16,6 +22,8 @@ public class Player : MonoBehaviour {
 		elementPool = new List<ElementManager>();
 		spellPool = new List<SpellManager>();
 		shieldPool = new List<ShieldManager>();
+		leftElement = null;
+		rightElement = null;
 
 		handLeft = 2;
 		handRight = 2;
@@ -23,9 +31,6 @@ public class Player : MonoBehaviour {
 
 	void Update () {
 		Hands ();
-		if (Input.GetKeyDown (KeyCode.Space)) { //Test for execute spell
-			ExecuteSpell ();
-		}
 	}
 
 	//Asign which hand number int is left and right || 2 is no hand found
@@ -59,17 +64,33 @@ public class Player : MonoBehaviour {
 	//Add summoned element to element pool
 	public void AddElementToPool(elementType t, int handNumber)
 	{
-		ElementManager el = ElementSpawner.instance.GetElementOfType (t, handNumber);
-		elementPool.Add (el);
+		ElementManager element = ElementSpawner.instance.GetElementOfType (t, handNumber);
+		elementPool.Add (element);
+
+		HandModel[] hands = GameManager.instance.movementManager.handController.GetAllPhysicsHands();
+
+		if (hands[handNumber].GetLeapHand().IsLeft) {
+			leftElement = element;
+		} else if (hands[handNumber].GetLeapHand().IsRight) {
+			rightElement = element;
+		}
 	}
 
 	//Delete alle elements and references in element pool
-	void EmptyElementPool()
-	{
+	void EmptyElementPool(){
 		foreach (ElementManager element in elementPool)	{
 			Destroy(element.instance);
 		}
 		elementPool.Clear ();
+	}
+
+	public void EmptyShieldPool(){
+		foreach (ShieldManager shield in shieldPool)	{
+			Destroy(shield.instance);
+		}
+		shieldPool.Clear ();
+		GameManager.instance.movementManager.insideShieldLeft = false;
+		GameManager.instance.movementManager.insideShieldRight = false;
 	}
 
 	//Combine elements from pool
@@ -86,8 +107,10 @@ public class Player : MonoBehaviour {
 
 				if (hands[handLeft].gameObject.GetComponentInChildren<HandInteraction>()._magnitude < hands[handRight].gameObject.GetComponentInChildren<HandInteraction>()._magnitude){
 					handRightSlot = false;
+					leftElement = element;
 				}else{
 					handLeftSlot = false;
+					rightElement = element;
 				}
 			}
 		}
@@ -95,18 +118,19 @@ public class Player : MonoBehaviour {
 
 	//Create a shield with elements from pool
 	public void ExecuteSpell(){
-		SpellManager spell = SpellSpawner.instance.CreateSpell (elementPool);
+		SpellManager spell = SpellSpawner.instance.CreateSpell (triggerShieldElementTypeSpell, triggerShieldPosition);
 		if (spell != null) {
 			spellPool.Add (spell);
-			EmptyElementPool ();
+			EmptyShieldPool();
+			GameManager.instance.movementManager.insideShield = false;
 			handLeftSlot = false; 
 			handRightSlot = false;
 		}
 	}
 
 	//Create a spell with elements from pool
-	public void ExecuteShield(){
-		ShieldManager shield = ShieldSpawner.instance.CreateShield (elementPool[0]);
+	public void ExecuteShield(ElementManager elementManager){
+		ShieldManager shield = ShieldSpawner.instance.CreateShield (elementManager);
 		if (shield != null) {
 			shieldPool.Add(shield);
 			EmptyElementPool();

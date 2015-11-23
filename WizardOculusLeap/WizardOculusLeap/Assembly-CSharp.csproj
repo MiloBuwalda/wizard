@@ -39,22 +39,24 @@
 	<Reference Include="System.Core" />
 	<Reference Include="System.Xml.Linq" />
 	<Reference Include="UnityEngine">
-	  <HintPath>D:/Program Files/Unity/Editor/Data/Managed/UnityEngine.dll</HintPath>
+	  <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEngine.dll</HintPath>
 	</Reference>
 	<Reference Include="UnityEditor">
-	  <HintPath>D:/Program Files/Unity/Editor/Data/Managed/UnityEditor.dll</HintPath>
+	  <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEditor.dll</HintPath>
 	</Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Custom\Fireball\Scripts\LightningboltUltimate.cs" />
-     <Compile Include="Assets\Custom\Fireball\Scripts\MaterialScroller.cs" />
-     <Compile Include="Assets\Custom\Fireball\Scripts\SphereRotator.cs" />
-     <Compile Include="Assets\Custom\Fireball\Scripts\SphereScaler.cs" />
+     <Compile Include="Assets\Custom\Earthscript.cs" />
+     <Compile Include="Assets\Custom\OrbitBehaviour.cs" />
+     <Compile Include="Assets\Custom\Scripts\PlasmaBall Scripts\LightningboltUltimate.cs" />
+     <Compile Include="Assets\Custom\Scripts\PlasmaBall Scripts\MaterialScroller.cs" />
      <Compile Include="Assets\Custom\Scripts\PlasmaBall Scripts\SphereCollapse.cs" />
      <Compile Include="Assets\Custom\Scripts\PlasmaBall Scripts\SphereCollapser.cs" />
+     <Compile Include="Assets\Custom\Scripts\PlasmaBall Scripts\SphereRotator.cs" />
+     <Compile Include="Assets\Custom\Scripts\PlasmaBall Scripts\SphereScaler.cs" />
      <Compile Include="Assets\Custom\Shadertest\ExplosionLooper.cs" />
-     <Compile Include="Assets\Kenrick\DarkBehavior.cs" />
-     <Compile Include="Assets\Kenrick\calltest.cs" />
+     <Compile Include="Assets\Custom\Waterscript.cs" />
+     <Compile Include="Assets\FireTheBall.cs" />
      <Compile Include="Assets\LeapMotion+OVR\DemoResources\Scripts\BlocksPlaneGenerator.cs" />
      <Compile Include="Assets\LeapMotion+OVR\DemoResources\Scripts\RandomBlocksGenerator.cs" />
      <Compile Include="Assets\LeapMotion+OVR\Scripts\LeapCameraAlignment.cs" />
@@ -200,6 +202,7 @@
      <Compile Include="Assets\_Scripts\Element.cs" />
      <Compile Include="Assets\_Scripts\ElementManager.cs" />
      <Compile Include="Assets\_Scripts\ElementMovement.cs" />
+     <Compile Include="Assets\_Scripts\ElementSpawnVisual.cs" />
      <Compile Include="Assets\_Scripts\ElementSpawner.cs" />
      <Compile Include="Assets\_Scripts\GameManager.cs" />
      <Compile Include="Assets\_Scripts\General\MouseLook_FIXED.cs" />
@@ -212,6 +215,7 @@
      <Compile Include="Assets\_Scripts\ICollidable.cs" />
      <Compile Include="Assets\_Scripts\MovementManager.cs" />
      <Compile Include="Assets\_Scripts\Player.cs" />
+     <Compile Include="Assets\_Scripts\ShieldElement.cs" />
      <Compile Include="Assets\_Scripts\ShieldManager.cs" />
      <Compile Include="Assets\_Scripts\ShieldSpawner.cs" />
      <Compile Include="Assets\_Scripts\SpellManager.cs" />
@@ -247,10 +251,8 @@
      <None Include="Assets\LeapMotion\Materials\Sources\Shaders\Toony-LightedOutline.shader" />
      <None Include="Assets\LeapMotion\Materials\Sources\Shaders\Toony-Lighted.shader" />
      <None Include="Assets\LeapMotion\Resources\PassthroughBackground.shader" />
-     <None Include="Assets\Kenrick\thingshader.shader" />
      <None Include="Assets\LeapMotion\Widgets\Shaders\SelfIllumAlpha.shader" />
      <None Include="Assets\Standard Assets\Environment\Water\Water\Shaders\FXWaterPro.shader" />
-     <None Include="Assets\Custom\Fireball\Shaders\DoubleSided.shader" />
      <None Include="Assets\Photon Unity Networking\readme.txt" />
      <None Include="Assets\LeapMotion\Version.txt" />
      <None Include="Assets\OVR\Shaders\OVRGUIShader.shader" />
@@ -262,19 +264,19 @@
      <None Include="Assets\Standard Assets\ParticleSystems\Shaders\PriorityParticleAdd.shader" />
      <None Include="Assets\Photon Unity Networking\changelog.txt" />
  <Reference Include="UnityEngine.UI">
- <HintPath>D:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
+ <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
  <Reference Include="LeapCSharp.NET3.5">
- <HintPath>D:/Documenten/Unity5/Wizard_Oculus_Leap/WizardOculusLeap/WizardOculusLeap/Assets/Plugins/LeapCSharp.NET3.5.dll</HintPath>
+ <HintPath>C:/Users/student/Documents/Unity5/Wizard_Oculus_Leap/WizardOculusLeap/WizardOculusLeap/Assets/Plugins/LeapCSharp.NET3.5.dll</HintPath>
  </Reference>
  <Reference Include="Photon3Unity3D">
- <HintPath>D:/Documenten/Unity5/Wizard_Oculus_Leap/WizardOculusLeap/WizardOculusLeap/Assets/Plugins/Photon3Unity3D.dll</HintPath>
+ <HintPath>C:/Users/student/Documents/Unity5/Wizard_Oculus_Leap/WizardOculusLeap/WizardOculusLeap/Assets/Plugins/Photon3Unity3D.dll</HintPath>
  </Reference>
  <Reference Include="websocket-sharp">
- <HintPath>D:/Documenten/Unity5/Wizard_Oculus_Leap/WizardOculusLeap/WizardOculusLeap/Assets/Plugins/WebSocket/websocket-sharp.dll</HintPath>
+ <HintPath>C:/Users/student/Documents/Unity5/Wizard_Oculus_Leap/WizardOculusLeap/WizardOculusLeap/Assets/Plugins/WebSocket/websocket-sharp.dll</HintPath>
  </Reference>
  <Reference Include="UnityEditor.iOS.Extensions.Xcode">
- <HintPath>D:/Program Files/Unity/Editor/Data/PlaybackEngines/iossupport/UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
+ <HintPath>C:/Program Files/Unity/Editor/Data/PlaybackEngines/iossupport/UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
  </Reference>
   </ItemGroup>
   <ItemGroup>
