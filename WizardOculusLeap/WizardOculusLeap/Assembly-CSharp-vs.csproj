@@ -39,10 +39,10 @@
 	<Reference Include="System.Core" />
 	<Reference Include="System.Xml.Linq" />
 	<Reference Include="UnityEngine">
-	  <HintPath>C:/Program Files/Unity5.01/Editor/Data/Managed/UnityEngine.dll</HintPath>
+	  <HintPath>C:/Program Files/Unity5.0.1/Editor/Data/Managed/UnityEngine.dll</HintPath>
 	</Reference>
 	<Reference Include="UnityEditor">
-	  <HintPath>C:/Program Files/Unity5.01/Editor/Data/Managed/UnityEditor.dll</HintPath>
+	  <HintPath>C:/Program Files/Unity5.0.1/Editor/Data/Managed/UnityEditor.dll</HintPath>
 	</Reference>
   </ItemGroup>
   <ItemGroup>
@@ -50,13 +50,13 @@
      <Compile Include="Assets\Custom\OrbitBehaviour.cs" />
      <Compile Include="Assets\Custom\Scripts\PlasmaBall Scripts\LightningboltUltimate.cs" />
      <Compile Include="Assets\Custom\Scripts\PlasmaBall Scripts\MaterialScroller.cs" />
-     <Compile Include="Assets\Custom\Scripts\PlasmaBall Scripts\SphereCollapse.cs" />
-     <Compile Include="Assets\Custom\Scripts\PlasmaBall Scripts\SphereCollapser.cs" />
      <Compile Include="Assets\Custom\Scripts\PlasmaBall Scripts\SphereRotator.cs" />
      <Compile Include="Assets\Custom\Scripts\PlasmaBall Scripts\SphereScaler.cs" />
      <Compile Include="Assets\Custom\Shadertest\ExplosionLooper.cs" />
      <Compile Include="Assets\Custom\Waterscript.cs" />
      <Compile Include="Assets\FireTheBall.cs" />
+     <Compile Include="Assets\Kenrick\DarkBehavior.cs" />
+     <Compile Include="Assets\Kenrick\calltest.cs" />
      <Compile Include="Assets\LeapMotion+OVR\DemoResources\Scripts\BlocksPlaneGenerator.cs" />
      <Compile Include="Assets\LeapMotion+OVR\DemoResources\Scripts\RandomBlocksGenerator.cs" />
      <Compile Include="Assets\LeapMotion+OVR\Scripts\LeapCameraAlignment.cs" />
@@ -255,8 +255,10 @@
      <None Include="Assets\LeapMotion\Materials\Sources\Shaders\Toony-LightedOutline.shader" />
      <None Include="Assets\LeapMotion\Materials\Sources\Shaders\Toony-Lighted.shader" />
      <None Include="Assets\LeapMotion\Resources\PassthroughBackground.shader" />
+     <None Include="Assets\Kenrick\thingshader.shader" />
      <None Include="Assets\LeapMotion\Widgets\Shaders\SelfIllumAlpha.shader" />
      <None Include="Assets\Standard Assets\Environment\Water\Water\Shaders\FXWaterPro.shader" />
+     <None Include="Assets\Custom\Fireball\Shaders\DoubleSided.shader" />
      <None Include="Assets\Photon Unity Networking\readme.txt" />
      <None Include="Assets\LeapMotion\Version.txt" />
      <None Include="Assets\OVR\Shaders\OVRGUIShader.shader" />
@@ -268,19 +270,19 @@
      <None Include="Assets\Standard Assets\ParticleSystems\Shaders\PriorityParticleAdd.shader" />
      <None Include="Assets\Photon Unity Networking\changelog.txt" />
  <Reference Include="UnityEngine.UI">
- <HintPath>C:/Program Files/Unity5.01/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
+ <HintPath>C:/Program Files/Unity5.0.1/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
  <Reference Include="LeapCSharp.NET3.5">
- <HintPath>C:/Users/MiloBU/Documenten/3D/Unity/wizard/WizardOculusLeap/WizardOculusLeap/Assets/Plugins/LeapCSharp.NET3.5.dll</HintPath>
+ <HintPath>C:/Users/student/Documents/Projects/wizard/WizardOculusLeap/WizardOculusLeap/Assets/Plugins/LeapCSharp.NET3.5.dll</HintPath>
  </Reference>
  <Reference Include="Photon3Unity3D">
- <HintPath>C:/Users/MiloBU/Documenten/3D/Unity/wizard/WizardOculusLeap/WizardOculusLeap/Assets/Plugins/Photon3Unity3D.dll</HintPath>
+ <HintPath>C:/Users/student/Documents/Projects/wizard/WizardOculusLeap/WizardOculusLeap/Assets/Plugins/Photon3Unity3D.dll</HintPath>
  </Reference>
  <Reference Include="websocket-sharp">
- <HintPath>C:/Users/MiloBU/Documenten/3D/Unity/wizard/WizardOculusLeap/WizardOculusLeap/Assets/Plugins/WebSocket/websocket-sharp.dll</HintPath>
+ <HintPath>C:/Users/student/Documents/Projects/wizard/WizardOculusLeap/WizardOculusLeap/Assets/Plugins/WebSocket/websocket-sharp.dll</HintPath>
  </Reference>
  <Reference Include="UnityEditor.iOS.Extensions.Xcode">
- <HintPath>C:/Program Files/Unity5.01/Editor/Data/PlaybackEngines/iossupport/UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
+ <HintPath>C:/Program Files/Unity5.0.1/Editor/Data/PlaybackEngines/iossupport/UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
  </Reference>
   </ItemGroup>
   <ItemGroup>
