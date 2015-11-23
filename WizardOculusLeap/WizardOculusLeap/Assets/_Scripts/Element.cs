@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public enum elementType {Fire, Air, Water, Earth};
+public enum elementType {Fire, Air, Water, Earth, AirFire, AirWater, EarthFire, EarthWater, FireAir, FireEarth, WaterAir, WaterEarth};
 
 public abstract class Element : MonoBehaviour, ICollidable
 {
