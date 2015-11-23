@@ -50,6 +50,8 @@
      <Compile Include="Assets\Custom\OrbitBehaviour.cs" />
      <Compile Include="Assets\Custom\Scripts\PlasmaBall Scripts\LightningboltUltimate.cs" />
      <Compile Include="Assets\Custom\Scripts\PlasmaBall Scripts\MaterialScroller.cs" />
+     <Compile Include="Assets\Custom\Scripts\PlasmaBall Scripts\SphereCollapse.cs" />
+     <Compile Include="Assets\Custom\Scripts\PlasmaBall Scripts\SphereCollapser.cs" />
      <Compile Include="Assets\Custom\Scripts\PlasmaBall Scripts\SphereRotator.cs" />
      <Compile Include="Assets\Custom\Scripts\PlasmaBall Scripts\SphereScaler.cs" />
      <Compile Include="Assets\Custom\Shadertest\ExplosionLooper.cs" />
@@ -258,7 +260,6 @@
      <None Include="Assets\Kenrick\thingshader.shader" />
      <None Include="Assets\LeapMotion\Widgets\Shaders\SelfIllumAlpha.shader" />
      <None Include="Assets\Standard Assets\Environment\Water\Water\Shaders\FXWaterPro.shader" />
-     <None Include="Assets\Custom\Fireball\Shaders\DoubleSided.shader" />
      <None Include="Assets\Photon Unity Networking\readme.txt" />
      <None Include="Assets\LeapMotion\Version.txt" />
      <None Include="Assets\OVR\Shaders\OVRGUIShader.shader" />

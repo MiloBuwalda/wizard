@@ -1,12 +1,12 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\RPCElement.cs">
     <Files>
-      <File FileName="Assets\RPCElement.cs" Line="1" Column="1" />
-      <File FileName="Assets\_Scripts\Player\SpellCasting.cs" Line="1" Column="1" />
-      <File FileName="Assets\_Scripts\General\MouseLook_FIXED.cs" Line="38" Column="12" />
-      <File FileName="Assets\_Scripts\General\NetworkedPlayer.cs" Line="23" Column="15" />
       <File FileName="Assets\_Scripts\General\NetworkController.cs" Line="1" Column="1" />
+      <File FileName="Assets\RPCElement.cs" Line="12" Column="24" />
+      <File FileName="Assets\_Scripts\Player\SpellCasting.cs" Line="1" Column="1" />
+      <File FileName="Assets\_Scripts\General\MouseLook_FIXED.cs" Line="1" Column="1" />
+      <File FileName="Assets\_Scripts\General\NetworkedPlayer.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
