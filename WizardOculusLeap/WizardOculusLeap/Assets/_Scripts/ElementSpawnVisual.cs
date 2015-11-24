@@ -27,6 +27,8 @@ public class ElementSpawnVisual : MonoBehaviour {
 	void Update() {
 		HandModel[] hands = GameManager.instance.movementManager.handController.GetAllPhysicsHands();
 
+		endPosition = hands [handNumber].GetPalmPosition();
+
 		float distCovered = (Time.time - startTime) * speed;
 		float fracJourney = distCovered / journeyLength;
 		transform.position = Vector3.Lerp(startPosition, endPosition, fracJourney);

@@ -66,7 +66,6 @@ public class MovementManager : MonoBehaviour {
 						GameManager.instance.player.handLeftSlot = true;
 						timerShield = Time.time + 10f * Time.deltaTime;
 						timerSummon = Time.time + 40f * Time.deltaTime;
-						summoning = true;
 					}
 				}
 				if (GameManager.instance.player.handRight != 2 && hands[GameManager.instance.player.handRight].GetLeapHand().GrabStrength > 0.8f){
@@ -82,7 +81,6 @@ public class MovementManager : MonoBehaviour {
 						GameManager.instance.player.handRightSlot = true;
 						timerShield = Time.time + 10f * Time.deltaTime;
 						timerSummon = Time.time + 40f * Time.deltaTime;
-						summoning = true;
 					}
 				}
 /////////////////////////////////////////////////////////////// SUMMON WITH GRAB /////////////////////////////////////////////////////////////// 

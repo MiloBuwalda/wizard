@@ -56,7 +56,6 @@
      <Compile Include="Assets\Custom\Scripts\PlasmaBall Scripts\SphereScaler.cs" />
      <Compile Include="Assets\Custom\Shadertest\ExplosionLooper.cs" />
      <Compile Include="Assets\Custom\Waterscript.cs" />
-     <Compile Include="Assets\FireTheBall.cs" />
      <Compile Include="Assets\LeapMotion+OVR\DemoResources\Scripts\BlocksPlaneGenerator.cs" />
      <Compile Include="Assets\LeapMotion+OVR\DemoResources\Scripts\RandomBlocksGenerator.cs" />
      <Compile Include="Assets\LeapMotion+OVR\Scripts\LeapCameraAlignment.cs" />
