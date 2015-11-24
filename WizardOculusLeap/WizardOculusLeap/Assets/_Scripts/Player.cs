@@ -2,6 +2,13 @@
 using System.Collections;
 using System.Collections.Generic;
 
+public enum Team
+{
+	Red,
+	Blue,
+	None,
+}
+
 public class Player : MonoBehaviour {
 
 	public List <ElementManager> elementPool;
@@ -136,6 +143,36 @@ public class Player : MonoBehaviour {
 			EmptyElementPool();
 			handLeftSlot = false;
 			handRightSlot = false;
+		}
+	}
+
+	Team m_Team;
+
+	public Team Team
+	{
+		get
+		{
+			return m_Team;
+		}
+	}
+
+	public void SetTeam ( Team team)
+	{
+		m_Team = team;
+
+		// Can set specific team colours here
+	}
+
+	void OnPhotonSerializeView ( PhotonStream stream, PhotonMessageInfo info)
+	{
+		SerializeState (stream, info);
+
+	}
+
+	void SerializeState (PhotonStream stream, PhotonMessageInfo info)
+	{
+		if (stream.isWriting == true) {
+			//stream.SendNext( health);
 		}
 	}
 }

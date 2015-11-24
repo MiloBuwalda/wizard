@@ -13,12 +13,13 @@ public class ShieldSpawner : MonoBehaviour {
 
 	void Start(){
 		shieldBook = new Dictionary<string, GameObject> ();
-		GameObject[] shields = Resources.LoadAll<GameObject> ("Shields"); //Load all shield prefabs from resource folder into dictionary
+		GameObject[] shields = Resources.LoadAll<GameObject> ("Shields/Resources"); //Load all shield prefabs from resource folder into dictionary
 		foreach(GameObject g in shields)
 		{
 			shieldBook.Add(g.name,g);
 		}
 	}
+
 
 	//Create a shield with element pool from player when player demands it
 	public ShieldManager CreateShield(ElementManager element){
