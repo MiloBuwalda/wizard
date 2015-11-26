@@ -38,6 +38,7 @@ public class Player : MonoBehaviour {
 
 	void Update () {
 		Hands ();
+		Vangnet ();
 	}
 
 	//Asign which hand number int is left and right || 2 is no hand found
@@ -64,6 +65,30 @@ public class Player : MonoBehaviour {
 					handRight = 1;
 					hands [1].gameObject.GetComponentInChildren<HandInteraction>().handNumber = 1;
 				}
+			}
+		}
+	}
+
+	void Vangnet (){
+		HandModel[] hands = GameManager.instance.movementManager.handController.GetAllPhysicsHands();
+		if (hands.Length == 0) {
+			if(handLeftSlot) {
+				handLeftSlot = false;
+			}
+			if (handRightSlot){
+				handRightSlot = false;
+			}
+			if (GameManager.instance.movementManager.summoning) {
+			GameManager.instance.movementManager.summoning = false;
+			}
+			if (GameManager.instance.movementManager.insideShield) {
+			GameManager.instance.movementManager.insideShield = false;
+			}
+			if (GameManager.instance.movementManager.insideShieldLeft) {
+			GameManager.instance.movementManager.insideShieldLeft = false;
+			}
+			if (GameManager.instance.movementManager.insideShieldRight) {
+			GameManager.instance.movementManager.insideShieldRight = false;
 			}
 		}
 	}

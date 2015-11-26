@@ -19,9 +19,6 @@ public class MovementManager : MonoBehaviour {
 
 	int elementToSummon;
 
-	float timerShield; //Delay shield summon
-	float timerSummon; //Delay summons
-
 	Controller leapController;
 	Listener leapListener;
 
@@ -47,42 +44,31 @@ public class MovementManager : MonoBehaviour {
 	void Update () {  
 		if (leapMotionOVRController == null || handController == null)
      	 return;
-
 		//Get all physic hand models
     	HandModel[] hands = handController.GetAllPhysicsHands();
 /////////////////////////////////////////////////////////////// SUMMON WITH GRAB ///////////////////////////////////////////////////////////////
 		if (hands.Length > 0) {
 			if (GameManager.instance.player.elementPool.Count < 2) {
 				if (GameManager.instance.player.handLeft != 2 && hands[GameManager.instance.player.handLeft].GetLeapHand().GrabStrength > 0.8f){
-					if (!GameManager.instance.player.handLeftSlot && !summoning && !insideShieldLeft && timerSummon < Time.time) {
+					if (!GameManager.instance.player.handLeftSlot && !summoning && !insideShieldLeft) {
 						GameManager.instance.elementSpawner.ElementToSpawn (hands [GameManager.instance.player.handLeft].GetPalmPosition (), GameManager.instance.player.handLeft);
 						GameManager.instance.player.handLeftSlot = true;
-						timerShield = Time.time + 10f * Time.deltaTime;
-						timerSummon = Time.time + 40f * Time.deltaTime;
 						summoning = true;
-					} else if (!GameManager.instance.player.handLeftSlot && !summoning && insideShieldLeft && timerSummon < Time.time){
+					} else if (!GameManager.instance.player.handLeftSlot && !summoning && insideShieldLeft){
 						GameManager.instance.player.AddElementToPool(GameManager.instance.player.triggerShieldElementTypeLeft, GameManager.instance.player.handLeft);
 						GameManager.instance.player.EmptyShieldPool();
 						GameManager.instance.player.handLeftSlot = true;
-						timerShield = Time.time + 10f * Time.deltaTime;
-						timerSummon = Time.time + 40f * Time.deltaTime;
-						summoning = true;
 					}
 				}
 				if (GameManager.instance.player.handRight != 2 && hands[GameManager.instance.player.handRight].GetLeapHand().GrabStrength > 0.8f){
-					if (!GameManager.instance.player.handRightSlot && !summoning && !insideShieldRight && timerSummon < Time.time) {
+					if (!GameManager.instance.player.handRightSlot && !summoning && !insideShieldRight) {
 						GameManager.instance.elementSpawner.ElementToSpawn (hands [GameManager.instance.player.handRight].GetPalmPosition (), GameManager.instance.player.handRight);
 						GameManager.instance.player.handRightSlot = true;
-						timerShield = Time.time + 10f * Time.deltaTime;
-						timerSummon = Time.time + 40f * Time.deltaTime;
 						summoning = true;
-					} else if (!GameManager.instance.player.handRightSlot && !summoning && insideShieldRight && timerSummon < Time.time) {
+					} else if (!GameManager.instance.player.handRightSlot && !summoning && insideShieldRight) {
 						GameManager.instance.player.AddElementToPool(GameManager.instance.player.triggerShieldElementTypeRight, GameManager.instance.player.handRight);
 						GameManager.instance.player.EmptyShieldPool();
 						GameManager.instance.player.handRightSlot = true;
-						timerShield = Time.time + 10f * Time.deltaTime;
-						timerSummon = Time.time + 40f * Time.deltaTime;
-						summoning = true;
 					}
 				}
 /////////////////////////////////////////////////////////////// SUMMON WITH GRAB /////////////////////////////////////////////////////////////// 
@@ -100,40 +86,36 @@ public class MovementManager : MonoBehaviour {
 //							//Linkerhand zonder rechterhand in de scene
 //							if (GameManager.instance.player.handLeft != 2 && gesture.Hands [0].Id == hands [GameManager.instance.player.handLeft].GetLeapHand ().Id) { 
 //								Debug.Log ("Left circle found 1");
-//								if (!GameManager.instance.player.handLeftSlot && timerSummon < Time.time) {
+//								if (!GameManager.instance.player.handLeftSlot) {
 //									GameManager.instance.elementSpawner.ElementToSpawn (hands [GameManager.instance.player.handLeft].GetPalmPosition (), GameManager.instance.player.handLeft);
 //									GameManager.instance.player.handLeftSlot = true;
 //									timerShield = Time.time + 10f * Time.deltaTime;
-//									timerSummon = Time.time + 40f * Time.deltaTime;
 //								}
 //							//Rechterhand zonder linkerhand in de scene
 //							} else if (GameManager.instance.player.handRight != 2 && gesture.Hands [0].Id == hands [GameManager.instance.player.handRight].GetLeapHand ().Id) {
 //								Debug.Log ("Right circle found 1");
-//								if (!GameManager.instance.player.handRightSlot && timerSummon < Time.time) {
+//								if (!GameManager.instance.player.handRightSlot) {
 //									GameManager.instance.elementSpawner.ElementToSpawn (hands [GameManager.instance.player.handRight].GetPalmPosition (), GameManager.instance.player.handRight);
 //									GameManager.instance.player.handRightSlot = true;
 //									timerShield = Time.time + 10f * Time.deltaTime;
-//									timerSummon = Time.time + 40f * Time.deltaTime;
 //								}
 //							}
 //							if (hands.Length > 1) {
 //								//Linkerhand met rechterhand in de scene
 //								if (GameManager.instance.player.handLeft != 2 && gesture.Hands [1].Id == hands [GameManager.instance.player.handLeft].GetLeapHand ().Id) { 
 //									Debug.Log ("Left circle found 2");
-//									if (!GameManager.instance.player.handLeftSlot && timerSummon < Time.time) {
+//									if (!GameManager.instance.player.handLeftSlot) {
 //										GameManager.instance.elementSpawner.ElementToSpawn (hands [GameManager.instance.player.handLeft].GetPalmPosition (), GameManager.instance.player.handLeft);
 //										GameManager.instance.player.handLeftSlot = true;
 //										timerShield = Time.time + 10f * Time.deltaTime;
-//										timerSummon = Time.time + 40f * Time.deltaTime;
 //									}
 //									//Rechterhand met linkerhand in de scene
 //								} else if (GameManager.instance.player.handRight != 2 && gesture.Hands [1].Id == hands [GameManager.instance.player.handRight].GetLeapHand ().Id) {
 //									Debug.Log ("Right circle found 2"); 
-//									if (!GameManager.instance.player.handRightSlot && timerSummon < Time.time) {
+//									if (!GameManager.instance.player.handRightSlot) {
 //										GameManager.instance.elementSpawner.ElementToSpawn (hands [GameManager.instance.player.handRight].GetPalmPosition (), GameManager.instance.player.handRight);
 //										GameManager.instance.player.handRightSlot = true;
 //										timerShield = Time.time + 10f * Time.deltaTime;
-//										timerSummon = Time.time + 40f * Time.deltaTime;
 //									}
 //								}
 //							}
@@ -165,12 +147,14 @@ public class MovementManager : MonoBehaviour {
 				Vector3 directionLeft = (hands [GameManager.instance.player.handLeft].GetPalmPosition () - handController.transform.position).normalized;
 				Vector3 normalLeft = hands [GameManager.instance.player.handLeft].GetPalmNormal ().normalized;
 
-				if (Vector3.Dot (directionLeft, normalLeft) > directionLeft.sqrMagnitude * 0.70f && Vector3.Dot (directionLeft, normalLeft) < directionLeft.sqrMagnitude * 1.1f && hands [GameManager.instance.player.handLeft].GetLeapHand().GrabStrength < 0.8f && timerShield < Time.time) {
+				if (Vector3.Dot (directionLeft, normalLeft) > directionLeft.sqrMagnitude * 0.70f && Vector3.Dot (directionLeft, normalLeft) < directionLeft.sqrMagnitude * 1.1f && hands [GameManager.instance.player.handLeft].GetLeapHand().GrabStrength < 0.8f) {
 					if(GameManager.instance.player.shieldPool.Count > 0){
 						GameManager.instance.player.EmptyShieldPool();
 						GameManager.instance.player.ExecuteShield(GameManager.instance.player.leftElement);
+						Debug.Log("Create Shield");
 					} else {
 						GameManager.instance.player.ExecuteShield(GameManager.instance.player.leftElement);
+						Debug.Log("Create Shield");
 					}
 				}
 			}
@@ -179,12 +163,14 @@ public class MovementManager : MonoBehaviour {
 				Vector3 directionRight = (hands [GameManager.instance.player.handRight].GetPalmPosition () - handController.transform.position).normalized;
 				Vector3 normalRight = hands [GameManager.instance.player.handRight].GetPalmNormal ().normalized;
 
-				if (Vector3.Dot (directionRight, normalRight) > directionRight.sqrMagnitude * 0.70f && Vector3.Dot (directionRight, normalRight) < directionRight.sqrMagnitude * 1.1f && hands [GameManager.instance.player.handRight].GetLeapHand().GrabStrength < 0.8f && timerShield < Time.time) {
+				if (Vector3.Dot (directionRight, normalRight) > directionRight.sqrMagnitude * 0.70f && Vector3.Dot (directionRight, normalRight) < directionRight.sqrMagnitude * 1.1f && hands [GameManager.instance.player.handRight].GetLeapHand().GrabStrength < 0.8f) {
 					if(GameManager.instance.player.shieldPool.Count > 0){
 						GameManager.instance.player.EmptyShieldPool();
 						GameManager.instance.player.ExecuteShield(GameManager.instance.player.rightElement);
+						Debug.Log("Create Shield");
 					} else {
 						GameManager.instance.player.ExecuteShield(GameManager.instance.player.rightElement);
+						Debug.Log("Create Shield");
 					}
 				}
 			}
