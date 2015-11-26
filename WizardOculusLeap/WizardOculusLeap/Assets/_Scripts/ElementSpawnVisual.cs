@@ -7,7 +7,7 @@ public class ElementSpawnVisual : MonoBehaviour {
 	public int handNumber;
 
 	int handID;
-	float speed = 5.0f;
+	float speed = 10f;
 	Vector3 startPosition;
 	Vector3 endPosition;
 	float startTime;
@@ -27,11 +27,15 @@ public class ElementSpawnVisual : MonoBehaviour {
 	void Update() {
 		HandModel[] hands = GameManager.instance.movementManager.handController.GetAllPhysicsHands();
 
-		endPosition = hands [handNumber].GetPalmPosition();
+		if (hands.Length > 0) {
+			endPosition = hands [handNumber].GetPalmPosition ();
+		}
 
 		float distCovered = (Time.time - startTime) * speed;
 		float fracJourney = distCovered / journeyLength;
 		transform.position = Vector3.Lerp(startPosition, endPosition, fracJourney);
+
+		transform.localScale = new Vector3(1.1f - fracJourney, 1.1f - fracJourney, 1.1f - fracJourney);
 
 		if (handID != hands [handNumber].GetLeapHand ().Id) {
 			GameManager.instance.movementManager.summoning = false;

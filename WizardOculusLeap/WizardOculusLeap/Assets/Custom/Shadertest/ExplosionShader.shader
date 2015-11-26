@@ -8,20 +8,22 @@
         _ChannelFactor ("ChannelFactor (r,g,b)", Vector) = (1,0,0)
         _Range ("Range (min,max)", Vector) = (0,0.5,0)
         _ClipRange ("ClipRange [0,1]", float) = 0.8
+        _Alpha ("Alpha (A)", 2D) = "white" {}
     }
  
     SubShader 
     {
-        Tags { "RenderType"="Opaque" }
+        Tags { "RenderType" = "Transparent" "Queue" = "Transparent" }
         Cull Off
         LOD 300
  
         CGPROGRAM
-        #pragma surface surf Lambert vertex:disp nolightmap
+        #pragma surface surf Lambert vertex:disp nolightmap alpha:fade
         #pragma target 3.0
         #pragma glsl
  
         sampler2D _DispTex;
+        
         float _Displacement;
         float3 _ChannelFactor;
         float2 _Range;
@@ -30,6 +32,7 @@
         struct Input 
         {
             float2 uv_DispTex;
+            float2 uv_Alpha;
         };
  
         void disp (inout appdata_full v)
@@ -40,6 +43,7 @@
         }
  
         sampler2D _RampTex;
+        sampler2D _Alpha;
  
         void surf (Input IN, inout SurfaceOutput o) 
         {
@@ -47,10 +51,24 @@
             float d = (dcolor.r*_ChannelFactor.r + dcolor.g*_ChannelFactor.g + dcolor.b*_ChannelFactor.b) * (_Range.y-_Range.x) + _Range.x;
             clip (_ClipRange-d);
             half4 c = tex2D (_RampTex, float2(d,0.5));
+            
             o.Albedo = c.rgb;
+            
+            
+            
             o.Emission = c.rgb*c.a;
+            
+            fixed4 e = tex2D (_Alpha, IN.uv_Alpha);
+            o.Alpha = e.a;
+            
+            
+            
+            
+            
         }
+        
         ENDCG
+        
     }
     FallBack "Diffuse"
 }

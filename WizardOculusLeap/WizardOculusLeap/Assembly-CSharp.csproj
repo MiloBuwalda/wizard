@@ -48,6 +48,7 @@
   <ItemGroup>
      <Compile Include="Assets\Custom\Earthscript.cs" />
      <Compile Include="Assets\Custom\OrbitBehaviour.cs" />
+     <Compile Include="Assets\Custom\OrbitBehaviour2.cs" />
      <Compile Include="Assets\Custom\Scripts\PlasmaBall Scripts\LightningboltUltimate.cs" />
      <Compile Include="Assets\Custom\Scripts\PlasmaBall Scripts\MaterialScroller.cs" />
      <Compile Include="Assets\Custom\Scripts\PlasmaBall Scripts\SphereCollapse.cs" />
@@ -55,7 +56,8 @@
      <Compile Include="Assets\Custom\Scripts\PlasmaBall Scripts\SphereRotator.cs" />
      <Compile Include="Assets\Custom\Scripts\PlasmaBall Scripts\SphereScaler.cs" />
      <Compile Include="Assets\Custom\Shadertest\ExplosionLooper.cs" />
-     <Compile Include="Assets\Custom\Waterscript.cs" />
+     <Compile Include="Assets\Custom\Windscript.cs" />
+     <Compile Include="Assets\Custom\waterpack\Waterscript.cs" />
      <Compile Include="Assets\LeapMotion+OVR\DemoResources\Scripts\BlocksPlaneGenerator.cs" />
      <Compile Include="Assets\LeapMotion+OVR\DemoResources\Scripts\RandomBlocksGenerator.cs" />
      <Compile Include="Assets\LeapMotion+OVR\Scripts\LeapCameraAlignment.cs" />
@@ -197,6 +199,8 @@
      <Compile Include="Assets\Photon Unity Networking\UtilityScripts\SmoothSyncMovement.cs" />
      <Compile Include="Assets\Photon Unity Networking\UtilityScripts\SupportLogger.cs" />
      <Compile Include="Assets\Photon Unity Networking\UtilityScripts\TimeKeeper.cs" />
+     <Compile Include="Assets\UnorganizedGateBullshit\ScrollingUVs_Layers.cs" />
+     <Compile Include="Assets\UnorganizedGateBullshit\windcontroll.cs" />
      <Compile Include="Assets\_Scripts\BasicLookInputModule.cs" />
      <Compile Include="Assets\_Scripts\Element.cs" />
      <Compile Include="Assets\_Scripts\ElementManager.cs" />
@@ -227,14 +231,17 @@
      <None Include="Assets\LeapMotion\Resources\LeapCG.cginc" />
      <None Include="Assets\LeapMotion\README_BEFORE_UPDATING.txt" />
      <None Include="Assets\Plugins\x86_64\donotdelete.txt" />
+     <None Include="Assets\UnorganizedGateBullshit\Lava_Flowing_Shader\Shaders\Unlit_Lava_Simple.shader" />
      <None Include="Assets\LeapMotion\readme.txt" />
      <None Include="Assets\Custom\Plasmaball (passive)\Shaders\FrontCullingMarble.shader" />
      <None Include="Assets\LeapMotion\Resources\ImageHandHighlight.shader" />
      <None Include="Assets\Plugins\Photon3Unity3D.xml" />
      <None Include="Assets\OVR\Shaders\TextShader3D.shader" />
+     <None Include="Assets\UnorganizedGateBullshit\Lava_Flowing_Shader\Shaders\Unlit_Lava_Distort.shader" />
      <None Include="Assets\Standard Assets\Environment\Water\Water4\Shaders\FXWater4Simple.shader" />
      <None Include="Assets\Plugins\release_history.txt" />
      <None Include="Assets\LeapMotion\Shaders\RimShading.shader" />
+     <None Include="Assets\Custom\Shadertest\AlphaOverlay.shader" />
      <None Include="Assets\_Shaders\Default_OverlayNoZTest.shader" />
      <None Include="Assets\LeapMotion\Dependencies.txt" />
      <None Include="Assets\LeapMotion\Materials\Sources\Shaders\Toony-BasicOutline.shader" />
@@ -244,12 +251,15 @@
      <None Include="Assets\Standard Assets\ParticleSystems\ParticleSystemsGuidelines.txt" />
      <None Include="Assets\LeapMotion\Resources\PassthroughForeground.shader" />
      <None Include="Assets\Standard Assets\Environment\Water (Basic)\Shaders\FXWaterBasic.shader" />
+     <None Include="Assets\UnorganizedGateBullshit\Lava_Flowing_Shader\ReadMe.txt" />
      <None Include="Assets\Custom\Shadertest\ExplosionShader.shader" />
      <None Include="Assets\Standard Assets\CrossPlatformInput\CrossPlatformInputGuidelines.txt" />
      <None Include="Assets\Standard Assets\ParticleSystems\Shaders\PriorityParticleAddSoft.shader" />
      <None Include="Assets\LeapMotion\Materials\Sources\Shaders\Toony-LightedOutline.shader" />
      <None Include="Assets\LeapMotion\Materials\Sources\Shaders\Toony-Lighted.shader" />
      <None Include="Assets\LeapMotion\Resources\PassthroughBackground.shader" />
+     <None Include="Assets\Custom\waterpack\ExplosionShader.shader" />
+     <None Include="Assets\UnorganizedGateBullshit\AlphaOverlay.shader" />
      <None Include="Assets\LeapMotion\Widgets\Shaders\SelfIllumAlpha.shader" />
      <None Include="Assets\Standard Assets\Environment\Water\Water\Shaders\FXWaterPro.shader" />
      <None Include="Assets\Photon Unity Networking\readme.txt" />
