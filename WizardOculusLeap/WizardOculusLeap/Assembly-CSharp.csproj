@@ -211,13 +211,14 @@
      <Compile Include="Assets\_Scripts\General\MouseLook_FIXED.cs" />
      <Compile Include="Assets\_Scripts\General\MultiplayerConnector.cs" />
      <Compile Include="Assets\_Scripts\General\NetworkController.cs" />
-     <Compile Include="Assets\_Scripts\General\NetworkedPlayer.cs" />
      <Compile Include="Assets\_Scripts\General\PhotonNetworkStarter.cs" />
      <Compile Include="Assets\_Scripts\General\PlayerSpawner.cs" />
      <Compile Include="Assets\_Scripts\General\RoomProperties.cs" />
      <Compile Include="Assets\_Scripts\HandInteraction.cs" />
      <Compile Include="Assets\_Scripts\ICollidable.cs" />
      <Compile Include="Assets\_Scripts\MovementManager.cs" />
+     <Compile Include="Assets\_Scripts\Networking\NetworkedPlayer.cs" />
+     <Compile Include="Assets\_Scripts\Networking\ShieldObserver.cs" />
      <Compile Include="Assets\_Scripts\Player.cs" />
      <Compile Include="Assets\_Scripts\Player\SpellCasting.cs" />
      <Compile Include="Assets\_Scripts\ShieldElement.cs" />
