@@ -1,10 +1,11 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\_Scripts\Networking\ShieldObserver.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\_Scripts\ElementSpawnVisual.cs">
     <Files>
-      <File FileName="Assets\_Scripts\ShieldSpawner.cs" Line="47" Column="5" />
+      <File FileName="Assets\_Scripts\ElementSpawnVisual.cs" Line="7" Column="23" />
+      <File FileName="Assets\_Scripts\ShieldSpawner.cs" Line="1" Column="1" />
       <File FileName="Assets\_Scripts\Networking\ShieldObserver.cs" Line="29" Column="2" />
-      <File FileName="Assets\_Scripts\Player.cs" Line="21" Column="51" />
+      <File FileName="Assets\_Scripts\Player.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

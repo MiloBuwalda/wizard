@@ -33,16 +33,41 @@ public class ShieldSpawner : MonoBehaviour {
 			ElementManager basis = element;
 			GameObject g;
 			PhotonView currentPhotonView;
+			ShieldObserver shieldObserver;
 			if (shieldBook.TryGetValue (basis.elementType.ToString() + "Shield", out g)){
+
+
+//				CLEANUPCOMPONENTS
+//				ShieldObserver[] so = g.GetComponents<ShieldObserver>();
+//				for (int i = 0; i < so.Length; i++) {
+//					DestroyImmediate(so[i], true);
+//				}
+//				
+//				PhotonView[] pv = g.GetComponents<PhotonView>();
+//				for (int i = 0; i < pv.Length; i++) {
+//					DestroyImmediate (pv[i], true);
+//				}
+
+				currentPhotonView = g.GetComponent<PhotonView>();
+
+				if(currentPhotonView == null){
+					currentPhotonView = g.AddComponent<PhotonView>();
+				}
+
+				shieldObserver = g.GetComponent<ShieldObserver>();
+				if (shieldObserver == null){
+					shieldObserver = g.AddComponent<ShieldObserver>();
+				}
+				
+				Debug.Log("currentPhotonView Count: " + currentPhotonView.ObservedComponents.Count);
+
+				if(currentPhotonView.ObservedComponents!=null && !currentPhotonView.ObservedComponents.Count>0)
+					currentPhotonView.ObservedComponents.Add(shieldObserver);
+
 				// Instantiate on network (call current element shield from within shield folder)
 				shield.instance = (GameObject) PhotonNetwork.Instantiate(
-					"Shield/"+g.name, basis.instance.transform.position, transform.rotation,0);
-				// Perhaps this needs to be shifted forward since photon instantiation prob requires the view:
-				currentPhotonView = shield.instance.AddComponent<PhotonView>();
-				// Add ShieldObserverComponent which contains the network synchronization stuff
-				shield.instance.AddComponent<ShieldObserver>();
-				// observe it in the photonview (!!!TEST!!!)
-				currentPhotonView.observed = shield.instance.GetComponent<ShieldObserver>();
+					"Shields/"+g.name, basis.instance.transform.position, transform.rotation,0);
+
 
 				shield.elementType = basis.elementType;
 				shield.Setup();

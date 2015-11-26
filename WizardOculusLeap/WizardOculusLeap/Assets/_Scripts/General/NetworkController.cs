@@ -5,10 +5,10 @@ public class NetworkController : Photon.MonoBehaviour
 {
 	string _versionNumber = "0.1"; 
 	string _room = "room_01";
-	string _levelName = "BasicNetworkRPC";
+	string _levelName = "DemoShootingNetworkIntegration";
 
 	public Transform spawnPoint;
-	public GameObject playerReference;
+//	public GameObject playerReference;
 
 
 	public bool isConnected = false;
@@ -97,11 +97,11 @@ public class NetworkController : Photon.MonoBehaviour
 
 //		PlayerSpawner ps = new PlayerSpawner ();
 //		ps.CreateNetworkedPlayer ();
-		PhotonNetwork.Instantiate (
-			playerReference.name, 
-			spawnPoint.position, 
-			Quaternion.identity, 
-			0);
+//		PhotonNetwork.Instantiate (
+//			playerReference.name, 
+//			spawnPoint.position, 
+//			Quaternion.identity, 
+//			0);
 		Debug.Log ("Joined Room");
 //		PhotonNetwork.isMessageQueueRunning = false;
 //		Application.LoadLevel ("Level");

@@ -25,6 +25,8 @@ public class Player : MonoBehaviour {
 	public bool handLeftSlot;
 	public bool handRightSlot;
 
+	public static int counter = 0; 
+
 	void Start () {
 		elementPool = new List<ElementManager>();
 		spellPool = new List<SpellManager>();
@@ -162,6 +164,8 @@ public class Player : MonoBehaviour {
 
 	//Create a spell with elements from pool
 	public void ExecuteShield(ElementManager elementManager){
+		Debug.Log ("called how many times? " + counter + " times.");
+		counter++;
 		ShieldManager shield = ShieldSpawner.instance.CreateShield (elementManager);
 		if (shield != null) {
 			shieldPool.Add(shield);
