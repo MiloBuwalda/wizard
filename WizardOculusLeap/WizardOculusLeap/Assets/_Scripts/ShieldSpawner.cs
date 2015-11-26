@@ -3,8 +3,12 @@ using System.Collections;
 using System.Collections.Generic;
 
 public class ShieldSpawner : MonoBehaviour {
+
 	public static ShieldSpawner instance;
 	public Dictionary<string, GameObject> shieldBook;
+
+	// shield id not a counter
+	public int shieldId = 1000;
 
 	void Awake () {
 		//singleton
@@ -30,6 +34,8 @@ public class ShieldSpawner : MonoBehaviour {
 	public ShieldManager CreateShield(ElementManager element){
 		if (element != null) {
 			ShieldManager shield = new ShieldManager();
+			shield.id = shieldId;
+			shieldId++;
 			ElementManager basis = element;
 			GameObject g;
 			PhotonView currentPhotonView;
@@ -59,10 +65,14 @@ public class ShieldSpawner : MonoBehaviour {
 					shieldObserver = g.AddComponent<ShieldObserver>();
 				}
 				
-				Debug.Log("currentPhotonView Count: " + currentPhotonView.ObservedComponents.Count);
-
-				if(currentPhotonView.ObservedComponents!=null && !currentPhotonView.ObservedComponents.Count>0)
+//				Debug.Log("currentPhotonView Count: " + currentPhotonView.ObservedComponents.Count);
+				currentPhotonView.ObservedComponents.Clear();
+				if(currentPhotonView.ObservedComponents!=null && currentPhotonView.ObservedComponents.Count==0)
+				{
 					currentPhotonView.ObservedComponents.Add(shieldObserver);
+//					currentPhotonView.ObservedComponents[0] = shieldObserver;
+//					currentPhotonView.ObservedComponents.
+				}
 
 				// Instantiate on network (call current element shield from within shield folder)
 				shield.instance = (GameObject) PhotonNetwork.Instantiate(

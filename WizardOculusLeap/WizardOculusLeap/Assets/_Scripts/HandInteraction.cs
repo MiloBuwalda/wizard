@@ -27,6 +27,7 @@ public class HandInteraction : MonoBehaviour {
 			GameManager.instance.player.triggerShieldPosition = other.gameObject.transform.position;
 			GameManager.instance.player.triggerShieldElementTypeSpell = other.gameObject.GetComponent<ShieldElement>().elementType;
 			GameManager.instance.movementManager.insideShield = true;
+			GameManager.instance.movementManager.insideShieldId = other.gameObject.GetComponent<ShieldElement>().id;
 		}
 	}
 

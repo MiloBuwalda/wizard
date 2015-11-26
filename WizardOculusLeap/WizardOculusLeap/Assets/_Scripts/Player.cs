@@ -25,7 +25,6 @@ public class Player : MonoBehaviour {
 	public bool handLeftSlot;
 	public bool handRightSlot;
 
-	public static int counter = 0; 
 
 	void Start () {
 		elementPool = new List<ElementManager>();
@@ -119,9 +118,14 @@ public class Player : MonoBehaviour {
 	}
 
 	public void EmptyShieldPool(){
-		foreach (ShieldManager shield in shieldPool)	{
-			Destroy(shield.instance);
+//		foreach (ShieldManager shield in shieldPool)	{
+////			Destroy(shield.instance);
+//		}
+
+		for (int i = 0; i < shieldPool.Count; i++) {
+			shieldPool[i].DestroyMe();
 		}
+
 		shieldPool.Clear ();
 		GameManager.instance.movementManager.insideShieldLeft = false;
 		GameManager.instance.movementManager.insideShieldRight = false;
@@ -151,11 +155,12 @@ public class Player : MonoBehaviour {
 	}
 
 	//Create a shield with elements from pool
-	public void ExecuteSpell(){
+	public void ExecuteSpell(int shieldId){
 		SpellManager spell = SpellSpawner.instance.CreateSpell (triggerShieldElementTypeSpell, triggerShieldPosition);
 		if (spell != null) {
 			spellPool.Add (spell);
-			EmptyShieldPool();
+			//EmptyShieldPool();
+			RemoveShield(shieldId);
 			GameManager.instance.movementManager.insideShield = false;
 			handLeftSlot = false; 
 			handRightSlot = false;
@@ -164,16 +169,32 @@ public class Player : MonoBehaviour {
 
 	//Create a spell with elements from pool
 	public void ExecuteShield(ElementManager elementManager){
-		Debug.Log ("called how many times? " + counter + " times.");
-		counter++;
 		ShieldManager shield = ShieldSpawner.instance.CreateShield (elementManager);
 		if (shield != null) {
+
 			shieldPool.Add(shield);
 			EmptyElementPool();
 			handLeftSlot = false;
 			handRightSlot = false;
 		}
 	}
+
+
+	public void RemoveShield(int shieldId){
+
+		foreach (ShieldManager s in shieldPool) {
+			if( s.id == shieldId){
+				if(shieldPool.Remove(s)){
+					s.DestroyMe();
+				}
+				// check if s still exists
+
+			}
+		}
+
+	}
+
+
 
 	Team m_Team;
 
