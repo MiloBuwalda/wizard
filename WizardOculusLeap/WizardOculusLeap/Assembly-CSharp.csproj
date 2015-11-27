@@ -227,6 +227,7 @@
      <Compile Include="Assets\_Scripts\ShieldElement.cs" />
      <Compile Include="Assets\_Scripts\ShieldManager.cs" />
      <Compile Include="Assets\_Scripts\ShieldSpawner.cs" />
+     <Compile Include="Assets\_Scripts\SpellCollision.cs" />
      <Compile Include="Assets\_Scripts\SpellManager.cs" />
      <Compile Include="Assets\_Scripts\SpellMovement.cs" />
      <Compile Include="Assets\_Scripts\SpellSpawner.cs" />

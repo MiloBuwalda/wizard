@@ -1,24 +1,10 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\_Scripts\ShieldSpawner.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\_Scripts\SpellCollision.cs">
     <Files>
-<<<<<<< HEAD
-      <File FileName="Assets\_Scripts\ElementMovement.cs" Line="25" Column="11" />
-      <File FileName="Assets\_Scripts\Player.cs" Line="1" Column="1" />
-      <File FileName="Assets\_Scripts\MovementManager.cs" Line="46" Column="15" />
-      <File FileName="Assets\_Scripts\ShieldSpawner.cs" Line="1" Column="1" />
-      <File FileName="Assets\Custom\waterpack\ExplosionShader.shader" Line="1" Column="1" />
-      <File FileName="Assets\Custom\waterpack\Waterscript.cs" Line="26" Column="31" />
-=======
-      <File FileName="Assets\_Scripts\Player.cs" Line="189" Column="6" />
-      <File FileName="Assets\_Scripts\ElementMovement.cs" Line="36" Column="1" />
-      <File FileName="Assets\_Scripts\MovementManager.cs" Line="142" Column="41" />
-      <File FileName="Assets\_Scripts\ShieldManager.cs" Line="14" Column="25" />
-      <File FileName="Assets\_Scripts\ShieldElement.cs" Line="8" Column="33" />
-      <File FileName="Assets\_Scripts\SpellManager.cs" Line="1" Column="1" />
-      <File FileName="Assets\_Scripts\HandInteraction.cs" Line="30" Column="55" />
-      <File FileName="Assets\_Scripts\ShieldSpawner.cs" Line="79" Column="43" />
->>>>>>> origin/networkMerger
+      <File FileName="Assets\_Scripts\Player.cs" Line="25" Column="27" />
+      <File FileName="Assets\_Scripts\MovementManager.cs" Line="1" Column="1" />
+      <File FileName="Assets\_Scripts\SpellCollision.cs" Line="14" Column="2" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
