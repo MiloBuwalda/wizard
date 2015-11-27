@@ -6,8 +6,6 @@ public class Waterscript : MonoBehaviour {
 
     public float loopDuration = 1.0f;
 
-
-
     public Material mat;
     public Mesh model;
 

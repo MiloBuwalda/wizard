@@ -37,9 +37,24 @@ public class ElementSpawnVisual : MonoBehaviour {
 
 		transform.localScale = new Vector3(1.1f - fracJourney, 1.1f - fracJourney, 1.1f - fracJourney);
 
-		if (handID != hands [handNumber].GetLeapHand ().Id) {
+		if (hands.Length == 0) {
 			GameManager.instance.movementManager.summoning = false;
-			Destroy(gameObject);
+			Destroy (gameObject);
+		} else if (hands.Length == 1 && handNumber == 0) {
+			if (handID != hands [0].GetLeapHand ().Id) {
+				GameManager.instance.movementManager.summoning = false;
+				Destroy (gameObject);
+			}
+		} else if (hands.Length > 1) {
+			if (handID != hands [handNumber].GetLeapHand ().Id) {
+				GameManager.instance.movementManager.summoning = false;
+				Destroy (gameObject);
+			}
+		} else {
+			if (handID != hands [handNumber].GetLeapHand ().Id) {
+				GameManager.instance.movementManager.summoning = false;
+				Destroy (gameObject);
+			}
 		}
 
 		if (fracJourney > 1) {
