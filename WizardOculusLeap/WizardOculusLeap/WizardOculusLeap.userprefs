@@ -1,12 +1,12 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Custom\waterpack\Waterscript.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\_Scripts\ElementMovement.cs">
     <Files>
-      <File FileName="Assets\_Scripts\Player.cs" Line="5" Column="38" />
+      <File FileName="Assets\_Scripts\ElementMovement.cs" Line="25" Column="11" />
+      <File FileName="Assets\_Scripts\Player.cs" Line="1" Column="1" />
       <File FileName="Assets\_Scripts\MovementManager.cs" Line="46" Column="15" />
-      <File FileName="Assets\_Scripts\ElementMovement.cs" Line="26" Column="1" />
-      <File FileName="Assets\_Scripts\ShieldSpawner.cs" Line="30" Column="31" />
-      <File FileName="Assets\Custom\waterpack\ExplosionShader.shader" Line="14" Column="6" />
+      <File FileName="Assets\_Scripts\ShieldSpawner.cs" Line="1" Column="1" />
+      <File FileName="Assets\Custom\waterpack\ExplosionShader.shader" Line="1" Column="1" />
       <File FileName="Assets\Custom\waterpack\Waterscript.cs" Line="26" Column="31" />
     </Files>
   </MonoDevelop.Ide.Workbench>
