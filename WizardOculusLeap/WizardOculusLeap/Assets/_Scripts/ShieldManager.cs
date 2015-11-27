@@ -7,7 +7,17 @@ public class ShieldManager {
 	public elementType elementType;
 	public ShieldElement shieldElement;
 
+	public int id;
+
 	public void Setup()	{
 		shieldElement = instance.GetComponent<ShieldElement> ();
+		shieldElement.id = id;
+	}
+
+	public void DestroyMe()
+	{
+		if (instance != null) {
+			PhotonNetwork.Destroy(instance);
+		}
 	}
 }

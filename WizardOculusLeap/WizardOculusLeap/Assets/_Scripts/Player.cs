@@ -2,6 +2,13 @@
 using System.Collections;
 using System.Collections.Generic;
 
+public enum Team
+{
+	Red,
+	Blue,
+	None,
+}
+
 public class Player : MonoBehaviour {
 
 	public List <ElementManager> elementPool;
@@ -17,6 +24,7 @@ public class Player : MonoBehaviour {
 	public int handRight;
 	public bool handLeftSlot;
 	public bool handRightSlot;
+
 
 	void Start () {
 		elementPool = new List<ElementManager>();
@@ -110,9 +118,14 @@ public class Player : MonoBehaviour {
 	}
 
 	public void EmptyShieldPool(){
-		foreach (ShieldManager shield in shieldPool)	{
-			Destroy(shield.instance);
+//		foreach (ShieldManager shield in shieldPool)	{
+////			Destroy(shield.instance);
+//		}
+
+		for (int i = 0; i < shieldPool.Count; i++) {
+			shieldPool[i].DestroyMe();
 		}
+
 		shieldPool.Clear ();
 		GameManager.instance.movementManager.insideShieldLeft = false;
 		GameManager.instance.movementManager.insideShieldRight = false;
@@ -142,11 +155,12 @@ public class Player : MonoBehaviour {
 	}
 
 	//Create a shield with elements from pool
-	public void ExecuteSpell(){
+	public void ExecuteSpell(int shieldId){
 		SpellManager spell = SpellSpawner.instance.CreateSpell (triggerShieldElementTypeSpell, triggerShieldPosition);
 		if (spell != null) {
 			spellPool.Add (spell);
-			EmptyShieldPool();
+			//EmptyShieldPool();
+			RemoveShield(shieldId);
 			GameManager.instance.movementManager.insideShield = false;
 			handLeftSlot = false; 
 			handRightSlot = false;
@@ -157,10 +171,58 @@ public class Player : MonoBehaviour {
 	public void ExecuteShield(ElementManager elementManager){
 		ShieldManager shield = ShieldSpawner.instance.CreateShield (elementManager);
 		if (shield != null) {
+
 			shieldPool.Add(shield);
 			EmptyElementPool();
 			handLeftSlot = false;
 			handRightSlot = false;
+		}
+	}
+
+
+	public void RemoveShield(int shieldId){
+
+		foreach (ShieldManager s in shieldPool) {
+			if( s.id == shieldId){
+				if(shieldPool.Remove(s)){
+					s.DestroyMe();
+				}
+				// check if s still exists
+
+			}
+		}
+
+	}
+
+
+
+	Team m_Team;
+
+	public Team Team
+	{
+		get
+		{
+			return m_Team;
+		}
+	}
+
+	public void SetTeam ( Team team)
+	{
+		m_Team = team;
+
+		// Can set specific team colours here
+	}
+
+	void OnPhotonSerializeView ( PhotonStream stream, PhotonMessageInfo info)
+	{
+		SerializeState (stream, info);
+
+	}
+
+	void SerializeState (PhotonStream stream, PhotonMessageInfo info)
+	{
+		if (stream.isWriting == true) {
+			//stream.SendNext( health);
 		}
 	}
 }

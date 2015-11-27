@@ -12,6 +12,8 @@ public class MovementManager : MonoBehaviour {
 	public bool insideShieldRight;
 	public bool summoning;
 
+	public int insideShieldId; 
+
 	Vector3 directionLeft;
 	Vector3 normalLeft; 
 	Vector3 directionRight;
@@ -137,7 +139,7 @@ public class MovementManager : MonoBehaviour {
 					if (hands[0].gameObject.GetComponentInChildren<HandInteraction>()._magnitude > 1 && hands[1].gameObject.GetComponentInChildren<HandInteraction>()._magnitude > 1){
 						//if collision with shield
 						if (insideShield){ 
-							GameManager.instance.player.ExecuteSpell ();
+							GameManager.instance.player.ExecuteSpell (insideShieldId);
 						}
 					}
 				}

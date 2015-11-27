@@ -1,10 +1,17 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class NetworkController : MonoBehaviour
+public class NetworkController : Photon.MonoBehaviour
 {
-	string _room = "Wizard";
-	string _levelName = "Demo";
+	string _versionNumber = "0.1"; 
+	string _room = "room_01";
+	string _levelName = "DemoShootingNetworkIntegration";
+
+	public Transform spawnPoint;
+//	public GameObject playerReference;
+
+
+	public bool isConnected = false;
 
 	public static bool isHost = false;
 	public static bool QuitOnLogout = false;
@@ -20,20 +27,22 @@ public class NetworkController : MonoBehaviour
 	void Start()
 	{
 		DontDestroyOnLoad (gameObject);
-
+//
+//		PhotonNetwork.ConnectUsingSettings(_versionNumber);
+		Connect ();
 		Debug.Log ("NetworkController Started");
-		PhotonNetwork.ConnectUsingSettings("0.1");
 	}
 
 	public void Connect()
 	{
-		if (PhotonNetwork.connectionState != ConnectionState.Disconnected)
-		    return;
-
+		Debug.Log("Connect");
+		if (PhotonNetwork.connectionState != ConnectionState.Disconnected) {
+			return;
+		}
 
 		try
 		{
-			PhotonNetwork.ConnectUsingSettings("0.1");
+			PhotonNetwork.ConnectUsingSettings(_versionNumber);
 		}
 		catch
 		{
@@ -53,34 +62,47 @@ public class NetworkController : MonoBehaviour
 	/// </summary>
 	void OnJoinedLobby()
 	{
-		if( isHost == true )
-			return;
-		
-		if( QuitOnLogout == true )
-		{
-			Application.Quit();
-			return;
-		}
-		
-		if( Application.loadedLevelName == _levelName )
-		{
-			RoomOptions roomOptions = new RoomOptions();
-			roomOptions.maxPlayers = 20;
-			
-			PhotonNetwork.JoinOrCreateRoom( "Wizard", roomOptions, TypedLobby.Default );
-			Debug.Log( "Joined Lobby" );
-		}
-		else
-		{
-			//If we join the lobby while not being in the MainMenu scene, something went wrong and we disconnect from Photon
-			PhotonNetwork.Disconnect();
-		}
+		RoomOptions roomOptions = new RoomOptions (){};
+		PhotonNetwork.JoinOrCreateRoom (_room, roomOptions, TypedLobby.Default);
+		Debug.Log ("Starting Server");
+//		if( isHost == true )
+//			return;
+//		
+//		if( QuitOnLogout == true )
+//		{
+//			Application.Quit();
+//			return;
+//		}
+//		
+//		if( Application.loadedLevelName == _levelName )
+//		{
+//			RoomOptions roomOptions = new RoomOptions();
+//			roomOptions.maxPlayers = 20;
+//			
+//			PhotonNetwork.JoinOrCreateRoom( _room, roomOptions, TypedLobby.Default );
+//			Debug.Log( "Joined Lobby" );
+//		}
+//		else
+//		{
+//			//If we join the lobby while not being in the MainMenu scene, something went wrong and we disconnect from Photon
+//			PhotonNetwork.Disconnect();
+//		}
 	}
 
 
 
 	void OnJoinedRoom()
 	{
+		isConnected = true;
+
+//		PlayerSpawner ps = new PlayerSpawner ();
+//		ps.CreateNetworkedPlayer ();
+//		PhotonNetwork.Instantiate (
+//			playerReference.name, 
+//			spawnPoint.position, 
+//			Quaternion.identity, 
+//			0);
+		Debug.Log ("Joined Room");
 //		PhotonNetwork.isMessageQueueRunning = false;
 //		Application.LoadLevel ("Level");
 	}
@@ -107,16 +129,16 @@ public class NetworkController : MonoBehaviour
 		Debug.Log( "OnCreatedRoom" );
 		
 		//When we create the room we set several custom room properties that get synchronized between all players
-		ExitGames.Client.Photon.Hashtable properties = new ExitGames.Client.Photon.Hashtable();
+//		ExitGames.Client.Photon.Hashtable properties = new ExitGames.Client.Photon.Hashtable();
 		
 //		//If we don't set the scores to 0 here, players would get errors when trying to access the score properties
 //		properties.Add( RoomProperty.BlueScore, (int)0 );
 //		properties.Add( RoomProperty.RedScore, (int)0 );
 		
 		//PhotonNetwork.time is synchronized between all players, so by using it as the start time here, all players can calculate how long the game ran
-		properties.Add( RoomProperty.StartTime, PhotonNetwork.time );
+//		properties.Add( RoomProperty.StartTime, PhotonNetwork.time );
 		
-		PhotonNetwork.room.SetCustomProperties( properties );
+//		PhotonNetwork.room.SetCustomProperties( properties );
 	}
 
 	/// <summary>
