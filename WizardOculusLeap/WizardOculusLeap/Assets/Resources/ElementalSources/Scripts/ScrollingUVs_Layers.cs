@@ -18,13 +18,12 @@ public class ScrollingUVs_Layers : MonoBehaviour
 
 	void LateUpdate() 
 	{
-		uvOffset.y -= ( uvAnimationRate.y * Time.deltaTime );
+		uvOffset.x -= ( uvAnimationRate.x * Time.deltaTime );
+		uvOffset.y -= (uvAnimationRate.y * Time.deltaTime);
 
 		if( textureRenderer.enabled )
 		{
 			textureRenderer.sharedMaterial.SetTextureOffset( textureName, uvOffset);
 		}
-
-
 	}
 }
