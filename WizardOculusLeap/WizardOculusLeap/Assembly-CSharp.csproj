@@ -202,7 +202,7 @@
      <Compile Include="Assets\Photon Unity Networking\UtilityScripts\SupportLogger.cs" />
      <Compile Include="Assets\Photon Unity Networking\UtilityScripts\TimeKeeper.cs" />
      <Compile Include="Assets\RPCElement.cs" />
-     <Compile Include="Assets\UnorganizedGateBullshit\ScrollingUVs_Layers.cs" />
+     <Compile Include="Assets\Resources\ElementalSources\Scripts\ScrollingUVs_Layers.cs" />
      <Compile Include="Assets\UnorganizedGateBullshit\windcontroll.cs" />
      <Compile Include="Assets\_Scripts\BasicLookInputModule.cs" />
      <Compile Include="Assets\_Scripts\Element.cs" />
@@ -281,6 +281,7 @@
      <None Include="Assets\Standard Assets\Environment\Water\Water4\Shaders\FXWater4Advanced.shader" />
      <None Include="Assets\Plugins\SystemWipeRecognizerDll.bundle\Contents\MacOS\version.txt" />
      <None Include="Assets\Standard Assets\ParticleSystems\Shaders\PriorityParticleAdd.shader" />
+     <None Include="Assets\Resources\ElementalSources\Materials\Shaders\PriorityParticleAddFrontCulling.shader" />
      <None Include="Assets\Photon Unity Networking\changelog.txt" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity5.0.1/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
