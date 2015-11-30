@@ -19,5 +19,7 @@ public class ShieldManager {
 		if (instance != null) {
 			PhotonNetwork.Destroy(instance);
 		}
+
+		Debug.Log ("Destroy me: " + elementType);
 	}
 }

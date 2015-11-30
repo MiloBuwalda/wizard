@@ -222,6 +222,7 @@
      <Compile Include="Assets\_Scripts\MovementManager.cs" />
      <Compile Include="Assets\_Scripts\Networking\NetworkedPlayer.cs" />
      <Compile Include="Assets\_Scripts\Networking\ShieldObserver.cs" />
+     <Compile Include="Assets\_Scripts\Networking\SpellObserver.cs" />
      <Compile Include="Assets\_Scripts\Player.cs" />
      <Compile Include="Assets\_Scripts\Player\SpellCasting.cs" />
      <Compile Include="Assets\_Scripts\ShieldElement.cs" />

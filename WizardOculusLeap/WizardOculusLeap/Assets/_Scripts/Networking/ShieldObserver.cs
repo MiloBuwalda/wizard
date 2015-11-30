@@ -29,10 +29,6 @@ public class ShieldObserver : Photon.MonoBehaviour {
 
 	int m_ShieldId;
 
-	// Update is called once per frame
-	void Update () {
-	
-	}
 	void OnPhotonSerializeView( PhotonStream stream, PhotonMessageInfo info )
 	{
 		// THIS IS FROM THE SKY ARENA PHOTON TUTORIAL
