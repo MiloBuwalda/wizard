@@ -28,6 +28,7 @@ public class SpellSpawner : MonoBehaviour {
 			//spell.instance = (GameObject)Instantiate (g, position, transform.rotation);
 			spell.instance = (GameObject)Instantiate (g, inFrontOfPlayer.position, transform.rotation);
 			spell.Setup ();
+			spell.spellCollision.elementType = t;
 		} else {
 			spell = null;
 		}
