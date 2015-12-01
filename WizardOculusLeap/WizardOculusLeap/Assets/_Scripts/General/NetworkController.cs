@@ -220,6 +220,13 @@ public class NetworkController : Photon.MonoBehaviour
 		}
 	}
 
+	void OnPhotonPlayerConnected(PhotonPlayer newPlayer)
+	{
+		if(PhotonNetwork.playerList.Length == 3)
+		{
+			Phton
+		}
+	}
 
 
 
