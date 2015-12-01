@@ -49,7 +49,7 @@ public class MovementManager : MonoBehaviour {
 		//Get all physic hand models
     	HandModel[] hands = handController.GetAllPhysicsHands();
 /////////////////////////////////////////////////////////////// SUMMON WITH GRAB ///////////////////////////////////////////////////////////////
-		if (hands.Length > 0) {
+		if (hands.Length > 0 && GameManager.instance.player.handRight!=2) {
 			if (GameManager.instance.player.elementPool.Count < 2) {
 				if (GameManager.instance.player.handLeft != 2 && hands[GameManager.instance.player.handLeft].GetLeapHand().GrabStrength > 0.8f){
 					if (!GameManager.instance.player.handLeftSlot && !summoning && !insideShieldLeft) {
@@ -127,12 +127,16 @@ public class MovementManager : MonoBehaviour {
 /////////////////////////////////////////////////////////////// SUMMON WITH CIRCLE GESTURE ///////////////////////////////////////////////////////////////
 			}
 			// Handen vooruit bewegen om spell execute te doen
-			if (hands.Length > 1) {	
+			if (hands.Length > 1 && GameManager.instance.player.handLeft!=2 && GameManager.instance.player.handRight!=2) {	
 				Vector3 directionLeft = (hands [GameManager.instance.player.handLeft].GetPalmPosition () - handController.transform.position).normalized;
 				Vector3 normalLeft = hands [GameManager.instance.player.handLeft].GetPalmNormal ().normalized;
-				
+
+				Debug.Log("MovementMan-Update= left: " + GameManager.instance.player.handLeft + ", right: " + GameManager.instance.player.handRight);
+
+
 				Vector3 directionRight = (hands [GameManager.instance.player.handRight].GetPalmPosition () - handController.transform.position).normalized;
 				Vector3 normalRight = hands [GameManager.instance.player.handRight].GetPalmNormal ().normalized;
+
 
 				if (Vector3.Dot (directionLeft, normalLeft) > directionLeft.sqrMagnitude * 0.5f && Vector3.Dot (directionRight, normalRight) > directionRight.sqrMagnitude * 0.5f) {
 //					if (GameObject.Find ("palm").GetComponent<HandInteraction> ()._magnitude > 1) {
@@ -140,6 +144,7 @@ public class MovementManager : MonoBehaviour {
 						//if collision with shield
 						if (insideShield){ 
 							GameManager.instance.player.ExecuteSpell (insideShieldId);
+							Debug.Log("Create Spell");
 						}
 					}
 				}

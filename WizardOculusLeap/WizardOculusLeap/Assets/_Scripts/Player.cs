@@ -156,7 +156,7 @@ public class Player : MonoBehaviour {
 
 	//Create a shield with elements from pool
 	public void ExecuteSpell(int shieldId){
-		SpellManager spell = SpellSpawner.instance.CreateSpell (triggerShieldElementTypeSpell, triggerShieldPosition);
+		SpellManager spell = SpellSpawner.instance.CreateSpellNetworked (triggerShieldElementTypeSpell, triggerShieldPosition);
 		if (spell != null) {
 			spellPool.Add (spell);
 			//EmptyShieldPool();
@@ -169,6 +169,11 @@ public class Player : MonoBehaviour {
 
 	//Create a spell with elements from pool
 	public void ExecuteShield(ElementManager elementManager){
+
+//		ExecuteSpell (0);
+//		return;
+//		// NO HE DIDNT : Workaround
+
 		ShieldManager shield = ShieldSpawner.instance.CreateShield (elementManager);
 		if (shield != null) {
 
@@ -182,15 +187,23 @@ public class Player : MonoBehaviour {
 
 	public void RemoveShield(int shieldId){
 
-		foreach (ShieldManager s in shieldPool) {
-			if( s.id == shieldId){
-				if(shieldPool.Remove(s)){
-					s.DestroyMe();
-				}
-				// check if s still exists
-
+		int iLength = shieldPool.Count; 
+		for (int i = 0; i < iLength; i++) {
+			if(shieldPool[i].id == shieldId)
+			{
+				shieldPool[i].DestroyMe();
 			}
 		}
+
+//		foreach (ShieldManager s in shieldPool) {
+//			if( s.id == shieldId){
+//				if(shieldPool.Remove(s)){
+//					s.DestroyMe();
+//				}
+//				// check if s still exists
+//
+//			}
+//		}
 
 	}
 

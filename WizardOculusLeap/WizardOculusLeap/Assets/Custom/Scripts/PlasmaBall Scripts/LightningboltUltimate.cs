@@ -14,10 +14,10 @@ public class LightningboltUltimate : MonoBehaviour
 	public GameObject lightningRenderer; //should be automated!
 	public float boltSize = 0.1f; //does not do anything yet
 	public int minimumBoltInterval = 25;
-	public int interBoltInterval = 5;
+	public int interBoltInterval = 5; 
 
 	//other variables
-	private Vector3 targetPoint;
+	private Vector3 targetPoint; 
 
 	//arrays
 	private int[] drawDelay;

@@ -35,4 +35,52 @@ public class SpellSpawner : MonoBehaviour {
 
 		return spell; 
 	}
+
+	//Create a spell with elements from player when player demands it
+	public SpellManager CreateSpellNetworked(elementType t, Vector3 position){
+		SpellManager spell = new SpellManager();
+		GameObject g;
+
+//		shield.id = shieldId;
+//		shieldId++;
+		PhotonView currentPhotonView;
+		SpellObserver spellObserver;
+
+		if (spellBook.TryGetValue (t.ToString () + "Spell", out g)) {
+
+			currentPhotonView = g.GetComponent<PhotonView>();
+			
+			if(currentPhotonView == null){
+				currentPhotonView = g.AddComponent<PhotonView>();
+			}
+			
+			spellObserver = g.GetComponent<SpellObserver>();
+			if (spellObserver == null){
+				spellObserver = g.AddComponent<SpellObserver>();
+			}
+			
+			//				Debug.Log("currentPhotonView Count: " + currentPhotonView.ObservedComponents.Count);
+			currentPhotonView.ObservedComponents.Clear();
+			if(currentPhotonView.ObservedComponents!=null && currentPhotonView.ObservedComponents.Count==0)
+			{
+				currentPhotonView.ObservedComponents.Add(spellObserver);
+				//					currentPhotonView.ObservedComponents[0] = shieldObserver;
+				//					currentPhotonView.ObservedComponents.
+			}
+			
+			// Instantiate on network (call current element shield from within shield folder)
+			spell.instance = (GameObject) PhotonNetwork.Instantiate(
+				"Spells/"+g.name, inFrontOfPlayer.position, transform.rotation,0);
+			Debug.Log("spellspawner:instantiate " + g.name);
+
+
+//			spell.instance = (GameObject)Instantiate (g, inFrontOfPlayer.position, transform.rotation);
+			spell.Setup ();
+			spell.spellCollision.elementType = t;
+		} else {
+			spell = null;
+		}
+		
+		return spell; 
+	}
 }
