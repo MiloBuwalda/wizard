@@ -1,13 +1,19 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class NetworkController : Photon.MonoBehaviour
 {
 	string _versionNumber = "0.1"; 
 	string _room = "room_01";
-	string _levelName = "DemoShootingNetworkIntegration";
+	string _levelName = "DemoShooting";
 
 	public Transform spawnPoint;
+
+
+	public GameObject observer;
+	public GameObject OVRplayer;
+
 //	public GameObject playerReference;
 
 
@@ -15,6 +21,8 @@ public class NetworkController : Photon.MonoBehaviour
 
 	public static bool isHost = false;
 	public static bool QuitOnLogout = false;
+
+	public static bool isObserver = false;
 
 	public static bool IsConnected
 	{
@@ -95,6 +103,12 @@ public class NetworkController : Photon.MonoBehaviour
 	{
 		isConnected = true;
 
+		// Create Observer if 2 players are already in the game
+		if (PhotonNetwork.playerList.Length == 1) {
+			isObserver = true;
+			SetObserver();
+		}
+
 //		PlayerSpawner ps = new PlayerSpawner ();
 //		ps.CreateNetworkedPlayer ();
 //		PhotonNetwork.Instantiate (
@@ -129,16 +143,16 @@ public class NetworkController : Photon.MonoBehaviour
 		Debug.Log( "OnCreatedRoom" );
 		
 		//When we create the room we set several custom room properties that get synchronized between all players
-//		ExitGames.Client.Photon.Hashtable properties = new ExitGames.Client.Photon.Hashtable();
+		ExitGames.Client.Photon.Hashtable properties = new ExitGames.Client.Photon.Hashtable();
 		
 //		//If we don't set the scores to 0 here, players would get errors when trying to access the score properties
 //		properties.Add( RoomProperty.BlueScore, (int)0 );
 //		properties.Add( RoomProperty.RedScore, (int)0 );
 		
 		//PhotonNetwork.time is synchronized between all players, so by using it as the start time here, all players can calculate how long the game ran
-//		properties.Add( RoomProperty.StartTime, PhotonNetwork.time );
+		properties.Add( RoomProperty.StartTime, PhotonNetwork.time );
 		
-//		PhotonNetwork.room.SetCustomProperties( properties );
+		PhotonNetwork.room.SetCustomProperties( properties );
 	}
 
 	/// <summary>
@@ -215,18 +229,68 @@ public class NetworkController : Photon.MonoBehaviour
 				connectorObject = new GameObject( "NetworkController" );
 				connectorObject.AddComponent<NetworkController>();
 			}
-			
+
 			instance = connectorObject.GetComponent<NetworkController>();
 		}
 	}
 
-	void OnPhotonPlayerConnected(PhotonPlayer newPlayer)
+	// only if someone doesn't have an OVR on his head
+	void SetObserver()
 	{
-		if(PhotonNetwork.playerList.Length == 3)
-		{
-			Phton
+
+		// Turn of game functionality
+		GameManager.instance.enabled = false;
+
+
+		float fadeSpeed = 1.5f;
+		Color fadeColor = new Color (0.01f, 0.01f, 0.01f);
+
+		bool starting = true;
+
+		Transform leftEye;
+		Transform rightEye;
+
+		// If someone has the Rift on, no need to switch to a normal camera.
+		if (Ovr.Hmd.Detect () > 0) {
+		
+//			PERHAPS TO EASE THE TRANSITION MAKE A FADER
+
+//			leftEye = OVRplayer.transform.Find("LeftEyeAnchor");
+//			rightEye = OVRplayer.transform.Find("RightEyeAnchor");
+//
+//			OVRScreenFade screenFaderLeft = leftEye.gameObject.AddComponent<OVRScreenFade>();
+//			OVRScreenFade screenFaderRight = rightEye.gameObject.AddComponent<OVRScreenFade>();
+
+			// However, his or her position and orientation has to be set to the observers'
+
+//			screenFaderLeft.fadeColor = fadeColor;
+//			screenFaderLeft.fadeTime = fadeSpeed;
+//			screenFaderRight.fadeColor = fadeColor;
+//			screenFaderRight.fadeTime = fadeSpeed;
+
+//			screenFaderLeft.
+
+			// Switch positions
+			OVRplayer.transform.position = observer.transform.position;
+			OVRplayer.transform.rotation = observer.transform.rotation;
+
+			OVRplayer.GetComponent<CharacterController>().enabled = false;
+			OVRplayer.GetComponent<OVRPlayerController>().enabled = false;
+			return;
 		}
+
+		OVRplayer.SetActive (false);
+		observer.SetActive (true);
+
 	}
+
+//	void OnPhotonPlayerConnected(PhotonPlayer newPlayer)
+//	{
+//		if(PhotonNetwork.playerList.Length == 3)
+//		{
+//
+//		}
+//	}
 
 
 
