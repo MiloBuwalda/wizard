@@ -42,7 +42,7 @@ public class Earthscript : MonoBehaviour {
             int nr = Random.Range(0, 4);
             while (randomNumbers.Contains(nr))
             {
-                nr = Random.Range(0, 29);
+                nr = Random.Range(0, 24);
             }
             randomNumbers.Add(nr);
 
@@ -114,7 +114,7 @@ public class Earthscript : MonoBehaviour {
     {
         GameObject Metaball = new GameObject("Metaball", typeof(MeshFilter), typeof(MeshRenderer));
         Metaball.transform.parent = Spawnpoint.transform;
-        Metaball.transform.position = Vector3.up * dist;
+        Metaball.transform.localPosition = Vector3.up * dist;
         
 
         MeshFilter mesh_filter = Metaball.GetComponent<MeshFilter>();

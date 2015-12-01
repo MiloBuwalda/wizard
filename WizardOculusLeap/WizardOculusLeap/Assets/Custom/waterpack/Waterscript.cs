@@ -103,7 +103,7 @@ public class Waterscript : MonoBehaviour {
     {
         GameObject Metaball = new GameObject("Metaball", typeof(MeshFilter), typeof(MeshRenderer));
         Metaball.transform.parent = Spawnpoint.transform;
-        Metaball.transform.position = Vector3.up * dist;
+        Metaball.transform.localPosition = Vector3.up * dist;
 
         MeshFilter mesh_filter = Metaball.GetComponent<MeshFilter>();
         mesh_filter.mesh = model;
