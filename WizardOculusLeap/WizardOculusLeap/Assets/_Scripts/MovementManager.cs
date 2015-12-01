@@ -49,7 +49,7 @@ public class MovementManager : MonoBehaviour {
 		//Get all physic hand models
     	HandModel[] hands = handController.GetAllPhysicsHands();
 /////////////////////////////////////////////////////////////// SUMMON WITH GRAB ///////////////////////////////////////////////////////////////
-		if (hands.Length > 0 && GameManager.instance.player.handRight!=2) {
+		if (hands.Length > 0) {// && GameManager.instance.player.handRight!=2) {
 			if (GameManager.instance.player.elementPool.Count < 2) {
 				if (GameManager.instance.player.handLeft != 2 && hands[GameManager.instance.player.handLeft].GetLeapHand().GrabStrength > 0.8f){
 					if (!GameManager.instance.player.handLeftSlot && !summoning && !insideShieldLeft) {
@@ -127,7 +127,7 @@ public class MovementManager : MonoBehaviour {
 /////////////////////////////////////////////////////////////// SUMMON WITH CIRCLE GESTURE ///////////////////////////////////////////////////////////////
 			}
 			// Handen vooruit bewegen om spell execute te doen
-			if (hands.Length > 1 && GameManager.instance.player.handLeft!=2 && GameManager.instance.player.handRight!=2) {	
+			if (hands.Length > 1) {// && GameManager.instance.player.handLeft!=2 && GameManager.instance.player.handRight!=2) {	
 				Vector3 directionLeft = (hands [GameManager.instance.player.handLeft].GetPalmPosition () - handController.transform.position).normalized;
 				Vector3 normalLeft = hands [GameManager.instance.player.handLeft].GetPalmNormal ().normalized;
 
