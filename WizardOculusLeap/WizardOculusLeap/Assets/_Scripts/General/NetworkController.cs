@@ -19,10 +19,10 @@ public class NetworkController : Photon.MonoBehaviour
 
 	public bool isConnected = false;
 
+	
 	public static bool isHost = false;
 	public static bool QuitOnLogout = false;
 
-	public static bool isObserver = false;
 
 	public static bool IsConnected
 	{
@@ -104,8 +104,7 @@ public class NetworkController : Photon.MonoBehaviour
 		isConnected = true;
 
 		// Create Observer if 2 players are already in the game
-		if (PhotonNetwork.playerList.Length == 1) {
-			isObserver = true;
+		if (PhotonNetwork.playerList.Length > 2) {
 			SetObserver();
 		}
 
@@ -242,10 +241,10 @@ public class NetworkController : Photon.MonoBehaviour
 		GameManager.instance.enabled = false;
 
 
-		float fadeSpeed = 1.5f;
-		Color fadeColor = new Color (0.01f, 0.01f, 0.01f);
+//		float fadeSpeed = 1.5f;
+//		Color fadeColor = new Color (0.01f, 0.01f, 0.01f);
 
-		bool starting = true;
+//		bool starting = true;
 
 		Transform leftEye;
 		Transform rightEye;
@@ -276,6 +275,7 @@ public class NetworkController : Photon.MonoBehaviour
 
 			OVRplayer.GetComponent<CharacterController>().enabled = false;
 			OVRplayer.GetComponent<OVRPlayerController>().enabled = false;
+
 			return;
 		}
 

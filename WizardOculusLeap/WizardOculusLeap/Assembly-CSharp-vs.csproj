@@ -142,7 +142,6 @@
      <Compile Include="Assets\OVR\Scripts\Util\OVRScreenFade.cs" />
      <Compile Include="Assets\OVR\Scripts\Util\OVRUGUI.cs" />
      <Compile Include="Assets\OVR\Scripts\Util\OVRVisionGuide.cs" />
-     <Compile Include="Assets\ObserverPlayer.cs" />
      <Compile Include="Assets\Photon Unity Networking\Plugins\PhotonNetwork\CustomTypes.cs" />
      <Compile Include="Assets\Photon Unity Networking\Plugins\PhotonNetwork\Enums.cs" />
      <Compile Include="Assets\Photon Unity Networking\Plugins\PhotonNetwork\Extensions.cs" />
@@ -215,6 +214,7 @@
      <Compile Include="Assets\_Scripts\General\MouseLook_FIXED.cs" />
      <Compile Include="Assets\_Scripts\General\MultiplayerConnector.cs" />
      <Compile Include="Assets\_Scripts\General\NetworkController.cs" />
+     <Compile Include="Assets\_Scripts\General\ObserverManager.cs" />
      <Compile Include="Assets\_Scripts\General\PhotonNetworkStarter.cs" />
      <Compile Include="Assets\_Scripts\General\PlayerSpawner.cs" />
      <Compile Include="Assets\_Scripts\General\RoomProperties.cs" />
