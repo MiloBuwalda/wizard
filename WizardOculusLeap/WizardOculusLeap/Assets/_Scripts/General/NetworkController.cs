@@ -6,7 +6,7 @@ public class NetworkController : Photon.MonoBehaviour
 {
 	string _versionNumber = "0.1"; 
 	string _room = "room_01";
-	string _levelName = "DemoShooting";
+	string _levelName; //"DemoShooting";
 
 	public Transform spawnPoint;
 
@@ -34,6 +34,7 @@ public class NetworkController : Photon.MonoBehaviour
 	
 	void Start()
 	{
+		_levelName = Application.loadedLevelName;
 		DontDestroyOnLoad (gameObject);
 //
 //		PhotonNetwork.ConnectUsingSettings(_versionNumber);
@@ -246,8 +247,8 @@ public class NetworkController : Photon.MonoBehaviour
 
 //		bool starting = true;
 
-		Transform leftEye;
-		Transform rightEye;
+//		Transform leftEye;
+//		Transform rightEye;
 
 		// If someone has the Rift on, no need to switch to a normal camera.
 		if (Ovr.Hmd.Detect () > 0) {

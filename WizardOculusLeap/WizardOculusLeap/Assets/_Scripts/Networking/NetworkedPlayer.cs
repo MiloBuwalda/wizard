@@ -14,7 +14,7 @@ public class NetworkedPlayer : Photon.MonoBehaviour
 	private float syncTime = 0f;
 	private Vector3 syncStartPosition = Vector3.zero;
 	private Vector3 syncEndPosition = Vector3.zero;
-	private Vector3 syncStartOrientation = Vector3.zero;
+//	private Vector3 syncStartOrientation = Vector3.zero;
 
 	private float m_Speed;
 	private float m_LastNetworkDataReceivedTime;
