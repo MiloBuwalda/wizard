@@ -10,6 +10,7 @@ public class ElementSpawner : MonoBehaviour {
 	public Transform airSpawn;
 	public Transform waterSpawn;
 	public Transform earthSpawn;
+ 	float playerHeight = 220.56f;
 	int basisNumber;
 	int otherNumber;
 	
@@ -50,19 +51,19 @@ public class ElementSpawner : MonoBehaviour {
 	public void ElementToSpawn (Vector3 location, int handNumber){
 		float locationSignX = Mathf.Sign (location.x);
 
-		if (locationSignX == -1 && location.y > 58.7) { //links boven
+		if (locationSignX == -1 && location.y > playerHeight) { //links boven
 			//GameManager.instance.player.AddElementToPool (elementType.Fire, handNumber);
 			ElementSpawnStart(elementType.Fire, handNumber);
 		}
-		else if (locationSignX == 1 && location.y > 58.7) { //rechts boven
+		else if (locationSignX == 1 && location.y > playerHeight) { //rechts boven
 			//GameManager.instance.player.AddElementToPool (elementType.Air, handNumber);
 			ElementSpawnStart(elementType.Air, handNumber);
 		}
-		else if (locationSignX == 1 && location.y < 58.7) { //rechts onder
+		else if (locationSignX == 1 && location.y < playerHeight) { //rechts onder
 			//GameManager.instance.player.AddElementToPool (elementType.Water, handNumber);
 			ElementSpawnStart(elementType.Water, handNumber);
 		}
-		else if (locationSignX == -1 && location.y < 58.7) { //links onder
+		else if (locationSignX == -1 && location.y < playerHeight) { //links onder
 			//GameManager.instance.player.AddElementToPool (elementType.Earth, handNumber);
 			ElementSpawnStart(elementType.Earth, handNumber);
 		}
