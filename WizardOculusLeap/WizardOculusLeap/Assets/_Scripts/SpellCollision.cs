@@ -131,24 +131,17 @@ public class SpellCollision : MonoBehaviour {
 			case "W0_M":
 			case "W0_S":
 				return Consequence.Loss;
-				break;
 			case "A0_M":
 				return Consequence.PushedBack;
-				break;
 			case "A0_S":
 				return Consequence.DirectHit;
-				break;
 			case "E0_M":
 				return Consequence.BreakMissile;
-				break;
 			case "E0_S":
 				return Consequence.DirectHit;
-				break;
 			default:
 				return Consequence.None;
-				break;
 			}
-			break;
 			#endregion
 			#region Fire Shield
 		case "F0_S":
@@ -156,23 +149,17 @@ public class SpellCollision : MonoBehaviour {
 			{
 			case "F0_M":
 				return Consequence.AbsorbShield;
-				break;
-			case "A0_M":
+			case "A0_M": 
 				return Consequence.None;
-				break;
 			case "W0_M":
 				return Consequence.Loss;
-				break;
 			case "E0_M":
 				return Consequence.FullBlock;
-				break;
 			default:
 				return Consequence.None;
-				break;
 			}
-			break;
 			#endregion
-			#region Air Stream
+			#region Air Stream 
 		case "A0_M":
 			switch (opposingSpellIdentifier)
 			{
@@ -182,19 +169,14 @@ public class SpellCollision : MonoBehaviour {
 			case "W0_M":
 			case "E0_S":
 				return Consequence.None;
-				break;
 			case "A0_M":
 				return Consequence.Stopped;
-				break;
 			case "W0_S":
 				return Consequence.DispelShield;
-				break;
 			case "E0_M":
 				return Consequence.PushedBack;
-				break;
 			default:
 				return Consequence.None;
-				break;
 			}
 			#endregion
 			#region Air Shield
@@ -203,21 +185,15 @@ public class SpellCollision : MonoBehaviour {
 			{
 			case "F0_M":
 				return Consequence.None;
-				break;
 			case "A0_M":
 				return Consequence.AbsorbShield;
-				break;
 			case "W0_M":
 				return Consequence.FullBlock;
-				break;
 			case "E0_M":
 				return Consequence.Loss;
-				break;
 			default:
 				return Consequence.None;
-				break;
 			}
-			break;
 			#endregion
 			#region Water Stream
 		case "W0_M":
@@ -225,27 +201,20 @@ public class SpellCollision : MonoBehaviour {
 			{
 			case "F0_M":
 				return Consequence.BreakMissile;
-				break;
 			case "F0_S":
 				return Consequence.DispelShield;
-				break;
 			case "A0_M":
 				return Consequence.PushedBack;
-				break;
 			case "A0_S":
 			case "W0_S":
 			case "E0_M":
 			case "E0_S":
 				return Consequence.None;
-				break;
 			case "W0_M":
 				return Consequence.Stopped;
-				break;
 			default:
 				return Consequence.None;
-				break;
 			}
-			break;
 			#endregion
 			#region Water Shield
 		case "W0_S":
@@ -253,19 +222,14 @@ public class SpellCollision : MonoBehaviour {
 			{
 			case "F0_M":
 				return Consequence.FullBlock;
-				break;
 			case "A0_M":
 				return Consequence.Loss;
-				break;
 			case "W0_M":
 				return Consequence.AbsorbShield;
-				break;
 			case "E0_M":
 			default:
 				return Consequence.None;
-				break;
 			}
-			break;
 			#endregion
 			#region Earth Missile
 		case "E0_M":
@@ -275,24 +239,18 @@ public class SpellCollision : MonoBehaviour {
 			case "F0_S":
 			case "E0_M":
 				return Consequence.Loss;
-				break;
 			case "A0_S":
 			case "W0_S":
 				return Consequence.DirectHit;
-				break;
 			case "W0_M":
 				return Consequence.PushedBack;
-				break;
 			case "E0_S":
 				return Consequence.DispelShield;
-				break;
 			case "A0_M":
 			default:
 				return Consequence.None;
-				break;
 			}
-			break;
-			#endregion
+			#endregion 
 			#region Earth Shield
 		case "E0_S":
 			switch (opposingSpellIdentifier)
@@ -300,20 +258,15 @@ public class SpellCollision : MonoBehaviour {
 			case "F0_M":
 			case "E0_M":
 				return Consequence.Loss;
-				break;
 			case "A0_M":
 				return Consequence.FullBlock;
-				break;
 			case "W0_M":
 			default:
 				return Consequence.None;
-				break;
 			}
-			break;
 			#endregion
 		default:
-			return Consequence.None;
-			break;
+			return Consequence.None; 
 		}
 	}
 	#endregion
@@ -321,7 +274,7 @@ public class SpellCollision : MonoBehaviour {
 	#region Absorb Shield
 	private void IAbsorbedASpell()
 	{
-		//Award points to the owner of this spell for absorbing a missile
+		//Award points to the owner of this spell for absorbing a missile 
 		//This object remains intact
 	}
 	#endregion

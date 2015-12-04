@@ -10,7 +10,7 @@ public class ElementSpawner : MonoBehaviour {
 	public Transform airSpawn;
 	public Transform waterSpawn;
 	public Transform earthSpawn;
- 	float playerHeight = 220.56f;
+ 	public Transform playerHeight;
 	int basisNumber;
 	int otherNumber;
 	
@@ -51,32 +51,28 @@ public class ElementSpawner : MonoBehaviour {
 	public void ElementToSpawn (Vector3 location, int handNumber){
 		float locationSignX = Mathf.Sign (location.x);
 
-		if (locationSignX == -1 && location.y > playerHeight) { //links boven
-			//GameManager.instance.player.AddElementToPool (elementType.Fire, handNumber);
+		if (locationSignX == -1 && location.y > playerHeight.position.y) { //links boven
 			ElementSpawnStart(elementType.Fire, handNumber);
 		}
-		else if (locationSignX == 1 && location.y > playerHeight) { //rechts boven
-			//GameManager.instance.player.AddElementToPool (elementType.Air, handNumber);
+		else if (locationSignX == 1 && location.y > playerHeight.position.y) { //rechts boven
 			ElementSpawnStart(elementType.Air, handNumber);
 		}
-		else if (locationSignX == 1 && location.y < playerHeight) { //rechts onder
-			//GameManager.instance.player.AddElementToPool (elementType.Water, handNumber);
+		else if (locationSignX == 1 && location.y < playerHeight.position.y) { //rechts onder
 			ElementSpawnStart(elementType.Water, handNumber);
 		}
-		else if (locationSignX == -1 && location.y < playerHeight) { //links onder
-			//GameManager.instance.player.AddElementToPool (elementType.Earth, handNumber);
+		else if (locationSignX == -1 && location.y < playerHeight.position.y) { //links onder
 			ElementSpawnStart(elementType.Earth, handNumber);
 		}
 	}
 
 	//Move an element (visual only) from spawnpoint to hand
 	void ElementSpawnStart (elementType element, int handNumber){
-		//GameManager.instance.player.AddElementToPool (element, handNumber);
 		switch (element) { 
 		case elementType.Fire:
 			GameObject clone1 = (GameObject)Instantiate (elementVisual, fireSpawn.position, Quaternion.identity);
 			clone1.GetComponent<ElementSpawnVisual>().element = element; 
-			clone1.GetComponent<ElementSpawnVisual>().handNumber = handNumber; 
+			clone1.GetComponent<ElementSpawnVisual>().handNumber = handNumber;
+			GameManager.instance.audioManager.OneShot(elementType.Fire);
 			break;
 		case elementType.Air:
 			GameObject clone2 = (GameObject)Instantiate (elementVisual, airSpawn.position, Quaternion.identity);

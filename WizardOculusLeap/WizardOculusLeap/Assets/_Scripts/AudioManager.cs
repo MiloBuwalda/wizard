@@ -25,8 +25,8 @@ public class AudioManager : MonoBehaviour {
 //		engine.stop();
 //		engine.release();
 	}
-	void OneShot()
+	public void OneShot(elementType element)
 	{
-//		FMOD_StudioSystem.instance.PlayOneShot(“/Weapons/Single­Shot”, transform.position)
+//		FMOD_StudioSystem.instance.PlayOneShot("snapshot:/Spells/Fire", transform.position);
 	}
 }
