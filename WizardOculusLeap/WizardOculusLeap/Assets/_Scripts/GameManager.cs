@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour {
 	public ElementSpawner elementSpawner;
 	public SpellSpawner spellSpawner;
 	public ShieldSpawner shieldSpawner;
+	public AudioManager audioManager;
 
 	void Awake(){
 		if(instance == null)
@@ -21,6 +22,7 @@ public class GameManager : MonoBehaviour {
 		elementSpawner = GetComponent<ElementSpawner> ();
 		spellSpawner = GetComponent<SpellSpawner> ();
 		shieldSpawner = GetComponent<ShieldSpawner> ();
+		audioManager = GetComponent<AudioManager> ();
 	}
 
 	void Update(){

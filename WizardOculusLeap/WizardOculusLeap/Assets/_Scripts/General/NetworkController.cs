@@ -12,8 +12,9 @@ public class NetworkController : Photon.MonoBehaviour
 
 
 	public GameObject observer;
+	public GameObject playerSpawner;
 	public GameObject OVRplayer;
-
+	 
 //	public GameObject playerReference;
 
 
@@ -103,11 +104,14 @@ public class NetworkController : Photon.MonoBehaviour
 	void OnJoinedRoom()
 	{
 		isConnected = true;
-
+		Debug.Log ("Network Controller/PhotonNetwork.playerList.Length: "+ PhotonNetwork.playerList.Length);
+		 
 		// Create Observer if 2 players are already in the game
 		if (PhotonNetwork.playerList.Length > 2) {
 			SetObserver();
 		}
+		if (playerSpawner != null)
+			playerSpawner.GetComponent<PlayerSpawner> ().SetCurrentSpawnPoint ();
 
 //		PlayerSpawner ps = new PlayerSpawner ();
 //		ps.CreateNetworkedPlayer ();

@@ -40,7 +40,7 @@ public class ElementSpawnVisual : MonoBehaviour {
 		if (hands.Length == 0) {
 			GameManager.instance.movementManager.summoning = false;
 			Destroy (gameObject);
-		} else if (hands.Length == 1 && handNumber == 0) {
+		} else if (hands.Length == 1) {
 			if (handID != hands [0].GetLeapHand ().Id) {
 				GameManager.instance.movementManager.summoning = false;
 				Destroy (gameObject);

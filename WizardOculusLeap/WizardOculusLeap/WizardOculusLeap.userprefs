@@ -1,15 +1,9 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\_Scripts\ElementSpawner.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\_Scripts\General\PlayerSpawner.cs">
     <Files>
-      <File FileName="Assets\_Scripts\General\NetworkController.cs" Line="44" Column="2" />
-      <File FileName="Assets\_Scripts\ShieldElement.cs" Line="1" Column="1" />
-      <File FileName="Assets\_Scripts\ShieldManager.cs" Line="1" Column="1" />
-      <File FileName="Assets\_Scripts\ShieldSpawner.cs" Line="34" Column="30" />
-      <File FileName="Assets\_Scripts\Player.cs" Line="172" Column="23" />
-      <File FileName="Assets\_Scripts\ElementManager.cs" Line="1" Column="1" />
-      <File FileName="Assets\_Scripts\ElementMovement.cs" Line="1" Column="1" />
-      <File FileName="Assets\_Scripts\ElementSpawner.cs" Line="1" Column="1" />
+      <File FileName="Assets\_Scripts\General\NetworkController.cs" Line="112" Column="32" />
+      <File FileName="Assets\_Scripts\General\PlayerSpawner.cs" Line="10" Column="38" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

@@ -11,16 +11,13 @@ public class MovementManager : MonoBehaviour {
 	public bool insideShieldLeft;
 	public bool insideShieldRight;
 	public bool summoning;
-
 	public int insideShieldId; 
 
 	Vector3 directionLeft;
-	Vector3 normalLeft; 
+	Vector3 normalLeft;
 	Vector3 directionRight;
 	Vector3 normalRight;
-
 	int elementToSummon;
-
 	Controller leapController;
 	Listener leapListener;
 
@@ -36,23 +33,24 @@ public class MovementManager : MonoBehaviour {
 		// Add a listener so that the controller is waiting for inputs
 		leapController.AddListener(leapListener);
 		// Check that the leap is fully connected and ready for input
-		Debug.Log("Leap Motion connected: " + leapController.IsConnected); 
+		Debug.Log("Leap Motion connected: " + leapController.IsConnected);
 		
 		// Set up the gesture detection
 		leapController.EnableGesture(Gesture.GestureType.TYPE_CIRCLE);
-		Debug.Log("Circle Gesture Enabled: " + leapController.IsGestureEnabled(Gesture.GestureType.TYPE_CIRCLE));	
+		Debug.Log ("Circle Gesture Enabled: " + leapController.IsGestureEnabled (Gesture.GestureType.TYPE_CIRCLE));
 	}
 
 	void Update () {  
 		if (leapMotionOVRController == null || handController == null)
      	 return;
+
 		//Get all physic hand models
     	HandModel[] hands = handController.GetAllPhysicsHands();
 /////////////////////////////////////////////////////////////// SUMMON WITH GRAB ///////////////////////////////////////////////////////////////
-		if (hands.Length > 0) {// && GameManager.instance.player.handRight!=2) {
-			if (GameManager.instance.player.elementPool.Count < 2) {
+		if (hands.Length > 0){
+			if (GameManager.instance.player.elementPool.Count < 2){
 				if (GameManager.instance.player.handLeft != 2 && hands[GameManager.instance.player.handLeft].GetLeapHand().GrabStrength > 0.8f){
-					if (!GameManager.instance.player.handLeftSlot && !summoning && !insideShieldLeft) {
+					if (!GameManager.instance.player.handLeftSlot && !summoning && !insideShieldLeft){
 						GameManager.instance.elementSpawner.ElementToSpawn (hands [GameManager.instance.player.handLeft].GetPalmPosition (), GameManager.instance.player.handLeft);
 						GameManager.instance.player.handLeftSlot = true;
 						summoning = true;
@@ -127,19 +125,15 @@ public class MovementManager : MonoBehaviour {
 /////////////////////////////////////////////////////////////// SUMMON WITH CIRCLE GESTURE ///////////////////////////////////////////////////////////////
 			}
 			// Handen vooruit bewegen om spell execute te doen
-			if (hands.Length > 1) {// && GameManager.instance.player.handLeft!=2 && GameManager.instance.player.handRight!=2) {	
+			if (hands.Length > 1 && GameManager.instance.player.handLeft!=2 && GameManager.instance.player.handRight!=2) {	
 				Vector3 directionLeft = (hands [GameManager.instance.player.handLeft].GetPalmPosition () - handController.transform.position).normalized;
 				Vector3 normalLeft = hands [GameManager.instance.player.handLeft].GetPalmNormal ().normalized;
-
-				Debug.Log("MovementMan-Update= left: " + GameManager.instance.player.handLeft + ", right: " + GameManager.instance.player.handRight);
-
 
 				Vector3 directionRight = (hands [GameManager.instance.player.handRight].GetPalmPosition () - handController.transform.position).normalized;
 				Vector3 normalRight = hands [GameManager.instance.player.handRight].GetPalmNormal ().normalized;
 
 
 				if (Vector3.Dot (directionLeft, normalLeft) > directionLeft.sqrMagnitude * 0.5f && Vector3.Dot (directionRight, normalRight) > directionRight.sqrMagnitude * 0.5f) {
-//					if (GameObject.Find ("palm").GetComponent<HandInteraction> ()._magnitude > 1) {
 					if (hands[0].gameObject.GetComponentInChildren<HandInteraction>()._magnitude > 1 && hands[1].gameObject.GetComponentInChildren<HandInteraction>()._magnitude > 1){
 						//if collision with shield
 						if (insideShield){ 

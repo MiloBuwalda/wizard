@@ -59,6 +59,7 @@
      <Compile Include="Assets\Custom\Windscript.cs" />
      <Compile Include="Assets\Custom\waterpack\Waterscript.cs" />
      <Compile Include="Assets\EnvironmentCheck.cs" />
+     <Compile Include="Assets\InfoScreen.cs" />
      <Compile Include="Assets\Kenrick\DarkBehavior.cs" />
      <Compile Include="Assets\Kenrick\calltest.cs" />
      <Compile Include="Assets\LeapMotion+OVR\DemoResources\Scripts\BlocksPlaneGenerator.cs" />
