@@ -1,0 +1,171 @@
+Initialize engine version: 5.0.1f1 (5a2e8fe35a68)
+GfxDevice: creating device client; threaded=1
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.0]
+    Renderer: NVIDIA GeForce GTX 980 (ID=0x13c0)
+    Vendor:   NVIDIA
+    VRAM:     3072 MB
+Begin MonoManager ReloadAssembly
+Platform assembly: C:\Users\student\Documents\Projects\wizard\WizardOculusLeap\Builds\networking\DemoShootingNetworkIntegration_SpawnTest_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading C:\Users\student\Documents\Projects\wizard\WizardOculusLeap\Builds\networking\DemoShootingNetworkIntegration_SpawnTest_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: C:\Users\student\Documents\Projects\wizard\WizardOculusLeap\Builds\networking\DemoShootingNetworkIntegration_SpawnTest_Data\Managed\Assembly-CSharp-firstpass.dll (this message is harmless)
+Loading C:\Users\student\Documents\Projects\wizard\WizardOculusLeap\Builds\networking\DemoShootingNetworkIntegration_SpawnTest_Data\Managed\Assembly-CSharp-firstpass.dll into Unity Child Domain
+Platform assembly: C:\Users\student\Documents\Projects\wizard\WizardOculusLeap\Builds\networking\DemoShootingNetworkIntegration_SpawnTest_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading C:\Users\student\Documents\Projects\wizard\WizardOculusLeap\Builds\networking\DemoShootingNetworkIntegration_SpawnTest_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: C:\Users\student\Documents\Projects\wizard\WizardOculusLeap\Builds\networking\DemoShootingNetworkIntegration_SpawnTest_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading C:\Users\student\Documents\Projects\wizard\WizardOculusLeap\Builds\networking\DemoShootingNetworkIntegration_SpawnTest_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+Platform assembly: C:\Users\student\Documents\Projects\wizard\WizardOculusLeap\Builds\networking\DemoShootingNetworkIntegration_SpawnTest_Data\Managed\LeapCSharp.NET3.5.dll (this message is harmless)
+Loading C:\Users\student\Documents\Projects\wizard\WizardOculusLeap\Builds\networking\DemoShootingNetworkIntegration_SpawnTest_Data\Managed\LeapCSharp.NET3.5.dll into Unity Child Domain
+Platform assembly: C:\Users\student\Documents\Projects\wizard\WizardOculusLeap\Builds\networking\DemoShootingNetworkIntegration_SpawnTest_Data\Managed\Photon3Unity3D.dll (this message is harmless)
+Loading C:\Users\student\Documents\Projects\wizard\WizardOculusLeap\Builds\networking\DemoShootingNetworkIntegration_SpawnTest_Data\Managed\Photon3Unity3D.dll into Unity Child Domain
+- Completed reload, in  0.095 seconds
+desktop: 1920x1200 59Hz; virtual: 3120x1920 at -1200,-400
+<RI> Initializing input.
+<RI> Input initialized.
+<RI> Initialized touch support.
+Platform assembly: C:\Users\student\Documents\Projects\wizard\WizardOculusLeap\Builds\networking\DemoShootingNetworkIntegration_SpawnTest_Data\Managed\System.Core.dll (this message is harmless)
+Platform assembly: C:\Users\student\Documents\Projects\wizard\WizardOculusLeap\Builds\networking\DemoShootingNetworkIntegration_SpawnTest_Data\Managed\System.dll (this message is harmless)
+Leap Motion Device ID:Connected Device: LP88765896378 v1.7.0
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Leap Motion connected: True
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Circle Gesture Enabled: True
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Connect
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+NetworkController Started
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Parent of RectTransform is being set with parent property. Consider using the SetParent method instead, with the worldPositionStays argument set to false. This will retain local orientation and scale rather than world orientation and scale, which can prevent common UI scaling issues.
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Parent of RectTransform is being set with parent property. Consider using the SetParent method instead, with the worldPositionStays argument set to false. This will retain local orientation and scale rather than world orientation and scale, which can prevent common UI scaling issues.
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Starting Server
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+OnCreatedRoom
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Network Controller/PhotonNetwork.playerList.Length: 1
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+PlayerSpawner/PhotonNetwork.playerList.Length: 1
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+currentspawnPoint:set 0
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Joined Room
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Create Shield
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+IndexOutOfRangeException: Array index is out of range.
+  at HandInteraction.OnTriggerStay (UnityEngine.Collider other) [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+spellspawner:instantiate AirSpell
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Destroy me: Air
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Create Spell
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+IndexOutOfRangeException: Array index is out of range.
+  at MovementManager.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+Destroy me: Air
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Create Shield
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Destroy me: Water
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Create Shield
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+spellspawner:instantiate EarthSpell
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Destroy me: Earth
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Create Spell
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Destroy me: Earth
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Create Shield
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+spellspawner:instantiate EarthSpell
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Destroy me: Earth
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Create Spell
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+IndexOutOfRangeException: Array index is out of range.
+  at MovementManager.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+Destroy me: Earth
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+IndexOutOfRangeException: Array index is out of range.
+  at ElementMovement.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+OnLeftRoom
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+

@@ -6,6 +6,7 @@ public class PlayerSpawner : MonoBehaviour {
 	public GameObject[] spawnPoints;
 
 	public GameObject playerReference;
+	public GameObject inFrontOfPlayer;
 
 	private Transform currentSpawnPoint;
 
@@ -43,6 +44,13 @@ public class PlayerSpawner : MonoBehaviour {
 		}
 		setSpawnPoint (currentSpawnPoint);
 		resetLocalSpace(playerReference);
+
+		// if on position B then the InFrontOfPlayer object is pointed 
+		// in the wrong direction. So this means 
+		if (playerReference.transform.position.z > 0) {
+			inFrontOfPlayer.transform.rotation = Quaternion.Euler (0, 0, 0);
+			Debug.Log("Infront rotation set with y= 180 ");
+		}
 	}
 
 	void resetLocalSpace(GameObject player)

@@ -7,7 +7,7 @@ public class SpellMovement : MonoBehaviour {
 
 	void Update () {
 		_position = transform.position;
-		_position.z += 3f * Time.deltaTime;
+		_position.z += 50f * Time.deltaTime;
 		transform.position = _position;
 	}
 }
