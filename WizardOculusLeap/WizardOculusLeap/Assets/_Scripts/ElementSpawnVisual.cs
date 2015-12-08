@@ -8,7 +8,7 @@ public class ElementSpawnVisual : MonoBehaviour {
 
 	int handID;
 	float speed = 10f;
-	float size = 4.4f;
+	float size = 4.1f;
 	Vector3 startPosition;
 	Vector3 endPosition;
 	float startTime;
@@ -34,7 +34,7 @@ public class ElementSpawnVisual : MonoBehaviour {
 			endPosition = hands [handNumber].GetPalmPosition ();
 		}
 
-		float distCovered = (Time.time - startTime) * speed;
+		float distCovered = (Time.time -  startTime) * speed;
 		float fracJourney = distCovered / journeyLength;
 		transform.position = Vector3.Lerp(startPosition, endPosition, fracJourney);
 

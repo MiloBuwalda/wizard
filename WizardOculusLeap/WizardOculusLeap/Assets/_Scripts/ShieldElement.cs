@@ -9,11 +9,8 @@ public class ShieldElement : MonoBehaviour {
 
 	public Transform player;
 
-	void Awake (){
-		player = GameObject.Find ("LeapOVRCameraRig").transform;
-	}
-
 	void Start (){
+		player = GameObject.Find ("LeapOVRCameraRig").transform;
 		transform.LookAt (player.position);
 	}
 }

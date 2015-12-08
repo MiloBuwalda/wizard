@@ -5,7 +5,10 @@ using System.Collections.Generic;
 public class ElementSpawner : MonoBehaviour {
 	public static ElementSpawner instance;
 	public Dictionary<string, GameObject> elementBook;
-	public GameObject elementVisual;
+	public GameObject fireVisual;
+	public GameObject airVisual;
+	public GameObject waterVisual;
+	public GameObject earthVisual;
 	public Transform fireSpawn;
 	public Transform airSpawn;
 	public Transform waterSpawn;
@@ -73,23 +76,23 @@ public class ElementSpawner : MonoBehaviour {
 	void ElementSpawnStart (elementType element, int handNumber){
 		switch (element) { 
 		case elementType.Fire:
-			GameObject clone1 = (GameObject)Instantiate (elementVisual, fireSpawn.position, Quaternion.identity);
+			GameObject clone1 = (GameObject)Instantiate (fireVisual, fireSpawn.position, Quaternion.identity);
 			clone1.GetComponent<ElementSpawnVisual>().element = element; 
 			clone1.GetComponent<ElementSpawnVisual>().handNumber = handNumber;
 			GameManager.instance.audioManager.OneShot(elementType.Fire);
 			break;
 		case elementType.Air:
-			GameObject clone2 = (GameObject)Instantiate (elementVisual, airSpawn.position, Quaternion.identity);
+			GameObject clone2 = (GameObject)Instantiate (airVisual, airSpawn.position, Quaternion.identity);
 			clone2.GetComponent<ElementSpawnVisual>().element = element; 
 			clone2.GetComponent<ElementSpawnVisual>().handNumber = handNumber; 
 			break;
 		case elementType.Water:
-			GameObject clone3 = (GameObject)Instantiate (elementVisual, waterSpawn.position, Quaternion.identity);
+			GameObject clone3 = (GameObject)Instantiate (waterVisual, waterSpawn.position, Quaternion.identity);
 			clone3.GetComponent<ElementSpawnVisual>().element = element; 
 			clone3.GetComponent<ElementSpawnVisual>().handNumber = handNumber; 
 			break;
 		case elementType.Earth:
-			GameObject clone4 = (GameObject)Instantiate (elementVisual, earthSpawn.position, Quaternion.identity);
+			GameObject clone4 = (GameObject)Instantiate (earthVisual, earthSpawn.position, Quaternion.identity);
 			clone4.GetComponent<ElementSpawnVisual>().element = element; 
 			clone4.GetComponent<ElementSpawnVisual>().handNumber = handNumber; 
 			break;
