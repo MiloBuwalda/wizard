@@ -3,7 +3,8 @@ using System.Collections;
 
 public class PlayerSpawner : MonoBehaviour {
 
-	public GameObject[] spawnPoints;
+	public Transform spawnPointRed;	
+	public Transform spawnPointBlue;
 
 	public GameObject playerReference;
 	public GameObject inFrontOfPlayer;
@@ -17,8 +18,9 @@ public class PlayerSpawner : MonoBehaviour {
 
 	void Setup()
 	{
-		if (spawnPoints == null || spawnPoints.Length == 0) {
-			spawnPoints = GameObject.FindGameObjectsWithTag("Spawn");
+
+		if (spawnPointRed == null || spawnPointBlue == null) {
+			GameObject[] spawnPoints = GameObject.FindGameObjectsWithTag("Spawn");
 
 			// if still null no spawnpoints have been set 
 			if(spawnPoints == null )
@@ -35,11 +37,11 @@ public class PlayerSpawner : MonoBehaviour {
 		Debug.Log ("PlayerSpawner/PhotonNetwork.playerList.Length: "+ PhotonNetwork.playerList.Length);
 
 		// if first player set player to pos 1 if player 2 then set tot pos 2
-		if (PhotonNetwork.playerList.Length == 1) {
-			currentSpawnPoint = spawnPoints [0].transform;
+		if (GameManager.instance.player.Team == Team.Blue) {
+			currentSpawnPoint = spawnPointBlue;
 			Debug.Log ("currentspawnPoint:set 0");
 		} else {
-			currentSpawnPoint = spawnPoints [1].transform;
+			currentSpawnPoint = spawnPointRed;
 			Debug.Log ("currentspawnPoint:set 1");
 		}
 		setSpawnPoint (currentSpawnPoint);

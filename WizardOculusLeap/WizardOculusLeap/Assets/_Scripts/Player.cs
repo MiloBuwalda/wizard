@@ -210,7 +210,7 @@ public class Player : MonoBehaviour {
 
 
 
-	Team m_Team;
+	public Team m_Team;
 
 	public Team Team
 	{
@@ -223,6 +223,9 @@ public class Player : MonoBehaviour {
 	public void SetTeam ( Team team)
 	{
 		m_Team = team;
+
+		// Location of player is set here.
+		GameManager.instance.playerSpawner.SetCurrentSpawnPoint ();
 
 		// Can set specific team colours here
 	}
