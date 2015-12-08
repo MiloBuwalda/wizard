@@ -76,8 +76,7 @@ public class ShieldSpawner : MonoBehaviour {
 
 				// Instantiate on network (call current element shield from within shield folder)
 				shield.instance = (GameObject) PhotonNetwork.Instantiate(
-					"Shields/"+g.name, basis.instance.transform.position, transform.rotation,0);
-
+					"Shields/"+g.name, basis.instance.transform.position, transform.rotation ,0);
 
 				shield.elementType = basis.elementType;
 				shield.Setup();

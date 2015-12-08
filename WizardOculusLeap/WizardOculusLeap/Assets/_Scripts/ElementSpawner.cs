@@ -11,6 +11,7 @@ public class ElementSpawner : MonoBehaviour {
 	public Transform waterSpawn;
 	public Transform earthSpawn;
  	public Transform playerHeight;
+	public Transform forwardDirection;
 	int basisNumber;
 	int otherNumber;
 	
@@ -50,6 +51,9 @@ public class ElementSpawner : MonoBehaviour {
 	//Find out which element to spawn, based on its location
 	public void ElementToSpawn (Vector3 location, int handNumber){
 		float locationSignX = Mathf.Sign (location.x);
+		if (forwardDirection.rotation.y == 180 || forwardDirection.rotation.y == -180) {
+			locationSignX *= -1;
+		}
 
 		if (locationSignX == -1 && location.y > playerHeight.position.y) { //links boven
 			ElementSpawnStart(elementType.Fire, handNumber);
