@@ -1,13 +1,29 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
-public class NetworkController : MonoBehaviour
+public class NetworkController : Photon.MonoBehaviour
 {
-	string _room = "Wizard";
-	string _levelName = "Demo";
+	string _versionNumber = "0.1"; 
+	string _room = "room_01";
+	string _levelName; //"DemoShooting";
 
+	public Transform spawnPoint;
+
+
+	public GameObject observer;
+	public GameObject playerSpawner;
+	public GameObject OVRplayer;
+	 
+//	public GameObject playerReference;
+
+
+	public bool isConnected = false;
+
+	
 	public static bool isHost = false;
 	public static bool QuitOnLogout = false;
+
 
 	public static bool IsConnected
 	{
@@ -19,21 +35,24 @@ public class NetworkController : MonoBehaviour
 	
 	void Start()
 	{
+		_levelName = Application.loadedLevelName;
 		DontDestroyOnLoad (gameObject);
-
+//
+//		PhotonNetwork.ConnectUsingSettings(_versionNumber);
+		Connect ();
 		Debug.Log ("NetworkController Started");
-		PhotonNetwork.ConnectUsingSettings("0.1");
 	}
 
 	public void Connect()
 	{
-		if (PhotonNetwork.connectionState != ConnectionState.Disconnected)
-		    return;
-
+		Debug.Log("Connect");
+		if (PhotonNetwork.connectionState != ConnectionState.Disconnected) {
+			return;
+		}
 
 		try
 		{
-			PhotonNetwork.ConnectUsingSettings("0.1");
+			PhotonNetwork.ConnectUsingSettings(_versionNumber);
 		}
 		catch
 		{
@@ -53,34 +72,60 @@ public class NetworkController : MonoBehaviour
 	/// </summary>
 	void OnJoinedLobby()
 	{
-		if( isHost == true )
-			return;
-		
-		if( QuitOnLogout == true )
-		{
-			Application.Quit();
-			return;
-		}
-		
-		if( Application.loadedLevelName == _levelName )
-		{
-			RoomOptions roomOptions = new RoomOptions();
-			roomOptions.maxPlayers = 20;
-			
-			PhotonNetwork.JoinOrCreateRoom( "Wizard", roomOptions, TypedLobby.Default );
-			Debug.Log( "Joined Lobby" );
-		}
-		else
-		{
-			//If we join the lobby while not being in the MainMenu scene, something went wrong and we disconnect from Photon
-			PhotonNetwork.Disconnect();
-		}
+		RoomOptions roomOptions = new RoomOptions (){};
+		PhotonNetwork.JoinOrCreateRoom (_room, roomOptions, TypedLobby.Default);
+		Debug.Log ("Starting Server");
+//		if( isHost == true )
+//			return;
+//		
+//		if( QuitOnLogout == true )
+//		{
+//			Application.Quit();
+//			return;
+//		}
+//		
+//		if( Application.loadedLevelName == _levelName )
+//		{
+//			RoomOptions roomOptions = new RoomOptions();
+//			roomOptions.maxPlayers = 20;
+//			
+//			PhotonNetwork.JoinOrCreateRoom( _room, roomOptions, TypedLobby.Default );
+//			Debug.Log( "Joined Lobby" );
+//		}
+//		else
+//		{
+//			//If we join the lobby while not being in the MainMenu scene, something went wrong and we disconnect from Photon
+//			PhotonNetwork.Disconnect();
+//		}
 	}
 
 
 
 	void OnJoinedRoom()
 	{
+		isConnected = true;
+		Debug.Log ("Network Controller/PhotonNetwork.playerList.Length: "+ PhotonNetwork.playerList.Length);
+
+		// When a"Player" is spawned on the network use OnPhotonInstantiate inside Player 
+
+		// Create Observer if 2 players are already in the game
+		if (PhotonNetwork.playerList.Length > 2) {
+			SetObserver();
+		}
+		if (playerSpawner != null) {
+			if(PhotonNetwork.playerList.Length == 1)
+				GameManager.instance.player.SetTeam(Team.Blue);
+			else
+				GameManager.instance.player.SetTeam(Team.Red);
+		}
+//		PlayerSpawner ps = new PlayerSpawner ();
+//		ps.CreateNetworkedPlayer ();
+//		PhotonNetwork.Instantiate (
+//			playerReference.name, 
+//			spawnPoint.position, 
+//			Quaternion.identity, 
+//			0);
+		Debug.Log ("Joined Room");
 //		PhotonNetwork.isMessageQueueRunning = false;
 //		Application.LoadLevel ("Level");
 	}
@@ -193,11 +238,69 @@ public class NetworkController : MonoBehaviour
 				connectorObject = new GameObject( "NetworkController" );
 				connectorObject.AddComponent<NetworkController>();
 			}
-			
+
 			instance = connectorObject.GetComponent<NetworkController>();
 		}
 	}
 
+	// only if someone doesn't have an OVR on his head
+	void SetObserver()
+	{
+
+		// Turn of game functionality
+		GameManager.instance.enabled = false;
+
+
+//		float fadeSpeed = 1.5f;
+//		Color fadeColor = new Color (0.01f, 0.01f, 0.01f);
+
+//		bool starting = true;
+
+//		Transform leftEye;
+//		Transform rightEye;
+
+		// If someone has the Rift on, no need to switch to a normal camera.
+		if (Ovr.Hmd.Detect () > 0) {
+		
+//			PERHAPS TO EASE THE TRANSITION MAKE A FADER
+
+//			leftEye = OVRplayer.transform.Find("LeftEyeAnchor");
+//			rightEye = OVRplayer.transform.Find("RightEyeAnchor");
+//
+//			OVRScreenFade screenFaderLeft = leftEye.gameObject.AddComponent<OVRScreenFade>();
+//			OVRScreenFade screenFaderRight = rightEye.gameObject.AddComponent<OVRScreenFade>();
+
+			// However, his or her position and orientation has to be set to the observers'
+
+//			screenFaderLeft.fadeColor = fadeColor;
+//			screenFaderLeft.fadeTime = fadeSpeed;
+//			screenFaderRight.fadeColor = fadeColor;
+//			screenFaderRight.fadeTime = fadeSpeed;
+
+//			screenFaderLeft.
+
+			// Switch positions
+			OVRplayer.transform.position = observer.transform.position;
+			OVRplayer.transform.rotation = observer.transform.rotation;
+
+			OVRplayer.GetComponent<CharacterController>().enabled = false;
+			OVRplayer.GetComponent<OVRPlayerController>().enabled = false;
+
+			return;
+		}
+
+		OVRplayer.SetActive (false);
+		observer.SetActive (true);
+
+	}
+
+//	void OnPhotonPlayerConnected(PhotonPlayer newPlayer)
+//	{
+//		if(PhotonNetwork.playerList.Length == 3)
+//		{
+//
+//		}
+//	}
 
 
 

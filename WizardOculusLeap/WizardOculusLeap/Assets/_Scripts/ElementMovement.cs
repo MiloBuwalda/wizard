@@ -32,10 +32,12 @@ public class ElementMovement : MonoBehaviour {
 					GameManager.instance.player.ExecuteShield(GameManager.instance.player.rightElement);
 				}
 			} else {
-				if (hands[handNumber].GetLeapHand().IsLeft){
-					GameManager.instance.player.ExecuteShield(GameManager.instance.player.leftElement);
-				} else if (hands[handNumber].GetLeapHand().IsRight){
-					GameManager.instance.player.ExecuteShield(GameManager.instance.player.rightElement);
+				if(hands.Length > 0){
+					if (hands[handNumber].GetLeapHand().IsLeft){
+						GameManager.instance.player.ExecuteShield(GameManager.instance.player.leftElement);
+					} else if (hands[handNumber].GetLeapHand().IsRight){
+						GameManager.instance.player.ExecuteShield(GameManager.instance.player.rightElement);
+					}
 				}
 			}
 		}

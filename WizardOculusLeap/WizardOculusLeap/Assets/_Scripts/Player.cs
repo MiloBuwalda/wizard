@@ -2,6 +2,14 @@
 using System.Collections;
 using System.Collections.Generic;
 
+public enum Team
+{
+	Red,
+	Blue,
+	Observer,
+	None,
+}
+
 public class Player : MonoBehaviour {
 
 	public List <ElementManager> elementPool;
@@ -18,6 +26,7 @@ public class Player : MonoBehaviour {
 	public bool handLeftSlot;
 	public bool handRightSlot;
 
+
 	void Start () {
 		elementPool = new List<ElementManager>();
 		spellPool = new List<SpellManager>();
@@ -31,6 +40,7 @@ public class Player : MonoBehaviour {
 
 	void Update () {
 		Hands ();
+		Vangnet ();
 	}
 
 	//Asign which hand number int is left and right || 2 is no hand found
@@ -61,6 +71,30 @@ public class Player : MonoBehaviour {
 		}
 	}
 
+	void Vangnet (){
+		HandModel[] hands = GameManager.instance.movementManager.handController.GetAllPhysicsHands();
+		if (hands.Length == 0) {
+			if(handLeftSlot) {
+				handLeftSlot = false;
+			}
+			if (handRightSlot){
+				handRightSlot = false;
+			}
+			if (GameManager.instance.movementManager.summoning) {
+			GameManager.instance.movementManager.summoning = false;
+			}
+			if (GameManager.instance.movementManager.insideShield) {
+			GameManager.instance.movementManager.insideShield = false;
+			}
+			if (GameManager.instance.movementManager.insideShieldLeft) {
+			GameManager.instance.movementManager.insideShieldLeft = false;
+			}
+			if (GameManager.instance.movementManager.insideShieldRight) {
+			GameManager.instance.movementManager.insideShieldRight = false;
+			}
+		}
+	}
+
 	//Add summoned element to element pool
 	public void AddElementToPool(elementType t, int handNumber)
 	{
@@ -85,9 +119,14 @@ public class Player : MonoBehaviour {
 	}
 
 	public void EmptyShieldPool(){
-		foreach (ShieldManager shield in shieldPool)	{
-			Destroy(shield.instance);
+//		foreach (ShieldManager shield in shieldPool)	{
+////			Destroy(shield.instance);
+//		}
+
+		for (int i = 0; i < shieldPool.Count; i++) {
+			shieldPool[i].DestroyMe();
 		}
+
 		shieldPool.Clear ();
 		GameManager.instance.movementManager.insideShieldLeft = false;
 		GameManager.instance.movementManager.insideShieldRight = false;
@@ -117,11 +156,12 @@ public class Player : MonoBehaviour {
 	}
 
 	//Create a shield with elements from pool
-	public void ExecuteSpell(){
-		SpellManager spell = SpellSpawner.instance.CreateSpell (triggerShieldElementTypeSpell, triggerShieldPosition);
+	public void ExecuteSpell(int shieldId){
+		SpellManager spell = SpellSpawner.instance.CreateSpellNetworked (triggerShieldElementTypeSpell, triggerShieldPosition);
 		if (spell != null) {
 			spellPool.Add (spell);
-			EmptyShieldPool();
+			//EmptyShieldPool();
+			RemoveShield(shieldId);
 			GameManager.instance.movementManager.insideShield = false;
 			handLeftSlot = false; 
 			handRightSlot = false;
@@ -130,12 +170,76 @@ public class Player : MonoBehaviour {
 
 	//Create a spell with elements from pool
 	public void ExecuteShield(ElementManager elementManager){
+
+//		ExecuteSpell (0);
+//		return;
+//		// NO HE DIDNT : Workaround
+
 		ShieldManager shield = ShieldSpawner.instance.CreateShield (elementManager);
 		if (shield != null) {
+
 			shieldPool.Add(shield);
 			EmptyElementPool();
 			handLeftSlot = false;
 			handRightSlot = false;
+		}
+	}
+
+
+	public void RemoveShield(int shieldId){
+
+		int iLength = shieldPool.Count; 
+		for (int i = 0; i < iLength; i++) {
+			if(shieldPool[i].id == shieldId)
+			{
+				shieldPool[i].DestroyMe();
+			}
+		}
+
+//		foreach (ShieldManager s in shieldPool) {
+//			if( s.id == shieldId){
+//				if(shieldPool.Remove(s)){
+//					s.DestroyMe();
+//				}
+//				// check if s still exists
+//
+//			}
+//		}
+
+	}
+
+
+
+	public Team m_Team;
+
+	public Team Team
+	{
+		get
+		{
+			return m_Team;
+		}
+	}
+
+	public void SetTeam ( Team team)
+	{
+		m_Team = team;
+
+		// Location of player is set here.
+		GameManager.instance.playerSpawner.SetCurrentSpawnPoint ();
+
+		// Can set specific team colours here
+	}
+
+	void OnPhotonSerializeView ( PhotonStream stream, PhotonMessageInfo info)
+	{
+		SerializeState (stream, info);
+
+	}
+
+	void SerializeState (PhotonStream stream, PhotonMessageInfo info)
+	{
+		if (stream.isWriting == true) {
+			//stream.SendNext( health);
 		}
 	}
 }
