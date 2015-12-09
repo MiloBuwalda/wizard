@@ -105,14 +105,19 @@ public class NetworkController : Photon.MonoBehaviour
 	{
 		isConnected = true;
 		Debug.Log ("Network Controller/PhotonNetwork.playerList.Length: "+ PhotonNetwork.playerList.Length);
-		 
+
+		// When a"Player" is spawned on the network use OnPhotonInstantiate inside Player 
+
 		// Create Observer if 2 players are already in the game
 		if (PhotonNetwork.playerList.Length > 2) {
 			SetObserver();
 		}
-		if (playerSpawner != null)
-			playerSpawner.GetComponent<PlayerSpawner> ().SetCurrentSpawnPoint ();
-
+		if (playerSpawner != null) {
+			if(PhotonNetwork.playerList.Length == 1)
+				GameManager.instance.player.SetTeam(Team.Blue);
+			else
+				GameManager.instance.player.SetTeam(Team.Red);
+		}
 //		PlayerSpawner ps = new PlayerSpawner ();
 //		ps.CreateNetworkedPlayer ();
 //		PhotonNetwork.Instantiate (
