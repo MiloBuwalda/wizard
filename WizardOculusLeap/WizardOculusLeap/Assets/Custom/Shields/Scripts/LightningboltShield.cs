@@ -77,9 +77,7 @@ public class LightningboltShield : MonoBehaviour
 				LR[i].SetPosition(0, transform.position);
 				//Create an impact point
 				targetPoint = (Random.onUnitSphere * impactRadius) + transform.position;
-				targetPoint.z = 0;
-				targetPoint.Normalize();
-				targetPoint *= impactRadius;
+				targetPoint.z *= transform.parent.localScale.z;
 				targetPoint.z += transform.position.z;
 				//are we there yet?
 				float closeEnough = Vector3.Distance(targetPoint, lastPoint)/(minimumSteps/2);

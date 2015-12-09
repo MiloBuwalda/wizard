@@ -1,0 +1,210 @@
+fileFormatVersion: 2
+guid: 7b74192b979a92040a98ee93e516866f
+timeCreated: 1448891366
+licenseType: Free
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: env_ice_glacier
+    100002: env_ice_glacier_2
+    100004: env_ice_glacier_ruins_base
+    100006: env_ice_glacier_ruins_faces
+    100008: env_ice_glacier_ruins_top
+    100010: env_ice_inner
+    100012: env_ice_inner001
+    100014: env_ice_inner002
+    100016: env_ice_inner003
+    100018: env_ice_inner004
+    100020: env_ice_inner005
+    100022: env_ice_outer_001
+    100024: env_ice_outer_002
+    100026: env_water_001
+    100028: env_water_002
+    100030: //RootNode
+    100032: miAreaLightomni001
+    100034: Omni004
+    100036: Omni005
+    100038: Omni006
+    100040: Omni007
+    100042: Sky001
+    100044: tower_001_base
+    100046: tower_001_top
+    100048: tower_001_top_base
+    100050: tower_001_top_debris
+    100052: tower_001_top_roof
+    100054: tower_002_base
+    100056: tower_002_top
+    100058: tower_002_top_base
+    100060: tower_002_top_debris
+    100062: tower_002_top_roof
+    400000: env_ice_glacier
+    400002: env_ice_glacier_2
+    400004: env_ice_glacier_ruins_base
+    400006: env_ice_glacier_ruins_faces
+    400008: env_ice_glacier_ruins_top
+    400010: env_ice_inner
+    400012: env_ice_inner001
+    400014: env_ice_inner002
+    400016: env_ice_inner003
+    400018: env_ice_inner004
+    400020: env_ice_inner005
+    400022: env_ice_outer_001
+    400024: env_ice_outer_002
+    400026: env_water_001
+    400028: env_water_002
+    400030: //RootNode
+    400032: miAreaLightomni001
+    400034: Omni004
+    400036: Omni005
+    400038: Omni006
+    400040: Omni007
+    400042: Sky001
+    400044: tower_001_base
+    400046: tower_001_top
+    400048: tower_001_top_base
+    400050: tower_001_top_debris
+    400052: tower_001_top_roof
+    400054: tower_002_base
+    400056: tower_002_top
+    400058: tower_002_top_base
+    400060: tower_002_top_debris
+    400062: tower_002_top_roof
+    2300000: env_ice_glacier
+    2300002: env_ice_glacier_2
+    2300004: env_ice_glacier_ruins_base
+    2300006: env_ice_glacier_ruins_faces
+    2300008: env_ice_glacier_ruins_top
+    2300010: env_ice_inner
+    2300012: env_ice_inner001
+    2300014: env_ice_inner002
+    2300016: env_ice_inner003
+    2300018: env_ice_inner004
+    2300020: env_ice_inner005
+    2300022: env_ice_outer_001
+    2300024: env_ice_outer_002
+    2300026: env_water_001
+    2300028: env_water_002
+    2300030: tower_001_base
+    2300032: tower_001_top
+    2300034: tower_001_top_base
+    2300036: tower_001_top_debris
+    2300038: tower_001_top_roof
+    2300040: tower_002_base
+    2300042: tower_002_top
+    2300044: tower_002_top_base
+    2300046: tower_002_top_debris
+    2300048: tower_002_top_roof
+    3300000: env_ice_glacier
+    3300002: env_ice_glacier_2
+    3300004: env_ice_glacier_ruins_base
+    3300006: env_ice_glacier_ruins_faces
+    3300008: env_ice_glacier_ruins_top
+    3300010: env_ice_inner
+    3300012: env_ice_inner001
+    3300014: env_ice_inner002
+    3300016: env_ice_inner003
+    3300018: env_ice_inner004
+    3300020: env_ice_inner005
+    3300022: env_ice_outer_001
+    3300024: env_ice_outer_002
+    3300026: env_water_001
+    3300028: env_water_002
+    3300030: tower_001_base
+    3300032: tower_001_top
+    3300034: tower_001_top_base
+    3300036: tower_001_top_debris
+    3300038: tower_001_top_roof
+    3300040: tower_002_base
+    3300042: tower_002_top
+    3300044: tower_002_top_base
+    3300046: tower_002_top_debris
+    3300048: tower_002_top_roof
+    4300000: tower_002_top
+    4300002: tower_002_top_roof
+    4300004: tower_002_top_debris
+    4300006: tower_002_top_base
+    4300008: env_water_001
+    4300010: env_water_002
+    4300012: tower_002_base
+    4300014: tower_001_base
+    4300016: tower_001_top_base
+    4300018: tower_001_top_debris
+    4300020: tower_001_top
+    4300022: tower_001_top_roof
+    4300024: env_ice_glacier_ruins_top
+    4300026: env_ice_glacier_ruins_faces
+    4300028: env_ice_outer_002
+    4300030: env_ice_inner001
+    4300032: env_ice_inner
+    4300034: env_ice_glacier
+    4300036: env_ice_glacier_2
+    4300038: env_ice_glacier_ruins_base
+    4300040: env_ice_inner002
+    4300042: env_ice_inner003
+    4300044: env_ice_inner004
+    4300046: env_ice_inner005
+    4300048: env_ice_outer_001
+    7400000: Take 001
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
