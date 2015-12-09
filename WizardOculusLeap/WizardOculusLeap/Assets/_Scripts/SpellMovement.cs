@@ -5,7 +5,7 @@ public class SpellMovement : MonoBehaviour {
 
 	public Vector3 startMarker;
 	public Vector3 endMarker;
-	public float speed = 30.0f;
+	public float speed = 5.0f;
 
 	private float startTime;
 	private float journeyLength;

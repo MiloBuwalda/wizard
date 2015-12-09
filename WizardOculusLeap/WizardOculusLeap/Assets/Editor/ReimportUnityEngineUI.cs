@@ -14,7 +14,6 @@ public class ReimportUnityEngineUI
 		var path = EditorApplication.applicationContentsPath + "/UnityExtensions/Unity/GUISystem/{0}/{1}";
 		var version = Regex.Match( Application.unityVersion,@"^[0-9]+\.[0-9]+\.[0-9]+").Value;
 		#else
-		Debug.Log("Editorpath" + EditorApplication.applicationContentsPath);
 		var path = EditorApplication.applicationContentsPath + "/UnityExtensions/Unity/GUISystem/{1}";
 		var version = string.Empty;
 		#endif

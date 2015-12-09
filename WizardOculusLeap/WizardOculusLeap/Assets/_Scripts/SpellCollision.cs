@@ -2,11 +2,11 @@
 using System.Collections;
 
 public class SpellCollision : MonoBehaviour {
-
+	
 	public int id;
 	
 	public elementType elementType;
-
+	
 	#region enums
 	public enum Consequence
 	{
@@ -22,7 +22,7 @@ public class SpellCollision : MonoBehaviour {
 		None
 	}
 	#endregion
-
+	
 	void OnTriggerEnter(Collider other){
 		Debug.Log ("OnTriggerEnter");
 		if (other.tag == "Spell") {
@@ -38,7 +38,7 @@ public class SpellCollision : MonoBehaviour {
 			WeAreColliding (element, elementOpposing);
 		}
 	}
-
+	
 	string CreateString (elementType Element, bool isSpell){
 		string e = Element.ToString ();
 		if (e.Contains ("Fire")) {
@@ -74,10 +74,10 @@ public class SpellCollision : MonoBehaviour {
 		} else {
 			e = e.Insert(2,"_S");
 		}
-
+		
 		return e;
 	}
-
+	
 	#region We Are Collising
 	public void WeAreColliding (string spellIdentifier, string opposingSpellIdentifier)
 	{
@@ -291,7 +291,8 @@ public class SpellCollision : MonoBehaviour {
 	private void IBrokeAShield()
 	{
 		//Destroy this object
-		Destroy (gameObject);
+		//Destroy (gameObject);
+		PhotonNetwork.Destroy (gameObject);
 		//Award points to the owner of this spell for destroying a shield
 	}
 	#endregion
@@ -299,7 +300,8 @@ public class SpellCollision : MonoBehaviour {
 	private void IDispelledAShield()
 	{
 		//Destroy this object
-		Destroy (gameObject);
+		//Destroy (gameObject);
+		PhotonNetwork.Destroy (gameObject);
 		//Award points to the owner of this spell for dispelling a shield
 	}
 	#endregion
@@ -307,7 +309,8 @@ public class SpellCollision : MonoBehaviour {
 	private void IDirectlyHitSomeone()
 	{
 		//Destroy this object
-		Destroy (gameObject);
+		//Destroy (gameObject);
+		PhotonNetwork.Destroy (gameObject);
 		//Award points to the owner of this spell for hitting another player
 	}
 	#endregion
@@ -322,7 +325,8 @@ public class SpellCollision : MonoBehaviour {
 	private void ILost()
 	{
 		//Destroy this object
-		Destroy (gameObject);
+		//Destroy (gameObject);
+		PhotonNetwork.Destroy (gameObject);
 		//No points are awarded this way; the destroying opposing spell does that
 	}
 	#endregion
