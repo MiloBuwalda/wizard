@@ -5,7 +5,7 @@ public class SpellMovement : MonoBehaviour {
 
 	public Vector3 startMarker;
 	public Vector3 endMarker;
-	public float speed = 5.0f;
+	public float speed = 15.0f;
 
 	private float startTime;
 	private float journeyLength;
@@ -16,6 +16,10 @@ public class SpellMovement : MonoBehaviour {
 	void Start()
 	{
 
+		// If photonview is not mine turn off script
+		PhotonView thisView = gameObject.GetComponent<PhotonView> ();
+		if (!thisView.isMine)
+			enabled = false;
 		startMarker = this.transform.position;
 
 			
@@ -25,7 +29,7 @@ public class SpellMovement : MonoBehaviour {
 		else {
 			endMarker = GameManager.instance.playerSpawner.spawnPointBlue.position;
 		}
-
+		Debug.Log ("endMarker" + endMarker);
 		startTime = Time.time;
 		journeyLength = Vector3.Distance (startMarker,endMarker);
 	}

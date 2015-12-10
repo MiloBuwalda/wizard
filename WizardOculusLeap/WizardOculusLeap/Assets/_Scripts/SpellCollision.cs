@@ -292,7 +292,7 @@ public class SpellCollision : MonoBehaviour {
 	{
 		//Destroy this object
 		//Destroy (gameObject);
-		PhotonNetwork.Destroy (gameObject);
+//		PhotonNetwork.Destroy (gameObject);
 		//Award points to the owner of this spell for destroying a shield
 	}
 	#endregion
@@ -301,7 +301,7 @@ public class SpellCollision : MonoBehaviour {
 	{
 		//Destroy this object
 		//Destroy (gameObject);
-		PhotonNetwork.Destroy (gameObject);
+//		PhotonNetwork.Destroy (gameObject);
 		//Award points to the owner of this spell for dispelling a shield
 	}
 	#endregion
@@ -310,7 +310,7 @@ public class SpellCollision : MonoBehaviour {
 	{
 		//Destroy this object
 		//Destroy (gameObject);
-		PhotonNetwork.Destroy (gameObject);
+//		PhotonNetwork.Destroy (gameObject);
 		//Award points to the owner of this spell for hitting another player
 	}
 	#endregion
@@ -326,7 +326,7 @@ public class SpellCollision : MonoBehaviour {
 	{
 		//Destroy this object
 		//Destroy (gameObject);
-		PhotonNetwork.Destroy (gameObject);
+//		PhotonNetwork.Destroy (gameObject);
 		//No points are awarded this way; the destroying opposing spell does that
 	}
 	#endregion
