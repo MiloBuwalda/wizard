@@ -25,19 +25,19 @@ public class MovementManager : MonoBehaviour {
 		leapController = new Controller();
 		leapListener = new Listener();
 		
-		// Log that the Leap Motion device is attached and recognized
-		foreach(Device item in leapController.Devices)
-		{
-			Debug.Log("Leap Motion Device ID:" + item.ToString());
-		}
-		// Add a listener so that the controller is waiting for inputs
-		leapController.AddListener(leapListener);
-		// Check that the leap is fully connected and ready for input
-		Debug.Log("Leap Motion connected: " + leapController.IsConnected);
-		
-		// Set up the gesture detection
-		leapController.EnableGesture(Gesture.GestureType.TYPE_CIRCLE);
-		Debug.Log ("Circle Gesture Enabled: " + leapController.IsGestureEnabled (Gesture.GestureType.TYPE_CIRCLE));
+//		// Log that the Leap Motion device is attached and recognized
+//		foreach(Device item in leapController.Devices)
+//		{
+//			Debug.Log("Leap Motion Device ID:" + item.ToString());
+//		}
+//		// Add a listener so that the controller is waiting for inputs
+//		leapController.AddListener(leapListener);
+//		// Check that the leap is fully connected and ready for input
+//		Debug.Log("Leap Motion connected: " + leapController.IsConnected);
+//		
+//		// Set up the gesture detection
+//		leapController.EnableGesture(Gesture.GestureType.TYPE_CIRCLE);
+//		Debug.Log ("Circle Gesture Enabled: " + leapController.IsGestureEnabled (Gesture.GestureType.TYPE_CIRCLE));
 	}
 
 	void Update () {  
@@ -144,7 +144,7 @@ public class MovementManager : MonoBehaviour {
 				}
 			}
 			//Linkerhand schild wanneer hand naar voren
-			if(GameManager.instance.player.handLeftSlot){
+			if(GameManager.instance.player.handLeftSlot && !summoning){
 				Vector3 directionLeft = (hands [GameManager.instance.player.handLeft].GetPalmPosition () - handController.transform.position).normalized;
 				Vector3 normalLeft = hands [GameManager.instance.player.handLeft].GetPalmNormal ().normalized;
 
@@ -160,7 +160,7 @@ public class MovementManager : MonoBehaviour {
 				}
 			}
 			//Rechterhand schild wanneer hand naar voren 
-			if(GameManager.instance.player.handRightSlot){
+			if(GameManager.instance.player.handRightSlot && !summoning){
 				Vector3 directionRight = (hands [GameManager.instance.player.handRight].GetPalmPosition () - handController.transform.position).normalized;
 				Vector3 normalRight = hands [GameManager.instance.player.handRight].GetPalmNormal ().normalized;
 

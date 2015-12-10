@@ -49,10 +49,6 @@
      <Compile Include="Assets\Custom\Earthscript.cs" />
      <Compile Include="Assets\Custom\OrbitBehaviour.cs" />
      <Compile Include="Assets\Custom\OrbitBehaviour2.cs" />
-     <Compile Include="Assets\Custom\Shields\Scripts\AlphaReducer.cs" />
-     <Compile Include="Assets\Custom\Shields\Scripts\ExplosionLooper.cs" />
-     <Compile Include="Assets\Custom\Shields\Scripts\FireMaterialScroller.cs" />
-     <Compile Include="Assets\Custom\Shields\Scripts\LightningboltShield.cs" />
      <Compile Include="Assets\Custom\Windscript.cs" />
      <Compile Include="Assets\Custom\waterpack\Waterscript.cs" />
      <Compile Include="Assets\Gates\windcontroll.cs" />
@@ -198,6 +194,7 @@
      <Compile Include="Assets\Photon Unity Networking\UtilityScripts\SupportLogger.cs" />
      <Compile Include="Assets\Photon Unity Networking\UtilityScripts\TimeKeeper.cs" />
      <Compile Include="Assets\Resources\ElementalSources\Scripts\ScrollingUVs_Layers.cs" />
+     <Compile Include="Assets\_Scripts\AirShieldWobbler.cs" />
      <Compile Include="Assets\_Scripts\AudioManager.cs" />
      <Compile Include="Assets\_Scripts\AudioState.cs" />
      <Compile Include="Assets\_Scripts\BasicLookInputModule.cs" />
@@ -207,6 +204,8 @@
      <Compile Include="Assets\_Scripts\ElementSpawnVisual.cs" />
      <Compile Include="Assets\_Scripts\ElementSpawner.cs" />
      <Compile Include="Assets\_Scripts\EnvironmentCheck.cs" />
+     <Compile Include="Assets\_Scripts\ExplosionLooper2.cs" />
+     <Compile Include="Assets\_Scripts\FireMaterialScroller.cs" />
      <Compile Include="Assets\_Scripts\GameManager.cs" />
      <Compile Include="Assets\_Scripts\General\MouseLook_FIXED.cs" />
      <Compile Include="Assets\_Scripts\General\MultiplayerConnector.cs" />
@@ -218,6 +217,7 @@
      <Compile Include="Assets\_Scripts\HandInteraction.cs" />
      <Compile Include="Assets\_Scripts\ICollidable.cs" />
      <Compile Include="Assets\_Scripts\InfoScreen.cs" />
+     <Compile Include="Assets\_Scripts\LightningboltShield.cs" />
      <Compile Include="Assets\_Scripts\MovementManager.cs" />
      <Compile Include="Assets\_Scripts\Networking\NetworkedPlayer.cs" />
      <Compile Include="Assets\_Scripts\Networking\ShieldObserver.cs" />
@@ -233,6 +233,7 @@
      <Compile Include="Assets\_Scripts\RPCElement.cs" />
      <Compile Include="Assets\_Scripts\ShieldElement.cs" />
      <Compile Include="Assets\_Scripts\ShieldManager.cs" />
+     <Compile Include="Assets\_Scripts\ShieldRotator.cs" />
      <Compile Include="Assets\_Scripts\ShieldSpawner.cs" />
      <Compile Include="Assets\_Scripts\SpellCollision.cs" />
      <Compile Include="Assets\_Scripts\SpellManager.cs" />
@@ -280,7 +281,7 @@
      <None Include="Assets\Standard Assets\Environment\Water\Water4\Shaders\FXWater4Simple.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\frag_ao.cginc" />
      <None Include="Assets\Plugins\release_history.txt" />
-     <None Include="Assets\Custom\Shields\Materials\Shaders\FireShaderNoCulling.shader" />
+     <None Include="Assets\_Shaders\FireShaderNoCulling.shader" />
      <None Include="Assets\Standard Assets\Effects\ToonShading\Shaders\ToonBasicOutline.shader" />
      <None Include="Assets\LeapMotion\Shaders\RimShading.shader" />
      <None Include="Assets\Custom\Shadertest\AlphaOverlay.shader" />
@@ -346,7 +347,7 @@
      <None Include="Assets\OVR\Shaders\OVRGUIShader.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_Antialiasing\FXAA2.shader" />
      <None Include="Assets\Plugins\x86\donotdelete.txt" />
-     <None Include="Assets\Custom\Shields\Materials\Shaders\WaterShaderLowAlpha.shader" />
+     <None Include="Assets\_Shaders\WaterShaderLowAlpha.shader" />
      <None Include="Assets\StreamingAssets\FMOD_bank_list.txt" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\ColorCorrection3DLut.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\LensFlareCreate.shader" />
