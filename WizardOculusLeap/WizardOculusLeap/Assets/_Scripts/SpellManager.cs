@@ -8,6 +8,8 @@ public class SpellManager {
 	public SpellMovement spellMovement;
 	public SpellCollision spellCollision;
 
+	public int id;
+
 	public void Setup (){ //(List<ElementManager> list) {
 		//elements = new List<elementType> ();
 		//foreach(ElementManager e in list){
@@ -16,5 +18,15 @@ public class SpellManager {
 		//Choose Texture
 		spellMovement = instance.GetComponent<SpellMovement> ();
 		spellCollision = instance.GetComponent<SpellCollision> ();
+		spellCollision.id = id;
+	}
+
+	public void DestroyMe()
+	{
+		if (instance != null) {
+			PhotonNetwork.Destroy(instance);
+		}
+		
+		Debug.Log ("Destroy me: ");
 	}
 }

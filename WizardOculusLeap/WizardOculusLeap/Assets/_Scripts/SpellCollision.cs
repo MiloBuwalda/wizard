@@ -6,6 +6,8 @@ public class SpellCollision : MonoBehaviour {
 	public int id;
 	
 	public elementType elementType;
+
+	PhotonView photonView;
 	
 	#region enums
 	public enum Consequence
@@ -24,6 +26,9 @@ public class SpellCollision : MonoBehaviour {
 	#endregion
 	
 	void OnTriggerEnter(Collider other){
+
+		photonView = gameObject.GetComponent<PhotonView> ();
+
 		Debug.Log ("OnTriggerEnter");
 		if (other.tag == "Spell") {
 			elementType otherElement = other.GetComponent<SpellCollision>().elementType; 
@@ -36,6 +41,10 @@ public class SpellCollision : MonoBehaviour {
 			string element = CreateString(elementType, false);
 			string elementOpposing = CreateString(otherElement, false);
 			WeAreColliding (element, elementOpposing);
+		}
+		if (other.tag == "Player") {
+			// score
+			// check if not collision with self on spawn but after
 		}
 	}
 	
@@ -292,7 +301,10 @@ public class SpellCollision : MonoBehaviour {
 	{
 		//Destroy this object
 		//Destroy (gameObject);
-//		PhotonNetwork.Destroy (gameObject);
+		if (photonView.isMine) {
+			GameManager.instance.player.RemoveSpell(id);
+			Debug.Log("Removed MY SPELL");
+		}
 		//Award points to the owner of this spell for destroying a shield
 	}
 	#endregion
@@ -301,7 +313,10 @@ public class SpellCollision : MonoBehaviour {
 	{
 		//Destroy this object
 		//Destroy (gameObject);
-//		PhotonNetwork.Destroy (gameObject);
+		if (photonView.isMine) {
+			GameManager.instance.player.RemoveSpell(id);
+			Debug.Log("Removed MY SPELL");
+		}
 		//Award points to the owner of this spell for dispelling a shield
 	}
 	#endregion
@@ -310,7 +325,10 @@ public class SpellCollision : MonoBehaviour {
 	{
 		//Destroy this object
 		//Destroy (gameObject);
-//		PhotonNetwork.Destroy (gameObject);
+		if (photonView.isMine) {
+			GameManager.instance.player.RemoveSpell(id);
+			Debug.Log("Removed MY SPELL");
+		}
 		//Award points to the owner of this spell for hitting another player
 	}
 	#endregion
@@ -326,7 +344,10 @@ public class SpellCollision : MonoBehaviour {
 	{
 		//Destroy this object
 		//Destroy (gameObject);
-//		PhotonNetwork.Destroy (gameObject);
+		if (photonView.isMine) {
+			GameManager.instance.player.RemoveSpell(id);
+			Debug.Log("Removed MY SPELL");
+		}
 		//No points are awarded this way; the destroying opposing spell does that
 	}
 	#endregion

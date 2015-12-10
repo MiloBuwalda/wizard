@@ -7,6 +7,11 @@ public class SpellSpawner : MonoBehaviour {
 	public Dictionary<string, GameObject> spellBook;
 	public Transform inFrontOfPlayer;
 
+
+	
+	// shield id not a counter
+	public int spellId = 1000;
+
 	void Awake () {
 		//singleton
 		instance = this;
@@ -41,6 +46,8 @@ public class SpellSpawner : MonoBehaviour {
 		SpellManager spell = new SpellManager();
 		GameObject g;
 
+		spell.id = spellId;
+		spellId++;
 //		shield.id = shieldId;
 //		shieldId++;
 		PhotonView currentPhotonView;
