@@ -7,7 +7,7 @@ public class ElementSpawnVisual : MonoBehaviour {
 	public int handNumber;
 
 	int handID;
-	float speed = 10f;
+	float speed = 30f;
 	float size = 4.1f;
 	Vector3 startPosition;
 	Vector3 endPosition;

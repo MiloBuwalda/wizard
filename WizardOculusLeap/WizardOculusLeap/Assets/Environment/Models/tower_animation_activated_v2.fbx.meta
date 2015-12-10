@@ -1,0 +1,369 @@
+fileFormatVersion: 2
+guid: ffd8b89239a4df34e91b96e81e46cd4b
+timeCreated: 1448979204
+licenseType: Free
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: polySurface1
+    100002: polySurface10
+    100004: polySurface11
+    100006: polySurface12
+    100008: polySurface13
+    100010: polySurface14
+    100012: polySurface15
+    100014: polySurface16
+    100016: polySurface17
+    100018: polySurface18
+    100020: polySurface19
+    100022: polySurface2
+    100024: polySurface20
+    100026: polySurface21
+    100028: polySurface22
+    100030: polySurface23
+    100032: polySurface24
+    100034: polySurface25
+    100036: polySurface26
+    100038: polySurface27
+    100040: polySurface28
+    100042: polySurface29
+    100044: polySurface3
+    100046: polySurface30
+    100048: polySurface31
+    100050: polySurface4
+    100052: polySurface5
+    100054: polySurface6
+    100056: polySurface7
+    100058: polySurface8
+    100060: polySurface9
+    100062: size_reference
+    100064: //RootNode
+    100066: tower_base
+    100068: tower_top
+    100070: tower_top_base
+    100072: tower_top_debris__360
+    100074: tower_top_debris__720
+    100076: tower_top_debris__min360
+    100078: tower_top_debris__min720
+    100080: tower_top_roof
+    400000: polySurface1
+    400002: polySurface10
+    400004: polySurface11
+    400006: polySurface12
+    400008: polySurface13
+    400010: polySurface14
+    400012: polySurface15
+    400014: polySurface16
+    400016: polySurface17
+    400018: polySurface18
+    400020: polySurface19
+    400022: polySurface2
+    400024: polySurface20
+    400026: polySurface21
+    400028: polySurface22
+    400030: polySurface23
+    400032: polySurface24
+    400034: polySurface25
+    400036: polySurface26
+    400038: polySurface27
+    400040: polySurface28
+    400042: polySurface29
+    400044: polySurface3
+    400046: polySurface30
+    400048: polySurface31
+    400050: polySurface4
+    400052: polySurface5
+    400054: polySurface6
+    400056: polySurface7
+    400058: polySurface8
+    400060: polySurface9
+    400062: size_reference
+    400064: //RootNode
+    400066: tower_base
+    400068: tower_top
+    400070: tower_top_base
+    400072: tower_top_debris__360
+    400074: tower_top_debris__720
+    400076: tower_top_debris__min360
+    400078: tower_top_debris__min720
+    400080: tower_top_roof
+    2300000: polySurface1
+    2300002: polySurface10
+    2300004: polySurface11
+    2300006: polySurface12
+    2300008: polySurface13
+    2300010: polySurface14
+    2300012: polySurface15
+    2300014: polySurface16
+    2300016: polySurface17
+    2300018: polySurface18
+    2300020: polySurface19
+    2300022: polySurface2
+    2300024: polySurface20
+    2300026: polySurface21
+    2300028: polySurface22
+    2300030: polySurface23
+    2300032: polySurface24
+    2300034: polySurface25
+    2300036: polySurface26
+    2300038: polySurface27
+    2300040: polySurface28
+    2300042: polySurface29
+    2300044: polySurface3
+    2300046: polySurface30
+    2300048: polySurface31
+    2300050: polySurface4
+    2300052: polySurface5
+    2300054: polySurface6
+    2300056: polySurface7
+    2300058: polySurface8
+    2300060: polySurface9
+    2300062: size_reference
+    2300064: tower_base
+    2300066: tower_top
+    2300068: tower_top_base
+    2300070: tower_top_roof
+    3300000: polySurface1
+    3300002: polySurface10
+    3300004: polySurface11
+    3300006: polySurface12
+    3300008: polySurface13
+    3300010: polySurface14
+    3300012: polySurface15
+    3300014: polySurface16
+    3300016: polySurface17
+    3300018: polySurface18
+    3300020: polySurface19
+    3300022: polySurface2
+    3300024: polySurface20
+    3300026: polySurface21
+    3300028: polySurface22
+    3300030: polySurface23
+    3300032: polySurface24
+    3300034: polySurface25
+    3300036: polySurface26
+    3300038: polySurface27
+    3300040: polySurface28
+    3300042: polySurface29
+    3300044: polySurface3
+    3300046: polySurface30
+    3300048: polySurface31
+    3300050: polySurface4
+    3300052: polySurface5
+    3300054: polySurface6
+    3300056: polySurface7
+    3300058: polySurface8
+    3300060: polySurface9
+    3300062: size_reference
+    3300064: tower_base
+    3300066: tower_top
+    3300068: tower_top_base
+    3300070: tower_top_roof
+    4300000: tower_top
+    4300002: size_reference
+    4300004: tower_top_roof
+    4300006: polySurface4
+    4300008: polySurface6
+    4300010: polySurface7
+    4300012: polySurface9
+    4300014: polySurface10
+    4300016: polySurface11
+    4300018: polySurface12
+    4300020: polySurface13
+    4300022: polySurface15
+    4300024: polySurface16
+    4300026: polySurface19
+    4300028: polySurface20
+    4300030: polySurface21
+    4300032: polySurface22
+    4300034: polySurface23
+    4300036: polySurface26
+    4300038: polySurface28
+    4300040: polySurface29
+    4300042: polySurface31
+    4300044: tower_top_base
+    4300046: tower_base
+    4300048: polySurface1
+    4300050: polySurface2
+    4300052: polySurface3
+    4300054: polySurface5
+    4300056: polySurface8
+    4300058: polySurface14
+    4300060: polySurface17
+    4300062: polySurface18
+    4300064: polySurface25
+    4300066: polySurface24
+    4300068: polySurface30
+    4300070: polySurface27
+    7400000: tower animation2
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: tower animation2
+      takeName: tower animation2
+      firstFrame: 1
+      lastFrame: 96
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: size_reference
+        weight: 1
+      - path: tower_base
+        weight: 1
+      - path: tower_top
+        weight: 1
+      - path: tower_top_base
+        weight: 1
+      - path: tower_top_debris__360
+        weight: 1
+      - path: tower_top_debris__360/polySurface4
+        weight: 1
+      - path: tower_top_debris__360/polySurface6
+        weight: 1
+      - path: tower_top_debris__360/polySurface7
+        weight: 1
+      - path: tower_top_debris__360/polySurface9
+        weight: 1
+      - path: tower_top_debris__360/polySurface10
+        weight: 1
+      - path: tower_top_debris__360/polySurface11
+        weight: 1
+      - path: tower_top_debris__360/polySurface12
+        weight: 1
+      - path: tower_top_debris__360/polySurface13
+        weight: 1
+      - path: tower_top_debris__360/polySurface15
+        weight: 1
+      - path: tower_top_debris__360/polySurface16
+        weight: 1
+      - path: tower_top_debris__360/polySurface19
+        weight: 1
+      - path: tower_top_debris__360/polySurface20
+        weight: 1
+      - path: tower_top_debris__360/polySurface21
+        weight: 1
+      - path: tower_top_debris__360/polySurface22
+        weight: 1
+      - path: tower_top_debris__360/polySurface23
+        weight: 1
+      - path: tower_top_debris__360/polySurface26
+        weight: 1
+      - path: tower_top_debris__360/polySurface28
+        weight: 1
+      - path: tower_top_debris__360/polySurface29
+        weight: 1
+      - path: tower_top_debris__360/polySurface31
+        weight: 1
+      - path: tower_top_debris__720
+        weight: 1
+      - path: tower_top_debris__720/polySurface24
+        weight: 1
+      - path: tower_top_debris__720/polySurface30
+        weight: 1
+      - path: tower_top_debris__min360
+        weight: 1
+      - path: tower_top_debris__min360/polySurface1
+        weight: 1
+      - path: tower_top_debris__min360/polySurface2
+        weight: 1
+      - path: tower_top_debris__min360/polySurface3
+        weight: 1
+      - path: tower_top_debris__min360/polySurface5
+        weight: 1
+      - path: tower_top_debris__min360/polySurface8
+        weight: 1
+      - path: tower_top_debris__min360/polySurface14
+        weight: 1
+      - path: tower_top_debris__min360/polySurface17
+        weight: 1
+      - path: tower_top_debris__min360/polySurface18
+        weight: 1
+      - path: tower_top_debris__min360/polySurface25
+        weight: 1
+      - path: tower_top_debris__min720
+        weight: 1
+      - path: tower_top_debris__min720/polySurface27
+        weight: 1
+      - path: tower_top_roof
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 100
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
