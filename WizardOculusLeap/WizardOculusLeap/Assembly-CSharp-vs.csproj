@@ -194,6 +194,7 @@
      <Compile Include="Assets\Photon Unity Networking\UtilityScripts\SupportLogger.cs" />
      <Compile Include="Assets\Photon Unity Networking\UtilityScripts\TimeKeeper.cs" />
      <Compile Include="Assets\Resources\ElementalSources\Scripts\ScrollingUVs_Layers.cs" />
+     <Compile Include="Assets\_Scripts\AirRotate_v1.cs" />
      <Compile Include="Assets\_Scripts\AirShieldWobbler.cs" />
      <Compile Include="Assets\_Scripts\AudioManager.cs" />
      <Compile Include="Assets\_Scripts\AudioState.cs" />
@@ -217,11 +218,14 @@
      <Compile Include="Assets\_Scripts\HandInteraction.cs" />
      <Compile Include="Assets\_Scripts\ICollidable.cs" />
      <Compile Include="Assets\_Scripts\InfoScreen.cs" />
+     <Compile Include="Assets\_Scripts\LightningboltController_v1.cs" />
      <Compile Include="Assets\_Scripts\LightningboltShield.cs" />
+     <Compile Include="Assets\_Scripts\MaterialScroller_v2.cs" />
      <Compile Include="Assets\_Scripts\MovementManager.cs" />
      <Compile Include="Assets\_Scripts\Networking\NetworkedPlayer.cs" />
      <Compile Include="Assets\_Scripts\Networking\ShieldObserver.cs" />
      <Compile Include="Assets\_Scripts\Networking\SpellObserver.cs" />
+     <Compile Include="Assets\_Scripts\ParticleSystemMultiplier_v2.cs" />
      <Compile Include="Assets\_Scripts\PlasmaBall Scripts\LightningboltUltimate.cs" />
      <Compile Include="Assets\_Scripts\PlasmaBall Scripts\MaterialScroller.cs" />
      <Compile Include="Assets\_Scripts\PlasmaBall Scripts\SphereCollapse.cs" />
@@ -239,7 +243,10 @@
      <Compile Include="Assets\_Scripts\SpellManager.cs" />
      <Compile Include="Assets\_Scripts\SpellMovement.cs" />
      <Compile Include="Assets\_Scripts\SpellSpawner.cs" />
+     <Compile Include="Assets\_Scripts\SphereCollapser_v2.cs" />
      <Compile Include="Assets\_Scripts\SphereInteraction.cs" />
+     <Compile Include="Assets\_Scripts\SphereRotator_v2.cs" />
+     <Compile Include="Assets\_Scripts\SphereScaler_v2.cs" />
      <Compile Include="Assets\_Scripts\circle_move.cs" />
      <None Include="Assets\Standard Assets\Effects\GlassRefraction\Shaders\GlassStainedBumpDistort.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\BlendOneOne.shader" />
@@ -262,7 +269,6 @@
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_DepthOfField\DepthOfFieldScatter.shader" />
      <None Include="Assets\Standard Assets\Effects\TessellationShaders\Shaders\BumpedSpecularSmooth.shader" />
      <None Include="Assets\Standard Assets\Effects\Projectors\Guidelines.txt" />
-     <None Include="Assets\Environment\Export\Environment\Script\NoFog.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\MotionBlur.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\MobileBloom.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\Contrast Stretch\MinMaxReduction.shader" />
@@ -373,13 +379,13 @@
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
  <Reference Include="LeapCSharp.NET3.5">
- <HintPath>C:/Users/student/Documents/Unity5/wizard/WizardOculusLeap/WizardOculusLeap/Assets/Plugins/LeapCSharp.NET3.5.dll</HintPath>
+ <HintPath>C:/Users/student/Documents/Unity5/wizard2/WizardOculusLeap/WizardOculusLeap/Assets/Plugins/LeapCSharp.NET3.5.dll</HintPath>
  </Reference>
  <Reference Include="Photon3Unity3D">
- <HintPath>C:/Users/student/Documents/Unity5/wizard/WizardOculusLeap/WizardOculusLeap/Assets/Plugins/Photon3Unity3D.dll</HintPath>
+ <HintPath>C:/Users/student/Documents/Unity5/wizard2/WizardOculusLeap/WizardOculusLeap/Assets/Plugins/Photon3Unity3D.dll</HintPath>
  </Reference>
  <Reference Include="websocket-sharp">
- <HintPath>C:/Users/student/Documents/Unity5/wizard/WizardOculusLeap/WizardOculusLeap/Assets/Plugins/WebSocket/websocket-sharp.dll</HintPath>
+ <HintPath>C:/Users/student/Documents/Unity5/wizard2/WizardOculusLeap/WizardOculusLeap/Assets/Plugins/WebSocket/websocket-sharp.dll</HintPath>
  </Reference>
  <Reference Include="UnityEditor.iOS.Extensions.Xcode">
  <HintPath>C:/Program Files/Unity/Editor/Data/PlaybackEngines/iossupport/UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
