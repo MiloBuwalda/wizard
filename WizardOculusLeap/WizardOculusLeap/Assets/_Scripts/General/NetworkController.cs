@@ -179,10 +179,10 @@ public class NetworkController : Photon.MonoBehaviour
 	
 	void OnDisconnectedFromPhoton()
 	{
-		if( Application.loadedLevelName != _levelName )
-		{
-			Application.LoadLevel( _levelName );
-		}
+//		if( Application.loadedLevelName != _levelName )
+//		{
+//			Application.LoadLevel( _levelName );
+//		}
 	}
 	
 	void OnFailedToConnectToPhoton( DisconnectCause cause )

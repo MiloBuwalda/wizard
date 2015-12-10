@@ -29,7 +29,7 @@ public class SpellCollision : MonoBehaviour {
 
 		photonView = gameObject.GetComponent<PhotonView> ();
 
-		Debug.Log ("OnTriggerEnter");
+//		Debug.Log ("OnTriggerEnter");
 		if (other.tag == "Spell") {
 			elementType otherElement = other.GetComponent<SpellCollision>().elementType; 
 			string element = CreateString(elementType, true);
@@ -90,7 +90,7 @@ public class SpellCollision : MonoBehaviour {
 	#region We Are Collising
 	public void WeAreColliding (string spellIdentifier, string opposingSpellIdentifier)
 	{
-		Debug.Log ("WeAreColldiding");
+//		Debug.Log ("WeAreColldiding");
 		switch (CalculateConsequence(spellIdentifier, opposingSpellIdentifier))
 		{
 		case Consequence.AbsorbShield:

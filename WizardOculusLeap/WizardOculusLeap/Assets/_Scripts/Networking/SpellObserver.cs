@@ -71,7 +71,6 @@ public class SpellObserver : MonoBehaviour {
 		//Multiple components need to synchronize values over the network.
 		//The SerializeState methods are made up, but they're useful to keep
 		//all the data separated into their respective components
-		Debug.Log ("OnPhotonSerializeView");
 		SerializeState( stream, info );
 		//		
 		//		ShipVisuals.SerializeState( stream, info );
@@ -79,7 +78,7 @@ public class SpellObserver : MonoBehaviour {
 	}
 	public void SerializeState( PhotonStream stream, PhotonMessageInfo info )
 	{
-		Debug.Log ("Serialized State");
+//		Debug.Log ("Serialized State");
 		//We only need to synchronize a couple of variables to be able to recreate a good
 		//approximation of the ships position on each client
 		//There is a lot of smoke and mirrors happening here
