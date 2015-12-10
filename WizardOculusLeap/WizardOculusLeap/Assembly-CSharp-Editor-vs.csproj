@@ -121,7 +121,7 @@
      <None Include="Assets\Standard Assets\Environment\Water\Water4\Shaders\FXWater4Simple.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\frag_ao.cginc" />
      <None Include="Assets\Plugins\release_history.txt" />
-     <None Include="Assets\Custom\Shields\Materials\Shaders\FireShaderNoCulling.shader" />
+     <None Include="Assets\_Shaders\FireShaderNoCulling.shader" />
      <None Include="Assets\Standard Assets\Effects\ToonShading\Shaders\ToonBasicOutline.shader" />
      <None Include="Assets\LeapMotion\Shaders\RimShading.shader" />
      <None Include="Assets\Custom\Shadertest\AlphaOverlay.shader" />
@@ -187,7 +187,7 @@
      <None Include="Assets\OVR\Shaders\OVRGUIShader.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_Antialiasing\FXAA2.shader" />
      <None Include="Assets\Plugins\x86\donotdelete.txt" />
-     <None Include="Assets\Custom\Shields\Materials\Shaders\WaterShaderLowAlpha.shader" />
+     <None Include="Assets\_Shaders\WaterShaderLowAlpha.shader" />
      <None Include="Assets\StreamingAssets\FMOD_bank_list.txt" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\ColorCorrection3DLut.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\LensFlareCreate.shader" />
