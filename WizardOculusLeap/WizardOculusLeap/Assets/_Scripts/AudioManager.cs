@@ -13,7 +13,7 @@ public class AudioManager : MonoBehaviour {
 //		engine = FMOD_StudioSystem.instance.getEvent("/Background/Orchestral Music");
 //		engine.start();
 //		engine.getParameter("RPM", out engineRPM);
-		background = FMOD_StudioSystem.instance.GetEvent ("event:/Background/Orchestral Music");
+		background = FMOD_StudioSystem.instance.GetEvent ("event:/Background/Ice Ambience");
 		if(play)
 			background.start ();
 	}

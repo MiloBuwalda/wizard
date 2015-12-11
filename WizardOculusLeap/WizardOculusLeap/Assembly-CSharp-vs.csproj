@@ -196,7 +196,6 @@
      <Compile Include="Assets\Prefabs\EarthExplscript.cs" />
      <Compile Include="Assets\Prefabs\Earthscript2.cs" />
      <Compile Include="Assets\Prefabs\OrbitBehaviour34.cs" />
-     <Compile Include="Assets\ResetScene.cs" />
      <Compile Include="Assets\Resources\ElementalSources\Scripts\ScrollingUVs_Layers.cs" />
      <Compile Include="Assets\_Scripts\AirRotate_v1.cs" />
      <Compile Include="Assets\_Scripts\AirRotate_v2.cs" />
