@@ -43,6 +43,7 @@ public class SpellSpawner : MonoBehaviour {
 
 	//Create a spell with elements from player when player demands it
 	public SpellManager CreateSpellNetworked(elementType t, Vector3 position){
+		Debug.Log ("Count CreateSpellNetworked");
 		SpellManager spell = new SpellManager();
 		GameObject g;
 
