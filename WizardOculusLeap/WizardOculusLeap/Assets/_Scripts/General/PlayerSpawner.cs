@@ -56,6 +56,7 @@ public class PlayerSpawner : MonoBehaviour {
 		}
 	}
 
+
 	void resetLocalSpace(GameObject player)
 	{
 		player.transform.localPosition = Vector3.zero;
