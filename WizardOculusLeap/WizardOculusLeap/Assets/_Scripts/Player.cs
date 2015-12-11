@@ -208,6 +208,19 @@ public class Player : MonoBehaviour {
 
 	}
 
+	public void RemoveSpell(int SpellId)
+	{
+		int iLength = spellPool.Count;
+		for (int i = 0; i < iLength; i++) {
+			if(spellPool[i].id == SpellId)
+			{
+				spellPool[i].DestroyMe();
+			}
+		}
+
+
+	}
+
 
 
 	public Team m_Team;

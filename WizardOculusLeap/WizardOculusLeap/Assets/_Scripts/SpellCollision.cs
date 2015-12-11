@@ -2,11 +2,13 @@
 using System.Collections;
 
 public class SpellCollision : MonoBehaviour {
-
+	
 	public int id;
 	
 	public elementType elementType;
 
+	PhotonView photonView;
+	
 	#region enums
 	public enum Consequence
 	{
@@ -22,9 +24,12 @@ public class SpellCollision : MonoBehaviour {
 		None
 	}
 	#endregion
-
+	
 	void OnTriggerEnter(Collider other){
-		Debug.Log ("OnTriggerEnter");
+
+		photonView = gameObject.GetComponent<PhotonView> ();
+
+//		Debug.Log ("OnTriggerEnter");
 		if (other.tag == "Spell") {
 			elementType otherElement = other.GetComponent<SpellCollision>().elementType; 
 			string element = CreateString(elementType, true);
@@ -37,8 +42,12 @@ public class SpellCollision : MonoBehaviour {
 			string elementOpposing = CreateString(otherElement, false);
 			WeAreColliding (element, elementOpposing);
 		}
+		if (other.tag == "Player") {
+			// score
+			// check if not collision with self on spawn but after
+		}
 	}
-
+	
 	string CreateString (elementType Element, bool isSpell){
 		string e = Element.ToString ();
 		if (e.Contains ("Fire")) {
@@ -74,14 +83,14 @@ public class SpellCollision : MonoBehaviour {
 		} else {
 			e = e.Insert(2,"_S");
 		}
-
+		
 		return e;
 	}
-
+	
 	#region We Are Collising
 	public void WeAreColliding (string spellIdentifier, string opposingSpellIdentifier)
 	{
-		Debug.Log ("WeAreColldiding");
+//		Debug.Log ("WeAreColldiding");
 		switch (CalculateConsequence(spellIdentifier, opposingSpellIdentifier))
 		{
 		case Consequence.AbsorbShield:
@@ -291,7 +300,11 @@ public class SpellCollision : MonoBehaviour {
 	private void IBrokeAShield()
 	{
 		//Destroy this object
-		Destroy (gameObject);
+		//Destroy (gameObject);
+		if (photonView.isMine) {
+			GameManager.instance.player.RemoveSpell(id);
+			Debug.Log("Removed MY SPELL");
+		}
 		//Award points to the owner of this spell for destroying a shield
 	}
 	#endregion
@@ -299,7 +312,11 @@ public class SpellCollision : MonoBehaviour {
 	private void IDispelledAShield()
 	{
 		//Destroy this object
-		Destroy (gameObject);
+		//Destroy (gameObject);
+		if (photonView.isMine) {
+			GameManager.instance.player.RemoveSpell(id);
+			Debug.Log("Removed MY SPELL");
+		}
 		//Award points to the owner of this spell for dispelling a shield
 	}
 	#endregion
@@ -307,7 +324,11 @@ public class SpellCollision : MonoBehaviour {
 	private void IDirectlyHitSomeone()
 	{
 		//Destroy this object
-		Destroy (gameObject);
+		//Destroy (gameObject);
+		if (photonView.isMine) {
+			GameManager.instance.player.RemoveSpell(id);
+			Debug.Log("Removed MY SPELL");
+		}
 		//Award points to the owner of this spell for hitting another player
 	}
 	#endregion
@@ -322,7 +343,11 @@ public class SpellCollision : MonoBehaviour {
 	private void ILost()
 	{
 		//Destroy this object
-		Destroy (gameObject);
+		//Destroy (gameObject);
+		if (photonView.isMine) {
+			GameManager.instance.player.RemoveSpell(id);
+			Debug.Log("Removed MY SPELL");
+		}
 		//No points are awarded this way; the destroying opposing spell does that
 	}
 	#endregion

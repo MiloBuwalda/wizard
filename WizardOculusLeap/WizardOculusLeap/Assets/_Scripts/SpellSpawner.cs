@@ -7,6 +7,11 @@ public class SpellSpawner : MonoBehaviour {
 	public Dictionary<string, GameObject> spellBook;
 	public Transform inFrontOfPlayer;
 
+
+	
+	// shield id not a counter
+	public int spellId = 1000;
+
 	void Awake () {
 		//singleton
 		instance = this;
@@ -41,6 +46,8 @@ public class SpellSpawner : MonoBehaviour {
 		SpellManager spell = new SpellManager();
 		GameObject g;
 
+		spell.id = spellId;
+		spellId++;
 //		shield.id = shieldId;
 //		shieldId++;
 		PhotonView currentPhotonView;
@@ -54,6 +61,7 @@ public class SpellSpawner : MonoBehaviour {
 				currentPhotonView = g.AddComponent<PhotonView>();
 			}
 			
+
 			spellObserver = g.GetComponent<SpellObserver>();
 			if (spellObserver == null){
 				spellObserver = g.AddComponent<SpellObserver>();
@@ -61,18 +69,22 @@ public class SpellSpawner : MonoBehaviour {
 			
 			//				Debug.Log("currentPhotonView Count: " + currentPhotonView.ObservedComponents.Count);
 			currentPhotonView.ObservedComponents.Clear();
+//			currentPhotonView.ObservedComponents.Add();
+
 			if(currentPhotonView.ObservedComponents!=null && currentPhotonView.ObservedComponents.Count==0)
 			{
 				currentPhotonView.ObservedComponents.Add(spellObserver);
+//				currentPhotonView.ObservedComponents.Add(this.transform);
 				//					currentPhotonView.ObservedComponents[0] = shieldObserver;
 				//					currentPhotonView.ObservedComponents.
 			}
 			
 			// Instantiate on network (call current element shield from within shield folder)
 			spell.instance = (GameObject) PhotonNetwork.Instantiate(
-				"Spells/"+g.name, inFrontOfPlayer.position, transform.rotation,0);
+				"Spells/"+g.name, inFrontOfPlayer.position, inFrontOfPlayer.rotation,0);
 			Debug.Log("spellspawner:instantiate " + g.name);
 
+//			spell.instance.
 
 //			spell.instance = (GameObject)Instantiate (g, inFrontOfPlayer.position, transform.rotation);
 			spell.Setup ();

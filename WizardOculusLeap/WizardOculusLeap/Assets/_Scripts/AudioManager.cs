@@ -6,6 +6,7 @@ public class AudioManager : MonoBehaviour {
 //	FMOD.Studio.EventInstance engine;
 //	FMOD.Studio.ParameterInstance engineRPM;
 	FMOD.Studio.EventInstance background;
+	public bool play = false;
 
 	void Start()
 	{
@@ -13,10 +14,15 @@ public class AudioManager : MonoBehaviour {
 //		engine.start();
 //		engine.getParameter("RPM", out engineRPM);
 		background = FMOD_StudioSystem.instance.GetEvent ("event:/Background/Orchestral Music");
-		background.start ();
+		if(play)
+			background.start ();
 	}
 	void Update()
 	{
+		if (!play) {
+			background.stop (FMOD.Studio.STOP_MODE.IMMEDIATE);
+			background.release ();
+		}
 		// get a RPM value from the game's car engine
 //		engineRPM.setValue(rpm);
 	}
