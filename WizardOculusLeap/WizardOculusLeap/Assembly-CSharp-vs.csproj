@@ -195,6 +195,7 @@
      <Compile Include="Assets\Photon Unity Networking\UtilityScripts\TimeKeeper.cs" />
      <Compile Include="Assets\Resources\ElementalSources\Scripts\ScrollingUVs_Layers.cs" />
      <Compile Include="Assets\_Scripts\AirRotate_v1.cs" />
+     <Compile Include="Assets\_Scripts\AirRotate_v2.cs" />
      <Compile Include="Assets\_Scripts\AirShieldWobbler.cs" />
      <Compile Include="Assets\_Scripts\AudioManager.cs" />
      <Compile Include="Assets\_Scripts\AudioState.cs" />
