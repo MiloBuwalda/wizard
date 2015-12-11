@@ -11,7 +11,7 @@ public class GameManager : MonoBehaviour {
 	public ShieldSpawner shieldSpawner;
 	public AudioManager audioManager;
 
-
+	public static Team currentTeam;
 	void Awake(){
 		if(instance == null)
 		{
@@ -33,6 +33,7 @@ public class GameManager : MonoBehaviour {
 			OVRManager.display.RecenterPose();
 		}
 		if (Input.GetKeyDown(KeyCode.R)) {
+			currentTeam = GameManager.instance.player.Team;
 			Application.LoadLevel (Application.loadedLevelName);
 			Debug.Log("RESET");
 			GameManager.instance.playerSpawner.playerReference = GameObject.FindGameObjectWithTag("Player");
@@ -52,6 +53,9 @@ public class GameManager : MonoBehaviour {
 		{
 			if(GameManager.instance.playerSpawner == null)
 				Debug.Log("lol");
+
+			GameManager.instance.player.SetTeam(currentTeam);
+
 			if(!(GameManager.instance.playerSpawner.playerReference.transform.position == GameManager.instance.playerSpawner.spawnPointBlue.position )&&
 			   !(GameManager.instance.playerSpawner.playerReference.transform.position == GameManager.instance.playerSpawner.spawnPointRed.position))
 			{
