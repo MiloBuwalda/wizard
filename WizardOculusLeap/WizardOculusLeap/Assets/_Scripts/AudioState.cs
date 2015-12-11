@@ -5,7 +5,7 @@ public class AudioState : MonoBehaviour {
 
 	FMOD.Studio.EventInstance fmodSound;
 	FMOD.Studio.ParameterInstance fmodState;
-	public int state;
+	public float state;
 	
 	void Start()
 	{
@@ -14,11 +14,13 @@ public class AudioState : MonoBehaviour {
 //		engine.getParameter("RPM", out engineRPM);
 		fmodSound = FMOD_StudioSystem.instance.GetEvent (gameObject.GetComponent<FMOD_StudioEventEmitter>().path);
 		fmodSound.getParameter ("State", out fmodState);
-	}
-	void Update()
-	{
+
 		fmodState.setValue (state);
 	}
+//	void Update()
+//	{
+//			
+//	}
 	void OnDisable()
 	{
 //		engine.stop();
