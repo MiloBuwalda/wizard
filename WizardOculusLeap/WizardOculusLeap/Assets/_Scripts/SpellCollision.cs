@@ -4,8 +4,8 @@ using System.Collections;
 public class SpellCollision : MonoBehaviour {
 	
 	public int id;
-	
 	public elementType elementType;
+	float time;
 
 	PhotonView photonView;
 	
@@ -24,7 +24,11 @@ public class SpellCollision : MonoBehaviour {
 		None
 	}
 	#endregion
-	
+
+	void Start(){
+		time = Time.time;
+	}
+
 	void OnTriggerEnter(Collider other){
 
 		photonView = gameObject.GetComponent<PhotonView> ();
@@ -42,9 +46,12 @@ public class SpellCollision : MonoBehaviour {
 			string elementOpposing = CreateString(otherElement, false);
 			WeAreColliding (element, elementOpposing);
 		}
-		if (other.tag == "Player") {
+		if (other.tag == "PlayerCollision"){// && Time.time + 1f > time) {
 			// score
-			// check if not collision with self on spawn but after
+			if (photonView.isMine) {
+				GameManager.instance.player.RemoveSpell(id);
+				Debug.Log("Removed MY SPELL");
+			}
 		}
 	}
 	

@@ -54,7 +54,7 @@ public class ElementSpawner : MonoBehaviour {
 	//Find out which element to spawn, based on its location
 	public void ElementToSpawn (Vector3 location, int handNumber){
 		float locationSignX = Mathf.Sign (location.x);
-		if (forwardDirection.rotation.y == 180 || forwardDirection.rotation.y == -180) {
+		if (GameManager.instance.player.Team == Team.Red) {
 			locationSignX *= -1;
 		}
 
