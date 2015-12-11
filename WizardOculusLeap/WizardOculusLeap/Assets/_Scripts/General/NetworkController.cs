@@ -37,6 +37,11 @@ public class NetworkController : Photon.MonoBehaviour
 	{
 		_levelName = Application.loadedLevelName;
 		DontDestroyOnLoad (gameObject);
+
+		if (FindObjectsOfType(GetType()).Length > 1)
+		{
+			Destroy(gameObject);
+		}
 //
 //		PhotonNetwork.ConnectUsingSettings(_versionNumber);
 		Connect ();
@@ -229,6 +234,7 @@ public class NetworkController : Photon.MonoBehaviour
 		{
 			if( instance == null )
 			{
+				Debug.Log ("CreateInstance");
 				CreateInstance();
 			}
 			
@@ -238,6 +244,7 @@ public class NetworkController : Photon.MonoBehaviour
 	
 	public static void CreateInstance()
 	{
+		Debug.Log ("CreateInstance");
 		if( instance == null )
 		{
 			GameObject connectorObject = GameObject.Find( "NetworkController" );

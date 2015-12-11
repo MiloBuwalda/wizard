@@ -32,5 +32,33 @@ public class GameManager : MonoBehaviour {
 		if (Input.GetKeyDown (KeyCode.F2)) {
 			OVRManager.display.RecenterPose();
 		}
+		if (Input.GetKeyDown(KeyCode.R)) {
+			Application.LoadLevel (Application.loadedLevelName);
+			Debug.Log("RESET");
+			GameManager.instance.playerSpawner.playerReference = GameObject.FindGameObjectWithTag("Player");
+			GameManager.instance.playerSpawner.SetCurrentSpawnPoint();		
+		}
 	}
+
+	void OnLevelWasLoaded()
+	{
+		StartCoroutine (Restarter ());
+	}
+
+	IEnumerator Restarter ()
+	{
+		yield return new WaitForSeconds (1);
+		if (instance.player.m_Team != null)
+		{
+			if(GameManager.instance.playerSpawner == null)
+				Debug.Log("lol");
+			if(!(GameManager.instance.playerSpawner.playerReference.transform.position == GameManager.instance.playerSpawner.spawnPointBlue.position )&&
+			   !(GameManager.instance.playerSpawner.playerReference.transform.position == GameManager.instance.playerSpawner.spawnPointRed.position))
+			{
+				// Not in the right position;
+				Debug.Log("position: "+ GameManager.instance.player.transform.position);
+				GameManager.instance.playerSpawner.SetCurrentSpawnPoint();
+			}
+			Debug.Log ("Already Exist!");
+		}	}
 }
