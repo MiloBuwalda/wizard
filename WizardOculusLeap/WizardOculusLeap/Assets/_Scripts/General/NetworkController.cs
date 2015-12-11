@@ -109,6 +109,12 @@ public class NetworkController : Photon.MonoBehaviour
 		// When a"Player" is spawned on the network use OnPhotonInstantiate inside Player 
 
 		// Create Observer if 2 players are already in the game
+
+//		///////////////////////////////////////////////// Remove after DEBUG ///
+//		if (PhotonNetwork.playerList.Length == 1)
+//			SetObserver ();
+//		return;
+
 		if (PhotonNetwork.playerList.Length > 2) {
 			SetObserver();
 		}
@@ -118,6 +124,9 @@ public class NetworkController : Photon.MonoBehaviour
 			else
 				GameManager.instance.player.SetTeam(Team.Red);
 		}
+//		Debug.Log("playerSpawnRed: " + GameManager.instance.playerSpawner.spawnPointRed.position);
+//		Debug.Log("playerSpawnBlue: " + GameManager.instance.playerSpawner.spawnPointBlue.position);
+
 //		PlayerSpawner ps = new PlayerSpawner ();
 //		ps.CreateNetworkedPlayer ();
 //		PhotonNetwork.Instantiate (
@@ -177,10 +186,10 @@ public class NetworkController : Photon.MonoBehaviour
 	
 	void OnDisconnectedFromPhoton()
 	{
-		if( Application.loadedLevelName != _levelName )
-		{
-			Application.LoadLevel( _levelName );
-		}
+//		if( Application.loadedLevelName != _levelName )
+//		{
+//			Application.LoadLevel( _levelName );
+//		}
 	}
 	
 	void OnFailedToConnectToPhoton( DisconnectCause cause )
@@ -250,6 +259,9 @@ public class NetworkController : Photon.MonoBehaviour
 		// Turn of game functionality
 		GameManager.instance.enabled = false;
 
+		GameObject player = GameObject.FindGameObjectWithTag ("Player");
+		if (player != null)
+			player.SetActive (false);
 
 //		float fadeSpeed = 1.5f;
 //		Color fadeColor = new Color (0.01f, 0.01f, 0.01f);

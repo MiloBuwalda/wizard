@@ -39,10 +39,11 @@ public class PlayerSpawner : MonoBehaviour {
 		// if first player set player to pos 1 if player 2 then set tot pos 2
 		if (GameManager.instance.player.Team == Team.Blue) {
 			currentSpawnPoint = spawnPointBlue;
-			Debug.Log ("currentspawnPoint:set 0");
+			Debug.Log ("currentspawnPoint:set blue");
 		} else {
+//			inFrontOfPlayer.transform.localRotation = Quaternion.identity;
 			currentSpawnPoint = spawnPointRed;
-			Debug.Log ("currentspawnPoint:set 1");
+			Debug.Log ("currentspawnPoint:set red");
 		}
 		setSpawnPoint (currentSpawnPoint);
 		resetLocalSpace(playerReference);

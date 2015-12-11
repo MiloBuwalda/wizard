@@ -109,6 +109,7 @@ public class ElementSpawner : MonoBehaviour {
 		float speed0 = list[0].instance.GetComponent<ElementMovement>()._magnitude;
 		float speed1 = list[1].instance.GetComponent<ElementMovement>()._magnitude;
 
+
 		if(speed0 < speed1){
 			basisNumber = 0; 
 			otherNumber = 1;
