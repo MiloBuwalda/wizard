@@ -10,8 +10,12 @@ public class SpellMovement : MonoBehaviour {
 	private float startTime;
 	private float journeyLength;
 
+	private Vector3 fakePosition;
+
 	private float distCovered;
 	private float fracJourney;
+
+	private float currentHeight;
 
 	void Start()
 	{
@@ -21,6 +25,11 @@ public class SpellMovement : MonoBehaviour {
 		if (!thisView.isMine)
 			enabled = false;
 		startMarker = this.transform.position;
+
+
+		fakePosition = transform.position;
+		currentHeight = transform.position.y;
+
 
 			
 		if(GameManager.instance.player.Team==Team.Blue){
@@ -37,6 +46,12 @@ public class SpellMovement : MonoBehaviour {
 	void Update () {
 		distCovered = (Time.time - startTime) * speed;
 		fracJourney = distCovered / journeyLength;
-		transform.position = Vector3.Lerp (startMarker, endMarker, fracJourney);
+
+		fakePosition = Vector3.Lerp(startMarker, endMarker, fracJourney);
+		currentHeight = Mathf.Sin (distCovered / journeyLength * Mathf.PI) * journeyLength/4;
+
+		transform.position = new Vector3 (fakePosition.x, currentHeight + fakePosition.y, fakePosition.z);
+
 	}
 }
+
