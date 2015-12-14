@@ -46,7 +46,7 @@ public class SpellCollision : MonoBehaviour {
 			string elementOpposing = CreateString(otherElement, false);
 			WeAreColliding (element, elementOpposing);
 		}
-		if (other.tag == "PlayerCollision"){// && Time.time + 1f > time) {
+		if (other.tag == "PlayerCollision" && time + 1f < Time.time) {
 			// score
 			if (photonView.isMine) {
 				GameManager.instance.player.RemoveSpell(id);
@@ -364,6 +364,12 @@ public class SpellCollision : MonoBehaviour {
 		//This missile has a reversed movement direction.
 		//This missile interacts with other object as if it was owned by the opposing player
 		//This object remains intact
+
+		//temp fix
+		if (photonView.isMine) {
+			GameManager.instance.player.RemoveSpell(id);
+			Debug.Log("Removed MY SPELL");
+		}
 	}
 	#endregion
 	#region Stopped
@@ -371,6 +377,12 @@ public class SpellCollision : MonoBehaviour {
 	{
 		//This missile's movement is suspended for the duration of the collision
 		//This object remains intact
+
+		//temp fix
+		if (photonView.isMine) {
+			GameManager.instance.player.RemoveSpell(id);
+			Debug.Log("Removed MY SPELL");
+		}
 	}
 	#endregion
 }

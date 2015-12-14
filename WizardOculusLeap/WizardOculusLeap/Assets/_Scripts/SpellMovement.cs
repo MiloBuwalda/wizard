@@ -17,6 +17,8 @@ public class SpellMovement : MonoBehaviour {
 
 	private float currentHeight;
 
+	string elementName;
+
 	void Start()
 	{
 
@@ -26,11 +28,8 @@ public class SpellMovement : MonoBehaviour {
 			enabled = false;
 		startMarker = this.transform.position;
 
-
 		fakePosition = transform.position;
 		currentHeight = transform.position.y;
-
-
 			
 		if(GameManager.instance.player.Team==Team.Blue){
 			endMarker = GameManager.instance.playerSpawner.spawnPointRed.position;
@@ -41,6 +40,27 @@ public class SpellMovement : MonoBehaviour {
 		Debug.Log ("endMarker" + endMarker);
 		startTime = Time.time;
 		journeyLength = Vector3.Distance (startMarker,endMarker);
+
+		elementName = gameObject.name;
+
+		switch (elementName [0]) {
+		case 'F':
+			speed = 30f;
+			break;
+		case 'A':
+			speed = 35f;
+			break;
+		case 'W':
+			speed = 25f;
+			break;
+		case 'E':
+			speed = 20f;
+			break;
+		default:
+			break;
+		}
+		
+
 	}
 
 	void Update () {
